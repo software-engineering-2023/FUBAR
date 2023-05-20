@@ -3,8 +3,13 @@
     margin: 0;
     padding: 0;
     font-family: 'Urbanist', sans-serif;
-}
-.navbar {
+  }
+  
+  body {
+    background: linear-gradient(to bottom, #ffffff, #4F0341);
+  }
+  
+  .navbar {
     background-color: #4F0341;
     position: fixed;
     top: 0;
@@ -14,47 +19,107 @@
     height: 50px; /* Adjust the height as needed */
     display: flex;
     align-items: center;
-}
-
-    .navbar .logo {
-        margin-right: auto; /* Push the logo to the left */
-    }
-
-        .navbar .logo img {
-            height: 60px; /* Adjust the height of the logo image as needed */
-        }
-
-    .navbar ul {
-        display: flex;
-        align-items: center;
-    }
-
-    .navbar li {
-        list-style-type: none;
-        margin-left: 20px; /* Increase the margin for more spacing */
-    }
-
-        .navbar li button {
-            color: white;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
-            transition: transform 0.3s, background-color 0.3s;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-
-            .navbar li button:hover {
-                color: #ffffff;
-                background-color: #cc7f32;
-                transform: scale(1.1);
-                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-            }
-
-        /* Adjust the distance between the buttons */
-        .navbar li:first-child {
-            margin-left: 0;
-        }
-        
+  }
+  
+  .navbar .logo {
+    margin-right: auto; /* Push the logo to the left */
+  }
+  
+  .navbar .logo img {
+    height: 60px; /* Adjust the height of the logo image as needed */
+  }
+  
+  .navbar ul {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar li {
+    list-style-type: none;
+    margin-left: 20px; /* Increase the margin for more spacing */
+  }
+  
+  .navbar li button {
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .navbar li button:hover {
+    color: #ffffff;
+    background-color: #cc7f32;
+    transform: scale(1.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .box {
+    border: 2px solid white;
+    width: 500px;
+    height: 300px;
+    padding: 20px;
+    margin: 0 10px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Add transition properties */
+  }
+  
+  .box:hover {
+    transform: translateY(-5px); /* Apply vertical translation on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add box shadow on hover */
+  }
+  
+  .credit-info {
+    text-align: center;
+  }
+  
+  .credit-info h2 {
+    font-size: 20px;
+  }
+  
+  .small-text {
+    font-size: 12px;
+  }
+  
+  .transaction-rows {
+    margin-top: 20px;
+  }
+  
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Align items in the middle */
+    padding: 10px 0; /* Add vertical padding */
+    border-top: 1px dashed rgba(255, 255, 255, 0.2); /* Add thin dashed line */
+  }
+  
+  
+  
+  
+  .row p {
+    flex: 1;
+    margin: 0;
+    color: black;
+    white-space: nowrap; /* Prevent text from wrapping */
+    margin-right: 10px; /* Adjust the margin as needed */
+  }
+  
+  
+  .row p:last-child {
+    color: red; /* Change the color of "DR" to light red */
+  }
+  
+  p {
+    margin: 5px 0;
+  }
+  
