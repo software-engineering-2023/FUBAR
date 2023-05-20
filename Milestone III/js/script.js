@@ -95,14 +95,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 });
-document.addEventListener('DOMContentLoaded', function () {
-    const transferbutton = document.getElementById('transferbutton');
-    if (transferbutton) {
-        transferbutton.addEventListener('click', function () {
-            window.location.href = 'transfer.html';
-        });
-    }
 
-});
 
 
