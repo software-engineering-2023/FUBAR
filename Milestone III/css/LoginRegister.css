@@ -1,0 +1,112 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Urbanist', sans-serif;
+}
+
+
+
+.navbar {
+    background-color: #4F0341;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 35px;
+    height: 50px; /* Adjust the height as needed */
+    display: flex;
+    align-items: center;
+}
+
+    .navbar .logo {
+        margin-right: auto; /* Push the logo to the left */
+    }
+
+        .navbar .logo img {
+            height: 60px; /* Adjust the height of the logo image as needed */
+        }
+
+    .navbar ul {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar li {
+        list-style-type: none;
+        margin-left: 20px; /* Increase the margin for more spacing */
+    }
+
+        .navbar li button {
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: transform 0.3s, background-color 0.3s;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+            .navbar li button:hover {
+                color: #ffffff;
+                background-color: #cc7f32;
+                transform: scale(1.1);
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            }
+
+        /* Adjust the distance between the buttons */
+        .navbar li:first-child {
+            margin-left: 0;
+        }
+
+.login-register-page {
+    background: linear-gradient(to bottom, #ffffff, #4F0341);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-register-container {
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+    .login-register-container h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.login-button,
+.register-button {
+    display: inline-block;
+    color: white;
+    background-color: #cc7f32;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    margin: 0 10px;
+}
+
+    .login-button:hover,
+    .register-button:hover {
+        background-color: #cc7f32;
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(204, 127, 50, 0.7);
+    }
