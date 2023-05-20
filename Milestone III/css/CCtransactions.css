@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Urbanist', sans-serif;
+    background: linear-gradient(to bottom, #ffffff, #4F0341);
 }
 .navbar {
     background-color: #4F0341;
