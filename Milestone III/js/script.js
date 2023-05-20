@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const CCtransactions = document.getElementById('CCtransactions');
     if (CCtransactions) {
         CCtransactions.addEventListener('click', function () {
-            window.location.href = 'transfer.html';
+            window.location.href = 'CCtransactions.html';
         });
     }
 
