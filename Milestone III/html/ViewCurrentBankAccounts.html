@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Client Page | Online Banking</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="../css/ViewCurrentBankAccounts.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="../img/FUBAR Logo.png" />
+        </div>
+        <ul>
+            <li><button>Home</button></li>
+            <li><button>About Us</button></li>
+            <li><button>Help</button></li>
+            <li><button>Contact</button></li>
+        </ul>
+    </div>
+
+    <div class="BankAccounts-page">
+        <div class="Bank-container">
+            <h1>Here are your current bank accounts, Dareen!</h1>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Account Number</th>
+                <th>Balance</th>
+                <th>Currency</th>
+                <th></th>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>123456789</td>
+                <td>$5000</td>
+                <td>USD</td>
+                <td><button class="view-transactions-button">View Transactions</button> </td>
+                <td><button class="close-account-button">Close Bank Account</button></td>
+            </tr>
+            <tr>
+                <td>987654321</td>
+                <td>$10000</td>
+                <td>EUR</td>
+                <td><button class="view-transactions-button">View Transactions</button> </td>
+                <td> <button class="close-account-button">Close Bank Account</button></td>
+
+            </tr>
+            <!-- Add more rows for other bank accounts -->
+        </tbody>
+    </table>
+
+
+        <script src="../js/script.js"></script>
+</body>
+</html>
