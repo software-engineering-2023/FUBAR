@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link href="../css/CCBillsPayments.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/script.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="../img/FUBAR Logo.png" />
+        </div>
+        <ul>
+            <li><button>Home</button></li>
+            <li><button>About Us</button></li>
+            <li><button>Help</button></li>
+            <li><button>Contact</button></li>
+        </ul>
+    </div>
+    <h1>Credit Card Bill Payment</h1>
+  
+    <form>
+      <label for="creditCard">Select Credit Card:</label>
+      <select id="creditCard" name="creditCard">
+        <option value="card1">1111222233334444</option>
+        <option value="card2">5555666677778888</option>
+      </select>
+      
+     
+      <br><br>
+      
+      <label for="dueDate">Bill Due Date:</label>
+<input type="date" id="dueDate" name="dueDate"value="" readonly>
+      
+      <br><br>
+      <label for="minimumPayment">Minimum Payment:</label>
+<input type="String" id="minimumPayment" name="minimumPayment"  value="" readonly>
+      
+      <br><br>
+      
+      <label for="accountNumber">Select Account:</label>
+      <select id="accountNumber" name="accountNumber">
+        <option value="account1">123456789</option>
+        <option value="account2">987654321</option>
+      </select>
+      <br><br>
+      
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" name="amount" min="0" step="1">
+      
+      <br><br>
+      <button id="pay" class="Pay">Pay</button>
+    
+    </form>
+    <div id="confirmationBox" class="modal">
+        <div class="modal-content">
+          <p>Are you sure you want to proceed?</p>
+          <button id="confirmYes">Yes</button>
+          <button id="confirmNo">No</button>
+        </div>
+      </div>
+      <div id="modalOverlay" class="modal-overlay"></div>
+    <script>
+    document.getElementById('creditCard').addEventListener('change', function() {
+    var selectedCard = this.value;
+    var amountField = document.getElementById('amount');
+    var dueDateField = document.getElementById('dueDate');
+    var minimumPaymentField = document.getElementById('minimumPayment');
+  
+    // Update form fields based on the selected credit card
+    if (selectedCard === 'card1') {
+      dueDateField.value = '2023-06-01';
+      minimumPaymentField.value = '50.00';
+    } else if (selectedCard === 'card2') {
+      dueDateField.value = '2023-06-15';
+      minimumPaymentField.value = '75.00';
+    } else if (selectedCard === 'card3') {
+      dueDateField.value = '2023-06-30';
+      minimumPaymentField.value = '60.00';
+    } else {
+      dueDateField.value = '';
+      minimumPaymentField.value = '';
+    }
+  });
+  
+    </script>
+
+
+
+</body>
+</html>
