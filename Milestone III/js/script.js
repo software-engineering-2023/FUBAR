@@ -122,52 +122,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 });
-// Add your custom JavaScript code here
-document.getElementById('creditCard').addEventListener('change', function() {
-    var selectedCard = this.value;
-    var amountField = document.getElementById('amount');
-    var dueDateField = document.getElementById('dueDate');
-    var minimumPaymentField = document.getElementById('minimumPayment');
-  
-    // Update form fields based on the selected credit card
-    if (selectedCard === 'card1') {
-      amountField.value = '100.00';
-      dueDateField.value = '2023-06-01';
-      minimumPaymentField.value = '50.00';
-    } else if (selectedCard === 'card2') {
-      amountField.value = '200.00';
-      dueDateField.value = '2023-06-15';
-      minimumPaymentField.value = '75.00';
-    } else if (selectedCard === 'card3') {
-      amountField.value = '150.00';
-      dueDateField.value = '2023-06-30';
-      minimumPaymentField.value = '60.00';
-    } else {
-      amountField.value = '';
-      dueDateField.value = '';
-      minimumPaymentField.value = '';
+  document.addEventListener('DOMContentLoaded', function () {
+    const util = document.getElementById('utility');
+    if (util) {
+        util.addEventListener('click', function () {
+            window.location.href = 'utilityBills.html';
+        });
+    }
+
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const homeButton = document.getElementById('home');
+    if (homeButton) {
+      homeButton.addEventListener('click', function() {
+        window.location.href = 'client.html';
+      });
     }
   });
-  const confirmButton = document.getElementById('pay');
-  const confirmationBox = document.getElementById('confirmationBox');
-  const confirmYes = document.getElementById('confirmYes');
-  const confirmNo = document.getElementById('confirmNo');
-  const modalOverlay = document.getElementById('modalOverlay');
-  
-  confirmButton.addEventListener('click', function() {
-    confirmationBox.style.display = 'block';
-    modalOverlay.style.display = 'block';
+  document.addEventListener('DOMContentLoaded', function() {
+    const reportButton = document.getElementById('report');
+    if (reportButton) {
+      reportButton.addEventListener('click', function() {
+        window.location.href = 'Report.html';
+      });
+    }
   });
-  
-  confirmYes.addEventListener('click', function() {
-    // Code to execute when confirmed
-    confirmationBox.style.display = 'none';
-    modalOverlay.style.display = 'none';
-  });
-  
-  confirmNo.addEventListener('click', function() {
-    // Code to execute when not confirmed
-    confirmationBox.style.display = 'none';
-    modalOverlay.style.display = 'none';
-  });
-  

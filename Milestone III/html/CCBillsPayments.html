@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Credit Card Bills | Online Banking</title>
     <script src="../js/script.js"></script>
 </head>
 <body>
@@ -15,9 +15,9 @@
             <img src="../img/FUBAR Logo.png" />
         </div>
         <ul>
-            <li><button>Home</button></li>
+          <li><button id="home" class="home">Home</button></li>
             <li><button>About Us</button></li>
-            <li><button>Help</button></li>
+            <li><button id="report">Report Issue</button></li>
             <li><button>Contact</button></li>
         </ul>
     </div>
@@ -37,8 +37,11 @@
 <input type="date" id="dueDate" name="dueDate"value="" readonly>
       
       <br><br>
+      <label for="amountToPay">Full Bill Amount:</label>
+      <input type="text" id="amountToPay" name="amountToPay"  value="" readonly>
+      <br><br>
       <label for="minimumPayment">Minimum Payment:</label>
-<input type="String" id="minimumPayment" name="minimumPayment"  value="" readonly>
+<input type="text" id="minimumPayment" name="minimumPayment"  value="" readonly>
       
       <br><br>
       
@@ -49,38 +52,40 @@
       </select>
       <br><br>
       
-      <label for="amount">Amount:</label>
-      <input type="number" id="amount" name="amount" min="0" step="1">
-      
+      <label for="amount">Amount To be Paid:</label>
+      <input type="text" id="amount" name="amount" min="0" step="1" required>
       <br><br>
-      <button id="pay" class="Pay">Pay</button>
+
+
+      <input type="checkbox" id="termsConditions" name="termsConditions" required>
+      <label for="termsConditions">I have read and agreed to the <a href="#">Terms and Conditions</a>.</label>
+
+      <br><br>
+      <button id="pay" class="Pay"data-toggle="modal" data-target="#confirmationModal">Pay</button>
     
     </form>
-    <div id="confirmationBox" class="modal">
-        <div class="modal-content">
-          <p>Are you sure you want to proceed?</p>
-          <button id="confirmYes">Yes</button>
-          <button id="confirmNo">No</button>
-        </div>
-      </div>
-      <div id="modalOverlay" class="modal-overlay"></div>
+
     <script>
     document.getElementById('creditCard').addEventListener('change', function() {
     var selectedCard = this.value;
     var amountField = document.getElementById('amount');
+    var amountToPayField = document.getElementById('amountToPay');
     var dueDateField = document.getElementById('dueDate');
     var minimumPaymentField = document.getElementById('minimumPayment');
   
     // Update form fields based on the selected credit card
     if (selectedCard === 'card1') {
       dueDateField.value = '2023-06-01';
-      minimumPaymentField.value = '50.00';
+      amountToPayField.value ='EGP 2500'
+      minimumPaymentField.value = 'EGP 500';
     } else if (selectedCard === 'card2') {
       dueDateField.value = '2023-06-15';
-      minimumPaymentField.value = '75.00';
+      amountToPayField.value = 'EGP 6000'
+      minimumPaymentField.value = 'EGP 800';
     } else if (selectedCard === 'card3') {
+      amountToPayField.value ='EGP 9000'
       dueDateField.value = '2023-06-30';
-      minimumPaymentField.value = '60.00';
+      minimumPaymentField.value = 'EGP 2000';
     } else {
       dueDateField.value = '';
       minimumPaymentField.value = '';

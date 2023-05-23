@@ -96,10 +96,31 @@
  
  .loans-button:hover,
  .utility-button:hover,
- .ccbills-button:hover{
+ .ccbills-button:hover,
+ .reminders-button:hover{
          background-color: #cc7f32;
          transform: scale(1.1);
          box-shadow: 0 0 10px rgba(204, 127, 50, 0.7);
      }
+     
+     .reminders-button
+      {
+         position: absolute;
+         top: 100px;
+         left: 20px;
+         color: white;
+     background-color: #cc7f32;
+     border: none;
+     cursor: pointer;
+     font-size: 18px;
+     font-weight: bold;
+     text-align: center;
+     padding: 15px 25px;
+     border-radius: 5px;
+     text-decoration: none;
+     transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+     margin: 0 10px;
+     }
+
      
       
