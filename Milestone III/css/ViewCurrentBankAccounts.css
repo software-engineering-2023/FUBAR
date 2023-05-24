@@ -129,15 +129,15 @@ tbody {
 
 .view-transactions-button,
 .close-account-button {
-    color: black;
-    background: none;
+    color: white;
+    background-color: #4F0341;
     border: none;
     cursor: pointer;
     font-size: 18px;
     font-weight: bold;
-    transition: transform 0.3s, background-color 0.3s;
     padding: 5px 10px;
     border-radius: 5px;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
     .view-transactions-button:hover,
