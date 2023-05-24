@@ -66,7 +66,6 @@ body {
             margin-left: 0;
         }
 
-
 .homepage-text {
     position: absolute;
     top: 50%;
@@ -94,7 +93,9 @@ body {
     .homepage-text p {
         font-size: 60px;
     }
-.homepage-button {
+
+.homepage-button,
+.get-started-button {
     display: inline-block;
     color: white;
     background-color: #cc7f32;
@@ -110,10 +111,12 @@ body {
     margin-top: 10px; /* Adjust the margin-top as needed */
 }
 
-    .homepage-button:hover {
-        background-color: #cc7f32;
-        transform: scale(1.1);
-        box-shadow: 0 0 10px rgba(204, 127, 50, 0.7);
-    }
+.homepage-button:hover,
+.get-started-button:hover {
+    background-color: #cc7f32;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(204, 127, 50, 0.7);
+}
+
 
     

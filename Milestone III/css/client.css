@@ -140,3 +140,30 @@
         border-color: #cc7f32;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     }
+
+    .back-link {
+        color: #cc7f32;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        font-weight: bold;
+        position: fixed;
+        top: 90px; /* Adjust the top position as needed */
+        left: 20px; /* Adjust the left position as needed */
+        text-shadow: none; /* Remove the text shadow */
+        box-shadow: none; /* Remove the box shadow */
+    }
+    
+    .back-link i {
+        margin-right: 5px;
+    }
+    
+    .back-link:hover {
+        color: #9d5d20; /* Adjust the hover color as needed */
+    }
+    
+    
+    .back-link:hover i {
+        color: #9d5d20;
+    }

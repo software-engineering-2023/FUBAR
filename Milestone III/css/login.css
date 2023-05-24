@@ -4,6 +4,7 @@
     padding: 0;
     font-family: 'Urbanist', sans-serif;
 }
+
 .navbar {
     background-color: #4F0341;
     position: fixed;
@@ -11,52 +12,51 @@
     left: 0;
     right: 0;
     padding: 35px;
-    height: 50px; /* Adjust the height as needed */
+    height: 50px;
     display: flex;
     align-items: center;
 }
 
-    .navbar .logo {
-        margin-right: auto; /* Push the logo to the left */
-    }
+.navbar .logo {
+    margin-right: auto;
+}
 
-        .navbar .logo img {
-            height: 60px; /* Adjust the height of the logo image as needed */
-        }
+.navbar .logo img {
+    height: 60px;
+}
 
-    .navbar ul {
-        display: flex;
-        align-items: center;
-    }
+.navbar ul {
+    display: flex;
+    align-items: center;
+}
 
-    .navbar li {
-        list-style-type: none;
-        margin-left: 20px; /* Increase the margin for more spacing */
-    }
+.navbar li {
+    list-style-type: none;
+    margin-left: 20px;
+}
 
-        .navbar li button {
-            color: white;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
-            transition: transform 0.3s, background-color 0.3s;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
+.navbar li button {
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
 
-            .navbar li button:hover {
-                color: #ffffff;
-                background-color: #cc7f32;
-                transform: scale(1.1);
-                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-            }
+.navbar li button:hover {
+    color: #ffffff;
+    background-color: #cc7f32;
+    transform: scale(1.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
 
-        /* Adjust the distance between the buttons */
-        .navbar li:first-child {
-            margin-left: 0;
-        }
+.navbar li:first-child {
+    margin-left: 0;
+}
 
 .login-register-page {
     display: flex;
@@ -70,44 +70,83 @@
     text-align: center;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
 }
 
-    .login-register-container h1 {
-        font-size: 32px;
-        margin-bottom: 20px;
-    }
-
+.login-register-container h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
 
 .login-form {
-    margin-top:40px;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-    .login-form input {
-        width: 300px;
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 5px;
-        border: none;
-    }
+.login-form input {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+}
 
-    .login-form button {
-        width: 150px;
-        padding: 10px;
-        background-color: #cc7f32;
-        border: none;
-        border-radius: 5px;
-        color: white;
-        font-weight: bold;
-        cursor: pointer;
-        margin-top:10px;
-        transition: background-color 0.3s;
-      
-    }
+.login-form button {
+    width: 150px;
+    padding: 10px;
+    background-color: #cc7f32;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
 
-        .login-form button:hover {
-            background-color: #9d5d20;
-        }
+.login-form button:hover {
+    background-color: #9d5d20;
+}
+
+.login-register-container p {
+    margin-top: 20px;
+}
+
+.login-register-container p a {
+    color: #cc7f32;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-register-container p a:hover {
+    color: #9d5d20;
+}
+
+.back-link {
+    color: #cc7f32;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    position: fixed;
+    top: 90px; /* Adjust the top position as needed */
+    left: 20px; /* Adjust the left position as needed */
+    text-shadow: none; /* Remove the text shadow */
+    box-shadow: none; /* Remove the box shadow */
+}
+
+.back-link i {
+    margin-right: 5px;
+}
+
+.back-link:hover {
+    color: #9d5d20; /* Adjust the hover color as needed */
+}
+
+
+.back-link:hover i {
+    color: #9d5d20;
+}
+
