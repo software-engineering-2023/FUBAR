@@ -4,7 +4,38 @@
     <script src="../js/script.js"></script>
     <meta charset="utf-8" />
     <link href="../css/CreditCard.css" rel="stylesheet" />
-    <title> </title>
+    <title> View Credit Cards</title>
+    <style>
+        .redeem-input {
+            width: 100px;
+            padding: 5px;
+            -moz-appearance: textfield; /* Remove small arrows in Firefox */
+            appearance: textfield; /* Remove small arrows in other browsers */
+        }
+    </style>
+    <script>
+        function redeemPoints(row) {
+            var redeemInput = row.querySelector('.redeem-input');
+            var pointsCell = row.querySelector('.points-cell');
+            var pointsValue = parseInt(pointsCell.textContent);
+            
+            var redeemAmount = parseInt(redeemInput.value);
+            
+            if (isNaN(redeemAmount) || redeemAmount <= 0) {
+                alert('Please enter a valid positive number.');
+                return;
+            }
+            
+            if (redeemAmount > pointsValue) {
+                alert('Redeem amount cannot exceed the available points.');
+                return;
+            }
+            
+            var newPoints = pointsValue - redeemAmount;
+            pointsCell.textContent = newPoints;
+            redeemInput.value = "";
+        }
+    </script>
 </head>
 <body>
     <div class="navbar">
@@ -33,7 +64,6 @@
                 <th>Points</th>
                 <th></th>
                 <th></th>
-
             </tr>
         </thead>
         <tbody>
@@ -41,21 +71,27 @@
                 <td>1111222233334444</td>
                 <td>$5000</td>
                 <td>$10000</td>
-                <td>1000</td>
-                <td><button class="view-transactions-button" id="CCtransactions">View Transactions</button> </td>
-                <td><button class="redeem-points-button">Redeem Points</button></td>
+                <td class="points-cell">1000</td>
+                <td><button class="view-transactions-button" id="CCtransactions">View Transactions</button></td>
+                <td>
+                    <input type="number" class="redeem-input" placeholder="Amount" />
+                    <button class="redeem-points-button" onclick="redeemPoints(this.parentNode.parentNode)">
+                        Redeem Points
+                    </button>
+                </td>
             </tr>
             <tr>
                 <td>5555666677778888</td>
                 <td>$10000</td>
                 <td>$20000</td>
-                <td>2000</td>
-                <td><button class="view-transactions-button" > View Transactions</button> </td>
-                <td> <button class="redeem-points-button" id="RedeemPoints"> Redeem Points</button></td>
-
+                <td class="points-cell">2000</td>
+                <td><button class="view-transactions-button">View Transactions</button></td>
+                <td>
+                    <input type="number" class="redeem-input" placeholder="Amount" />
+                    <button class="redeem-points-button" onclick="redeemPoints(this.parentNode.parentNode)">
+                        Redeem Points
+                    </button>
+                </td>
             </tr>
             <!-- Add more rows for other bank accounts -->
-        </tbody>
-    </table>
-</body>
-</html>
+       

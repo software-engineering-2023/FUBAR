@@ -147,3 +147,28 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const redeemButtons = document.getElementsByClassName('redeem-points-button');
+  
+    // Add event listeners to all redeem buttons
+    for (let i = 0; i < redeemButtons.length; i++) {
+      redeemButtons[i].addEventListener('click', function() {
+        const pointsCell = this.parentNode.parentNode.querySelector('.points');
+        const currentPoints = parseInt(pointsCell.textContent);
+        const pointsInput = this.parentNode.querySelector('.redeem-points-input').value;
+        const pointsToRedeem = parseInt(pointsInput);
+  
+        if (isNaN(pointsToRedeem) || pointsToRedeem < 0 || pointsToRedeem > currentPoints) {
+          alert('Invalid number of points');
+        } else {
+          const newPoints = currentPoints - pointsToRedeem;
+          pointsCell.textContent = newPoints;
+        }
+      });
+    }
+  });
+  
+
+  
+  

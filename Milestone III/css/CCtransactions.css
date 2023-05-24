@@ -1,4 +1,4 @@
-* {
+*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -68,7 +68,7 @@
   .box {
     border: 2px solid white;
     width: 500px;
-    height: 300px;
+    height: 400px;
     padding: 20px;
     margin: 0 10px;
     transition: transform 0.3s, box-shadow 0.3s; /* Add transition properties */
@@ -77,6 +77,7 @@
   .box:hover {
     transform: translateY(-5px); /* Apply vertical translation on hover */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add box shadow on hover */
+    
   }
   
   .credit-info {
@@ -122,4 +123,3 @@
   p {
     margin: 5px 0;
   }
-  
