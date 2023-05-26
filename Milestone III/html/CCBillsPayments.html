@@ -6,10 +6,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <title>Credit Card Bills | Online Banking</title>
     <script src="../js/script.js"></script>
 </head>
 <body>
+  <a href="billPayments.html" onclick="history.back()" class="back-link">
+    <i class="fas fa-arrow-left"></i>
+    Back
+</a>
     <div class="navbar">
         <div class="logo">
             <img src="../img/FUBAR Logo.png" />
@@ -21,9 +26,11 @@
             <li><button>Contact</button></li>
         </ul>
     </div>
-    <h1>Credit Card Bill Payment</h1>
+
     <script>
       function payccbill(row) {
+        var loanElement = row.querySelector('.card-input');
+            var loanValue =loanElement.selectedIndex;
           var amountInput = row.querySelector('.amount-input');
           var Amount = parseInt(amountInput.value);
           var selectElement = row.querySelector('.account-input');
@@ -31,6 +38,10 @@
            var billElement = row.querySelector('.bill-input');
            var billValue = parseInt(billElement.value.substr(4));
            var checkbox = row.querySelector('.check-input');
+           if (loanValue===0) {
+              alert('Please choose a credit card.');
+              return;
+              }
            if (isNaN(Amount) || Amount <= 0) {
               alert('Please enter a valid positive number.');
               return;
@@ -59,7 +70,7 @@
   </script>
     <form>
       <label for="creditCard">Select Credit Card:</label>
-      <select id="creditCard" name="creditCard">
+      <select id="creditCard" name="creditCard" class="card-input">
         <option value="card1" >1111222233334444</option>
         <option value="card2">5555666677778888</option>
       </select>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="../css/loaninstallments.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Loan Installments | Online Banking</title>
+</head>
+<body>
+    <a href="billPayments.html" onclick="history.back()" class="back-link">
+      <i class="fas fa-arrow-left"></i>
+      Back
+  </a>
+      <div class="navbar">
+          <div class="logo">
+              <img src="../img/FUBAR Logo.png" />
+          </div>
+          <ul>
+            <li><button id="home" class="home">Home</button></li>
+              <li><button>About Us</button></li>
+              <li><button id="report">Report Issue</button></li>
+              <li><button>Contact</button></li>
+          </ul>
+      </div>
+      <script>
+        function payccbill(row) {
+            var loanElement = row.querySelector('.loan-input');
+            var loanValue =loanElement.selectedIndex;
+              var selectElement = row.querySelector('.account-input');
+             var selectedValue = parseInt(selectElement.value.substr(4));
+             var billElement = row.querySelector('.bill-input');
+             var billValue = parseInt(billElement.value.substr(4));
+             var checkbox = row.querySelector('.check-input');
+             if (loanValue===0) {
+              alert('Please choose a loan.');
+              return;
+              }
+             if (!checkbox.checked) {
+              alert('Please agree to the terms and conditions.');
+                return;
+             }
+            
+            else{
+  
+              alert('Installment Paid Successfully')
+            }
+            
+        }
+    </script>
+      <form>
+        <label for="creditCard">Select Loan:</label>
+        <select id="creditCard" class="loan-input">
+          <option value="card1" >92019748032</option>
+          <option value="card2">64717491702</option>
+        </select>
+        
+       
+        <br><br>
+        <label for="amountToPay">Installment Amount:</label>
+        <input type="text" id="amountToPay" name="amountToPay" class="bill-input" value="" readonly>
+        <br><br>
+        <label for="dueDate">Due Before</label>
+  <input type="date" id="dueDate" name="dueDate"value="" readonly>
+        <br><br>
+        
+        <label for="accountNumber">Select Account:</label>
+        <select id="accountNumber" class="account-input" name="accountNumber">
+          <option value="500,000">123456789</option>
+          <option value="100,000">987654321</option>
+        </select>
+        <br><br>
+        <input type="checkbox" id="termsConditions"class="check-input" name="termsConditions" required>
+        <label for="termsConditions">I have read and agreed to the <a href="#">Terms and Conditions</a>.</label>
+  
+        <br><br>
+        <button id="pay" class="Pay" onclick="payccbill(this.parentNode.parentNode)">Pay</button>
+      
+      </form>
+  
+      <script>
+      document.getElementById('creditCard').addEventListener('change', function() {
+      var selectedCard = this.value;
+      var amountToPayField = document.getElementById('amountToPay');
+      var dueDateField = document.getElementById('dueDate');
+    
+      // Update form fields based on the selected credit card
+      if (selectedCard === 'card1') {
+        dueDateField.value = '2023-06-01';
+        amountToPayField.value ='EGP 15000'
+      } else if (selectedCard === 'card2') {
+        amountToPayField.value ='EGP 40000'
+        dueDateField.value = '2023-06-30';
+        minimumPaymentField.value = 'EGP 450';
+      } else if (selectedCard === 'card3') {
+        amountToPayField.value ='EGP 9000'
+        dueDateField.value = '2023-06-30';
+      } else {
+        dueDateField.value = '';
+        minimumPaymentField.value = '';
+      }
+    });
+    
+      </script>
+  
+  
+  
+  </body>
+</html>

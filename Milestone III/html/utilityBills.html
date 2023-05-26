@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <title>Utility Bills | Online Banking</title>
 </head>
 <body>
@@ -51,7 +52,10 @@
          
       </tbody>
   </table>  -->
-  
+  <a href="billPayments.html" onclick="history.back()" class="back-link">
+    <i class="fas fa-arrow-left"></i>
+    Back
+</a>
     <form>
         <label for="billType">Bill Type:</label>
         <select id="billType" name="billType">
@@ -84,8 +88,8 @@
 
         <label for="accountSelection">Account Selection:</label>
         <select id="accountSelection" class="account-input" name="accountSelection">
-            <option value="5000">123456789</option>
-        <option value="10000">987654321</option>
+            <option value="500000">123456789</option>
+        <option value="100000">987654321</option>
         </select>
         <br><br>
 
