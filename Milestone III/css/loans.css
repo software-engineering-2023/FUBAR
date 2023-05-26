@@ -148,17 +148,19 @@ tbody {
     }
     .message {
         text-align: center;
-        margin-top: 20px;
-    }
-    
-    .message a {
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      
+      .message a {
         color: #4F0341;
         text-decoration: underline;
-    }
-    
-    .message a:hover {
+      }
+      
+      .message a:hover {
         color: #cc7f32;
-    }
+      }
+      
     
     
 

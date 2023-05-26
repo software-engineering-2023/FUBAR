@@ -23,14 +23,14 @@ body {
     display: flex;
     align-items: center;
     z-index: 999;
-  }
+}
 
 .navbar .logo {
     margin-right: auto;
 }
 
 .navbar .logo img {
-    height: 60px; /* Adjust the height of the logo image as needed */
+    height: 60px;
 }
 
 .navbar ul {
@@ -40,7 +40,7 @@ body {
 
 .navbar li {
     list-style-type: none;
-    margin-left: 20px; /* Increase the margin for more spacing */
+    margin-left: 20px;
 }
 
 .navbar li button {
@@ -90,17 +90,19 @@ body {
 
 .table-container {
     margin-top: 20px;
-    width: 100%;
-    max-width: 100%;
     display: flex;
-    justify-content: center;
-}
-
-table {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+  }
+  
+  table {
     width: 100%;
     max-width: 100%;
     border-collapse: collapse;
-}
+    margin-bottom: 20px; /* Add margin below the table */
+  }
+  
+  
 
 th,
 td {
@@ -137,8 +139,9 @@ tbody {
 
 .view-transactions-button:hover,
 .redeem-points-button:hover {
-    background-color: #cc7f32
+    background-color: #cc7f32;
 }
+
 .view-transactions-button {
     color: white;
     background-color: #4F0341;
@@ -187,6 +190,7 @@ tbody {
     transform: scale(1.1);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
+
 .back-link {
     position: fixed;
     top: 100px;
@@ -197,16 +201,34 @@ tbody {
     text-decoration: none;
     transition: transform 0.3s, color 0.3s;
     z-index: 1000;
-  }
-  
-  .back-link:hover {
+}
+
+.back-link:hover {
     color: #cc7f32;
     transform: scale(1.1);
-  }
-  
-  .back-link i {
-    margin-right: 5px;
-  }
-  
-  
+}
 
+.back-link i {
+    margin-right: 5px;
+}
+
+ /* Additional styles for the message */
+ .message {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    font-weight: bold;
+  }
+  
+  .message a {
+    color:  #9d5d20;
+    text-decoration: underline;
+    text-shadow: none;
+    font-weight: bold;
+  }
+  
+  .message a:hover {
+    color: #cc7f32;
+  }
+  

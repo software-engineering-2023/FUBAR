@@ -36,7 +36,6 @@
                 <div class="button-box">
                     <button class="transparent-button" id="viewBankAccountsButton">
                         <img src="../img/view-bank-accounts-image.jpeg" alt="View Bank Accounts"/>
-                       
                         <span>View Bank Accounts</span>
                     </button>
                 </div>
@@ -75,8 +74,19 @@
             </div>
         </div>
 
-
-
-
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const openBankAccountButton = document.getElementById('openBankAccount');
+                if (openBankAccountButton) {
+                    openBankAccountButton.addEventListener('click', function () {
+                        window.location.href = 'openBankAcc.html';
+                    });
+                }
+            });
+        </script>
+    </div>
+    <div class="message">
+        <p>Apply for a new loan? <a href="applyForALoan.html">Click here</a></p>
+    </div>
 </body>
 </html>

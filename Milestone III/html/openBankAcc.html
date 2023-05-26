@@ -17,7 +17,7 @@
             <img src="../img/FUBAR Logo.png" />
         </div>
         <ul>
-            <li><button id="home" class="home" >Home</button></li>
+            <li><button id="home" class="home">Home</button></li>
             <li><button>About Us</button></li>
             <li><button id="report">Report Issue</button></li>
             <li><button>Contact</button></li>
@@ -30,35 +30,63 @@
     </a>
 
     <h1>Open Bank Account</h1>
+
+    <form id="openAccountForm">
+        <label for="accountType">Account Type:</label>
+        <select id="accountType" name="accountType">
+            <option value="" disabled selected>Choose account type</option>
+            <option value="current">Current</option>
+            <option value="savings">Savings</option>
+        </select>
+
+        <br>
+
+        <label for="currency">Currency:</label>
+        <select id="currency" name="currency">
+            <option value="" disabled selected>Choose currency</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="EGP">EGP</option>
+        </select>
+
+        <br>
+
+        <input type="submit" id="openAcc" value="Open Account">
+    </form>
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const openBankAccountButton = document.getElementById('openAcc');
+        if (openBankAccountButton) {
+          openBankAccountButton.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Get selected account type and currency
+            const accountType = document.getElementById('accountType').value;
+            const currency = document.getElementById('currency').value;
+        
+            // Check if account type and currency are selected
+            if (accountType === '' || currency === '') {
+              alert('Please choose a bank account type and currency.');
+              return; // Stop further execution
+            }
+        
+            // Show pop-up message
+            alert('Your application will get reviewed. We will get back to you soon.');
+        
+            // Clear form fields (optional)
+            document.getElementById('accountType').value = '';
+            document.getElementById('currency').value = '';
+          });
+        }
+      });
+    </script>
+    
+    
   
-  <form id="openAccountForm">
-    <label for="accountType">Account Type:</label>
-    <select id="accountType" name="accountType">
-      <option value="" disabled selected>Choose account type</option>
-      <option value="current">Current</option>
-      <option value="savings">Savings</option>
-    </select>
 
-    <br>
-
-    <label for="currency">Currency:</label>
-    <select id="currency" name="currency">
-      <option value="" disabled selected>Choose currency</option>
-      <option value="USD">USD</option>
-      <option value="EUR">EUR</option>
-      <option value="EGP">EGP</option>
-      
-    </select>
-
-    <br>
-
-    <input type="submit" id="openAcc" value="Open Account">
-  </form>
-
-  <script src="script.js">
-    
-  </script>
-    
 </body>
 </html>
+
 
