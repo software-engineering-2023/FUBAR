@@ -197,7 +197,7 @@
     }
   });
   
-  document.getElementById('openAccountForm').addEventListener('submit', function (event) {
+  document.getElementById('openAccountForm').addEventListener('openAcc', function (event) {
     event.preventDefault(); // Prevent form submission
   
     // Get selected account type and currency
@@ -217,5 +217,10 @@
     // Clear form fields (optional)
     document.getElementById('accountType').value = '';
     document.getElementById('currency').value = '';
-  });
+});
+
+    
+ 
+
+  
   
