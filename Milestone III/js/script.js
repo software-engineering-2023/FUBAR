@@ -186,23 +186,8 @@
         window.location.href = 'openBankAcc.html';
       });
     }
-<<<<<<< Updated upstream
-  
-  
-  document.addEventListener('DOMContentLoaded', function () {
-    const viewTransactionsButtonInBA = document.getElementById('viewTransactionsButtonInBA');
-    if (viewTransactionsButtonInBA) {
-      viewTransactionsButtonInBA.addEventListener('click', function () {
-        window.location.href = 'ViewTransactionsInBA.html';
-      });
-    }
-  });
-  
-  document.getElementById('openAccountForm').addEventListener('openAcc', function (event) {
-=======
 
   document.getElementById('openAccountForm').addEventListener('submit', function (event) {
->>>>>>> Stashed changes
     event.preventDefault(); // Prevent form submission
   
     // Get selected account type and currency
@@ -222,23 +207,7 @@
     // Clear form fields (optional)
     document.getElementById('accountType').value = '';
     document.getElementById('currency').value = '';
-<<<<<<< Updated upstream
-});
+  });
 
-    
  
-
-  
-=======
-  });
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const viewTransactionsButtonInBA = document.getElementById('viewTransactionsButtonInBA');
-    if (viewTransactionsButtonInBA) {
-      viewTransactionsButtonInBA.addEventListener('click', function () {
-        window.location.href = 'ViewTransactionsInBA.html';
-      });
-    }
-  });
->>>>>>> Stashed changes
   
