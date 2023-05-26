@@ -86,3 +86,59 @@ body {
 .back-link i {
     margin-right: 5px;
 }
+
+  
+  .container {
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 100px;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-top: 0;
+    
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  
+  .checkbox-label {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .checkbox-label a {
+    text-decoration: underline;
+    color: blue;
+  }
+  
+  .checkbox-label input {
+    vertical-align: middle;
+  }
+  .register-button{
+    color: black;
+  }
+
+  
+  #terms-error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+  }
+  
+  #required-error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+  }
+  

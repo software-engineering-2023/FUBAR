@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Online Banking</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="../css/registrationID.css" rel="stylesheet" />
+    <script src="../js/script.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="../img/FUBAR Logo.png" />
+        </div>
+        <ul>
+            <li><button>About Us</button></li>
+            <li><button>Contact</button></li>
+        </ul>
+    </div>
+
+    <div class="container">
+      <h2>Register using your National ID</h2>
+      <form id="registration-form" onsubmit="return validateForm()">
+        <label for="national-id" class="label">National ID number:</label>
+        <input type="text" id="national-id" required>
+
+        <label for="username" class="label">Username:</label>
+        <input type="text" id="username" required>
+
+        <label for="password" class="label">Password:</label>
+        <input type="password" id="password" required>
+
+        <label for="confirm-password" class="label">Confirm password:</label>
+        <input type="password" id="confirm-password" required>
+
+        <div class="terms-section">
+          <label class="checkbox-label">
+            <input type="checkbox" id="terms-checkbox" required>
+            I have read and agreed to the
+            <a href="#" target="_blank">Terms and Conditions</a>
+          </label>
+          <div id="terms-error">Please tick the box</div>
+        </div>
+
+        <div id="required-error">Please fill in the required fields</div>
+        <button type="submit" id="register" class="register-button">Register</button>
+      </div>
+  
+      </form>
+      <div id="required-error">Please fill in the required fields</div>
+    </div>
+
+    <a href="Login.html" onclick="history.back()" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        Back
+    </a>
+  
+    <script>
+      function validateForm() {
+        var termsCheckbox = document.getElementById("terms-checkbox");
+        var requiredError = document.getElementById("required-error");
+        var termsError = document.getElementById("terms-error");
+
+        requiredError.style.display = "none";
+        termsError.style.display = "none";
+
+        if (!termsCheckbox.checked) {
+          termsError.style.display = "block";
+          return false;
+        }
+
+        var inputs = document.querySelectorAll("input[required]");
+        for (var i = 0; i < inputs.length; i++) {
+          if (inputs[i].value === "") {
+            requiredError.style.display = "block";
+            return false;
+          }
+        }
+
+        return true;
+      }
+    </script>
+</body>
+</html>
