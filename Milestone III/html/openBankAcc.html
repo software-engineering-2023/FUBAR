@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/script.js"></script>
+    <title>Open Bank Account | Online Banking</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="../css/openBankAcc.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="../img/FUBAR Logo.png" />
+        </div>
+        <ul>
+            <li><button id="home" class="home" >Home</button></li>
+            <li><button>About Us</button></li>
+            <li><button id="report">Report Issue</button></li>
+            <li><button>Contact</button></li>
+        </ul>
+    </div>
+
+    <a href="client.html" onclick="history.back()" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        Back
+    </a>
+
+    <h1>Open Bank Account</h1>
+  
+  <form id="openAccountForm">
+    <label for="accountType">Account Type:</label>
+    <select id="accountType" name="accountType">
+      <option value="" disabled selected>Choose account type</option>
+      <option value="current">Current</option>
+      <option value="savings">Savings</option>
+    </select>
+
+    <br>
+
+    <label for="currency">Currency:</label>
+    <select id="currency" name="currency">
+      <option value="" disabled selected>Choose currency</option>
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+      <option value="JPY">JPY</option>
+      <option value="EGP">EGP</option>
+      
+    </select>
+
+    <br>
+
+    <input type="submit" value="Open Account">
+  </form>
+
+  <script src="script.js"></script>
+    
+</body>
+</html>
+

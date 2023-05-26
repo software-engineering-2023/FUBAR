@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="../css/ViewTransactionsInBA.css" rel="stylesheet" />
+  <title>Bank Account Transactions | FUBAR Egypt</title>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <img src="../img/FUBAR Logo.png" />
+    </div>
+    <ul>
+      <li><button id="home" class="home">Home</button></li>
+      <li><button>About Us</button></li>
+      <li><button id="report">Report Issue</button></li>
+      <li><button>Contact</button></li>
+    </ul>
+  </div>
+
+  <a href="ViewCurrentBankAccounts.html" onclick="history.back()" class="back-link">
+    <i class="fas fa-arrow-left"></i>
+    Back
+  </a>
+
+  <div class="container">
+    <div class="box">
+      <div class="BankAccount-info">
+        <h2>123456789</h2>
+        <p class="small-text">Available Balance</p>
+        <p>EGP + 10,500,000.15</p>
+      </div>
+      <div class="transaction-rows">
+        <div class="row">
+          <p class="date">25/05</p>
+          <p class="description">Online Transfer- Fund Transfer</p>
+          <p class="amount">EGP -70,000.00</p>
+        </div>
+        <div class="row">
+          <p class="date">25/05</p>
+          <p class="description">Credit Interest</p>
+          <p class="amount">EGP +3,436.37</p>
+        </div>
+        <div class="row">
+          <p class="date">24/05</p>
+          <p class="description">Online Transfer- Fund Transfer</p>
+          <p class="amount">EGP -48,000.00</p>
+        </div>
+        <div class="row">
+          <p class="date">11/05</p>
+          <p class="description">TT231315LHWV - 264745363123353 SHAHD MOATAZ</p>
+          <p class="amount">EGP +200,000.00</p>
+        </div>
+        <div class="row">
+          <p class="date">10/05</p>
+          <p class="description">TT23131QWBH0 - 26473989787124 Gehan Sanad</p>
+          <p class="amount">EGP +400,000.00</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get all the p.amount elements
+    const amountElements = document.querySelectorAll('.row p.amount');
+
+    // Loop through the elements
+    amountElements.forEach((element) => {
+      const text = element.innerText;
+      if (text.includes('-')) {
+        element.classList.add('red');
+      } else if (text.includes('+')) {
+        element.classList.add('green');
+      }
+    });
+  </script>
+</body>
+</html>
