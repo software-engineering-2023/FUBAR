@@ -162,6 +162,25 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   });
+  document.addEventListener('DOMContentLoaded', function () {
+    const viewBankAccountsButton = document.getElementById('loansButton');
+    if (viewBankAccountsButton) {
+        viewBankAccountsButton.addEventListener('click', function () {
+            window.location.href = 'loans.html';
+        });
+    }
+
+});
   
+  document.addEventListener('DOMContentLoaded', function () {
+    const getStartedButton = document.getElementById('viewDetailsButton');
+    if (getStartedButton) {
+        getStartedButton.addEventListener('click', function () {
+            window.location.href = 'viewLoanDetails.html';
+        });
+    }
+
+});
+
 
   

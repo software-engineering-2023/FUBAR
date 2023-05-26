@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/applyForALoan.css" rel="stylesheet" />
+    <title>Loan Application | FUBAR Egypt</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="../img/FUBAR Logo.png" />
+        </div>
+        <ul>
+            <li><button id="home" class="home">Home</button></li>
+            <li><button>About Us</button></li>
+            <li><button id="report">Report Issue</button></li>
+            <li><button>Contact</button></li>
+        </ul>
+    </div>
+    
+    <h1>Loan Application</h1>
+
+    <form id="loan-application-form">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="loan-amount">Loan Amount:</label>
+            <input type="number" id="loan-amount" name="loan-amount" required>
+        </div>
+
+        <div class="form-group">
+            <label for="currency">Currency:</label>
+            <select id="currency" name="currency" required>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="EGP">EGP</option>
+                <!-- Add more currency options as needed -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="loan-type">Loan Type:</label>
+            <select id="loan-type" name="loan-type" required>
+                <option value="personal">Personal Loan</option>
+                <option value="car">Car Loan</option>
+                <!-- Add more loan type options as needed -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="purpose">Loan Purpose:</label>
+            <textarea id="purpose" name="purpose" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" id="submitLoan">Submit</button>
+        </div>
+    </form>
+
+    <script src="../js/application.js"></script>
+    <script>
+        document.getElementById('loan-application-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form submission
+            showMessage("Success", "You have applied for a loan successfully. We will review your application and get back to you.");
+        });
+
+        function showMessage(title, message) {
+            alert(title + "\n\n" + message); // Display the message in an alert box with a title
+        }
+    </script>
+
+
+</body>
+</html>
