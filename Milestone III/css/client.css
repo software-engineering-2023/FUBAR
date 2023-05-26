@@ -15,7 +15,8 @@
     height: 50px;
     display: flex;
     align-items: center;
-}
+    z-index: 999;
+  }
 
     .navbar .logo {
         margin-right: auto;
@@ -142,28 +143,24 @@
     }
 
     .back-link {
-        color: #cc7f32;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
+        position: fixed;
+        top: 100px;
+        left: 20px;
+        color: orange;
         font-size: 18px;
         font-weight: bold;
-        position: fixed;
-        top: 90px; /* Adjust the top position as needed */
-        left: 20px; /* Adjust the left position as needed */
-        text-shadow: none; /* Remove the text shadow */
-        box-shadow: none; /* Remove the box shadow */
-    }
-    
-    .back-link i {
+        text-decoration: none;
+        transition: transform 0.3s, color 0.3s;
+        z-index: 1000;
+      }
+      
+      .back-link:hover {
+        color: #cc7f32;
+        transform: scale(1.1);
+      }
+      
+      .back-link i {
         margin-right: 5px;
-    }
+      }
+      
     
-    .back-link:hover {
-        color: #9d5d20; /* Adjust the hover color as needed */
-    }
-    
-    
-    .back-link:hover i {
-        color: #9d5d20;
-    }

@@ -6,12 +6,6 @@
         });
     }
 
-    const loginButton = document.getElementById('loginButton');
-    if (loginButton) {
-        loginButton.addEventListener('click', function () {
-            window.location.href = 'Login.html';
-        });
-    }
 });
 
 const users = [
@@ -33,9 +27,9 @@ const users = [
 ];
 
 document.addEventListener('DOMContentLoaded', function () {
-    const loginButton2 = document.getElementById('loginButton2');
+    const loginButton = document.getElementById('loginButton');
 
-    loginButton2.addEventListener('click', function (event) {
+    loginButton.addEventListener('click', function (event) {
         event.preventDefault(); // Prevent form submission
 
         const username = document.getElementById('username').value;
@@ -170,5 +164,4 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
 
-  
   

@@ -19,10 +19,11 @@ body {
     left: 0;
     right: 0;
     padding: 35px;
-    height: 50px; /* Adjust the height as needed */
+    height: 50px;
     display: flex;
     align-items: center;
-}
+    z-index: 999;
+  }
 
 .navbar .logo {
     margin-right: auto;
@@ -186,5 +187,26 @@ tbody {
     transform: scale(1.1);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
-
+.back-link {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    color: orange;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
+    z-index: 1000;
+  }
+  
+  .back-link:hover {
+    color: #cc7f32;
+    transform: scale(1.1);
+  }
+  
+  .back-link i {
+    margin-right: 5px;
+  }
+  
+  
 

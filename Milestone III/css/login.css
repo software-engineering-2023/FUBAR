@@ -3,9 +3,9 @@
     margin: 0;
     padding: 0;
     font-family: 'Urbanist', sans-serif;
-}
-
-.navbar {
+  }
+  
+  .navbar {
     background-color: #4F0341;
     position: fixed;
     top: 0;
@@ -15,27 +15,28 @@
     height: 50px;
     display: flex;
     align-items: center;
-}
-
-.navbar .logo {
+    z-index: 999;
+  }
+  
+  .navbar .logo {
     margin-right: auto;
-}
-
-.navbar .logo img {
+  }
+  
+  .navbar .logo img {
     height: 60px;
-}
-
-.navbar ul {
+  }
+  
+  .navbar ul {
     display: flex;
     align-items: center;
-}
-
-.navbar li {
+  }
+  
+  .navbar li {
     list-style-type: none;
     margin-left: 20px;
-}
-
-.navbar li button {
+  }
+  
+  .navbar li button {
     color: white;
     background: none;
     border: none;
@@ -45,54 +46,54 @@
     transition: transform 0.3s, background-color 0.3s;
     padding: 5px 10px;
     border-radius: 5px;
-}
-
-.navbar li button:hover {
+  }
+  
+  .navbar li button:hover {
     color: #ffffff;
     background-color: #cc7f32;
     transform: scale(1.1);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-.navbar li:first-child {
+  }
+  
+  .navbar li:first-child {
     margin-left: 0;
-}
-
-.login-register-page {
+  }
+  
+  .login-register-page {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background: linear-gradient(to bottom, #ffffff, #4F0341);
-}
-
-.login-register-container {
+  }
+  
+  .login-register-container {
     text-align: center;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.login-register-container h1 {
+  }
+  
+  .login-register-container h1 {
     font-size: 32px;
     margin-bottom: 20px;
-}
-
-.login-form {
+  }
+  
+  .login-form {
     margin-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.login-form input {
+  }
+  
+  .login-form input {
     width: 300px;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
     border: none;
-}
-
-.login-form button {
+  }
+  
+  .login-form button {
     width: 150px;
     padding: 10px;
     background-color: #cc7f32;
@@ -103,50 +104,45 @@
     cursor: pointer;
     margin-top: 10px;
     transition: background-color 0.3s;
-}
-
-.login-form button:hover {
+  }
+  
+  .login-form button:hover {
     background-color: #9d5d20;
-}
-
-.login-register-container p {
+  }
+  
+  .login-register-container p {
     margin-top: 20px;
-}
-
-.login-register-container p a {
+  }
+  
+  .login-register-container p a {
     color: #cc7f32;
     text-decoration: none;
     font-weight: bold;
-}
-
-.login-register-container p a:hover {
+  }
+  
+  .login-register-container p a:hover {
     color: #9d5d20;
-}
-
-.back-link {
-    color: #cc7f32;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
+  }
+  
+  .back-link {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    color: orange;
     font-size: 18px;
     font-weight: bold;
-    position: fixed;
-    top: 90px; /* Adjust the top position as needed */
-    left: 20px; /* Adjust the left position as needed */
-    text-shadow: none; /* Remove the text shadow */
-    box-shadow: none; /* Remove the box shadow */
-}
-
-.back-link i {
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
+    z-index: 1000;
+  }
+  
+  .back-link:hover {
+    color: #cc7f32;
+    transform: scale(1.1);
+  }
+  
+  .back-link i {
     margin-right: 5px;
-}
-
-.back-link:hover {
-    color: #9d5d20; /* Adjust the hover color as needed */
-}
-
-
-.back-link:hover i {
-    color: #9d5d20;
-}
-
+  }
+  
+  
