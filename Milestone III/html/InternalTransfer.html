@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <script src="../js/script.js"></script>
-    <link href="../css/InternationalTransfer.css" rel="stylesheet" />
+    <link href="../css/InternalTransfer.css" rel="stylesheet" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,9 +21,83 @@
             <li><button>Contact</button></li>
         </ul>
     </div>
+
     <a href="transfer.html" onclick="history.back()" class="back-link">
         <i class="fas fa-arrow-left"></i>
         Back
     </a>
+
+    <form>
+        <label for="Paymentname">Payment Name:</label>
+        <input type="text" class="num-input" id="Paymentname" name="Paymentname" required>
+        <br><br>
+        <label for="fromAccount">From Account:</label>
+        <select id="fromAccount" name="fromAccount">
+            <option value="1234">1234</option>
+            <option value="5678">5678</option>
+            <option value="91011">91011</option>
+        </select>
+        <br><br>
+        <label for="beneficiaryAccount">Beneficiary Account No.</label>
+        <input type="text" class="beneficiaryAccount" id="beneficiaryAccount" name="beneficiaryAccount" required>
+        <br><br>
+        <label for="Amount">Transfer Amount:</label>
+        <input type="text" class="amount" id="Amount" name="Amount" required>
+        <br><br>
+        <label for="transactionDate">Transaction Date:</label>
+        <input type="date" id="transactionDate" name="transactionDate" readonly>
+        <br><br>
+        <label for="transactionDescription">Transaction Description:</label>
+        <input type="text" id="transactionDescription" name="transactionDescription" required>
+        <br><br>
+        <input type="checkbox" id="termsConditions" name="termsConditions" class="check-input" required>
+        <label for="termsConditions">I have read and agreed to the <a href="#">Terms and Conditions</a>.</label>
+        <br>
+        <button id="Transfer" class="Transfer" onclick="transferinternally(this.form)">Transfer</button>
+    </form>
+
+    <script>
+        function transferinternally(form) {
+            var paymentNameInput = form.querySelector('.num-input');
+            var beneficiaryAccountInput = form.querySelector('.beneficiaryAccount');
+            var amountInput = form.querySelector('.amount');
+            var checkbox = form.querySelector('.check-input');
+
+            var paymentName = paymentNameInput.value;
+            var beneficiaryAccount = beneficiaryAccountInput.value;
+            var amount = parseInt(amountInput.value);
+
+            if (paymentName.trim() === '') {
+                alert('Please enter a valid payment name.');
+                return;
+            }
+
+            if (beneficiaryAccount.trim() === '') {
+                alert('Please enter a valid beneficiary account number.');
+                return;
+            }
+
+            if (isNaN(amount)) {
+                alert('Please enter a valid transfer amount.');
+                return;
+            }
+
+            if (!checkbox.checked) {
+                alert('Please agree to the terms and conditions.');
+                return;
+            }
+
+            // Success
+            var confirmationMessage = 'Transfer successful!\n' +
+                'Payment Name: ' + paymentName + '\n' +
+                'Beneficiary Account No.: ' + beneficiaryAccount + '\n' +
+                'Transfer Amount: ' + amount + '\n' +
+                'Transaction Date: ' + new Date().toLocaleDateString() + '\n' +
+                'Transaction Description: ' + form.transactionDescription.value;
+
+            alert(confirmationMessage);
+            form.reset();
+        }
+    </script>
 </body>
 </html>
