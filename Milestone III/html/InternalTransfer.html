@@ -85,7 +85,10 @@
                 alert('Please agree to the terms and conditions.');
                 return;
             }
-
+            const confirmation = confirm('Are you sure you want to make this transfer?');
+             if (!confirmation) {
+             return false;
+            }
             // Success
             var confirmationMessage = 'Transfer successful!\n' +
                 'Payment Name: ' + paymentName + '\n' +

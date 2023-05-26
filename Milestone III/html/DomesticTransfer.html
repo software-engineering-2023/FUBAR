@@ -3,6 +3,11 @@
 <head>
     <script src="../js/script.js"></script>
     <link href="../css/DomesticTransfer.css" rel="stylesheet" />
+    <style>
+        .underline {
+            text-decoration: underline;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,5 +30,198 @@
         <i class="fas fa-arrow-left"></i>
         Back
     </a>
+    <form>
+        <label for="Paymentname">Payment Name:</label>
+        <input type="text" class="num-input" id="Paymentname" name="Paymentname" required>
+        <br><br>
+        <label for="fromAccount">From Account:</label>
+        <select id="fromAccount" name="fromAccount">
+            <option value="123456789">123456789</option>
+            <option value="987654321">987654321</option>
+        </select>
+        <br><br>
+        <label for="beneficiaryBank" class="underline">Beneficiary Bank</label>
+        <br>
+        <label for="bankName">Bank Name:</label>
+        <input type="text" class="bankName" id="bankName" name="bankName" required>
+        <br><br>
+        <label for="branchAddress">Branch Address:</label>
+        <input type="text" class="branchAddress" id="branchAddress" name="branchAddress" required>
+        <br><br>
+        <label for="city">City:</label>
+        <input type="text" class="city" id="city" name="city" required>
+        <br><br>
+        <label for="state">State:</label>
+        <input type="text" class="state" id="state" name="state" required>
+        <br><br>
+        <label for="bankCode">Bank Code: (SWIFT, FEDWIRE, Sort Code, BLZ, BSB)</label>
+        <input type="text" class="bankCode" id="bankCode" name="bankCode" required>
+        <br><br>
+        <label for="beneficiarydetails" class="underline">Beneficiary Details</label>
+        <br>
+        <label for="beneficiaryName">Beneficiary Name:</label>
+        <input type="text" class="beneficiaryName" id="beneficiaryName" name="beneficiaryName" required>
+        <br><br>
+        <label for="beneficiaryAddress">Beneficiary Address:</label>
+        <input type="text" class="beneficiaryAddress" id="beneficiaryAddress" name="beneficiaryAddress" required>
+        <br><br>
+        <label for="beneficiaryCity">Beneficiary City:</label>
+        <input type="text" class="beneficiaryCity" id="beneficiaryCity" name="beneficiaryCity" required>
+        <br><br>
+        <label for="beneficiaryState">Beneficiary State:</label>
+        <input type="text" class="beneficiaryState" id="beneficiaryState" name="beneficiaryState" required>
+        <br><br>
+        <label for="PaymentConfirmationDetails" class="underline">Payment Confirmation Details</label>
+        <br>
+        <label for="beneficiaryAccount/IBAN">Beneficiary Account Number/IBAN:</label>
+        <input type="text" class="beneficiaryAccount/IBAN" id="beneficiaryAccount/IBAN" name="beneficiaryAccount/IBAN" required>
+        <br><br>
+        <label for="Amount">Transfer Amount:</label>
+        <input type="text" class="amount" id="Amount" name="Amount" required>
+        <br><br>
+        <label for="transactionDate">Transaction Date:</label>
+        <input type="date" id="transactionDate" name="transactionDate" readonly>
+        <br><br>
+        <label for="transactionPurpose">Transaction Purpose:</label>
+        <input type="text" id="transactionPurpose" name="transactionPurpose" required>
+        <br><br>
+        <input type="checkbox" id="termsConditions" name="termsConditions" class="check-input" required>
+        <label for="termsConditions">I have read and agreed to the <a href="#">Terms and Conditions</a>.</label>
+        <br>
+        <button id="Transfer" class="Transfer" onclick="transferDomestically(this.form)">Transfer</button>
+    </form>
+    <script>
+    function transferDomestically(form) {
+        // Verification for Payment Name
+        const paymentName = form.Paymentname.value;
+        if (paymentName.trim() === '') {
+            alert('Please enter the Payment Name. All Boxes are required to be filled');
+            return false;
+        }
+
+        // Verification for Bank Name
+        const bankName = form.bankName.value;
+        if (bankName.trim() === '') {
+            alert('Please enter the Bank Name. All Boxes are required to be filled');
+            return false;
+        }
+
+        // Verification for Branch Address
+        const branchAddress = form.branchAddress.value;
+        if (branchAddress.trim() === '') {
+            alert('Please enter the Branch Address. All Boxes are required to be filled');
+            return false;
+        }
+
+        // Verification for City
+        const city = form.city.value;
+        if (city.trim() === '') {
+            alert('Please enter the City. All Boxes are required to be filled');
+            return false;
+        }
+
+        // Verification for State
+        const state = form.state.value;
+        if (state.trim() === '') {
+            alert('Please enter the State. All Boxes are required to be filled');
+            return false;
+        }
+
+        // Verification for Bank Code
+        const bankCode = form.bankCode.value;
+        if (bankCode.trim() === '') {
+            alert('Please enter the Bank Code. All Boxes are required to be filled');
+            return false;
+        }
+
+        // Verification for Beneficiary Name
+        const beneficiaryName = form.beneficiaryName.value;
+        if (beneficiaryName.trim() === '') {
+            alert('Please enter the Beneficiary Name. All Boxes are required to be filled');
+            return false;
+        }
+
+        // Verification for Beneficiary Address
+        const beneficiaryAddress = form.beneficiaryAddress.value;
+        if (beneficiaryAddress.trim() === '') {
+            alert('Please enter the Beneficiary Address. All Boxes are required to be filled');
+            return false;
+        }
+
+        // Verification for Beneficiary City
+        const beneficiaryCity = form.beneficiaryCity.value;
+        if (beneficiaryCity.trim() === '') {
+            alert('Please enter the Beneficiary City. All Boxes are required to be filled');
+            return false;
+        }
+
+        // Verification for Beneficiary State
+        const beneficiaryState = form.beneficiaryState.value;
+        if (beneficiaryState.trim() === '') {
+            alert('Please enter the Beneficiary State. All Boxes are required to be filled');
+            return false;
+        }
+
+        const beneficiaryAccountIBAN = form['beneficiaryAccount/IBAN'].value;
+        if (beneficiaryAccountIBAN.trim() === '') {
+            alert('Please enter the Beneficiary Account Number/IBAN.');
+            return false;
+        }
+
+        // Verification for Transfer Amount
+        const amount = form.Amount.value;
+        if (amount.trim() === '') {
+            alert('Please enter the Transfer Amount.');
+            return false;
+        }
+
+        // Verification for Transaction Purpose
+        const transactionPurpose = form.transactionPurpose.value;
+        if (transactionPurpose.trim() === '') {
+            alert('Please enter the Transaction Purpose.');
+            return false;
+        }
+ 
+        const termsConditions = form.termsConditions;
+        if (!termsConditions.checked) {
+            alert('Please read and agree to the Terms and Conditions.');
+            return false;
+        }
+        // Confirmation
+        const confirmation = confirm('Are you sure you want to make this transfer?');
+        if (!confirmation) {
+            return false;
+        }
+
+        // If all verifications pass and user confirms, proceed with the transfer
+        // Your transfer logic here 
+        const fromAccount = form.fromAccount.value;
+        const transactionDate = form.transactionDate.value;
+
+        const confirmationMessage =
+            'Transfer successful!\n' +
+            'Payment Name: ' + paymentName + '\n' +
+            'From Account: ' + fromAccount + '\n' +
+            'Bank Name: ' + bankName + '\n' +
+            'Branch Address: ' + branchAddress + '\n' +
+            'City: ' + city + '\n' +
+            'State: ' + state + '\n' +
+            'Bank Code: ' + bankCode + '\n' +
+            'Beneficiary Name: ' + beneficiaryName + '\n' +
+            'Beneficiary Address: ' + beneficiaryAddress + '\n' +
+            'Beneficiary City: ' + beneficiaryCity + '\n' +
+            'Beneficiary State: ' + beneficiaryState + '\n' +
+            'Beneficiary Account/IBAN: ' + beneficiaryAccountIBAN + '\n' +
+            'Transfer Amount: ' + amount + '\n' +
+            'Transaction Date: ' + new Date().toLocaleDateString() + '\n' +
+            'Transaction Purpose: ' + transactionPurpose;
+
+        alert(confirmationMessage); // Display confirmation message
+
+        form.reset(); // Reset the form
+
+        return true;
+    }
+     </script>
 </body>
 </html>
