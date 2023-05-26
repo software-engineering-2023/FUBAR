@@ -2,10 +2,95 @@
 <html>
 <head>
     <script src="../js/script.js"></script>
+    <link href="../css/style.css" rel="stylesheet" />
+    <link href="../css/banker.css" rel="stylesheet" />
     <meta charset="utf-8" />
     <title></title>
 </head>
 <body>
-    Hello I am banker
+    <div class="navbar">
+        <div class="logo">
+            <img src="../img/FUBAR Logo.png" />
+        </div>
+        <ul>
+            <li><button id="Bhome" class="home" >Home</button></li>
+            <li><button>About Us</button></li>
+            <li><button id="Breport">Report Issue</button></li>
+            <li><button>Contact</button></li>
+        </ul>
+    </div>
+
+    <a href="Login.html" onclick="history.back()" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        Back
+    </a>
+
+    <div class="banker-page">
+        <div class="banker-container">
+            <h1>Welcome back, Perrie!</h1>
+        </div>
+        <div class="button-container">
+            <div class="button-row">
+                <div class="button-box">
+                    <button class="transparent-button" id="viewBankAccountsButton">
+                        <img src="../img/view-bank-accounts-image.jpeg" alt="View Bank Accounts"/>
+                       
+                        <span>Review Bank Account Applications</span>
+                    </button>
+                </div>
+                <div class="button-box">
+                    <button class="transparent-button" id="resolveCCIssues">
+                        <img src="../img/ResolveCCIssues.jpeg" alt="Resolve Credit Card Issues" />
+                        <span>Resolve Credit Card Issues</span>
+                    </button>
+                </div>
+            </div>
+            <div class="button-row">
+                <div class="button-box">
+                    <button class="transparent-button" id="reviewLoanButton"> 
+                        <img src="../img/loans-image.jpeg"  alt="Review Loan Applications"/>
+                        <span>Review Loan Applications</span>
+                    </button>
+                </div>
+                <div class="button-box">
+                    <button class="transparent-button" id="reviewCreditCardButton">
+                        <img src="../img/credit-cards-image.jpeg" alt="Review Credit Card Applications" />
+                        <span>Review Credit Card Applications</span>
+                    </button>
+                </div>
+                <!-- <div class="button-box">
+                    <button class="transparent-button" id="billButton">
+                        <img src="../img/bills-image.jpeg"  alt="Bills"  />
+                        <span>Bills</span>
+                    </button>
+                </div>
+                <div class="button-box">
+                    <button class="transparent-button" id="transferbutton">
+                        <img src="../img/transfer-money-image.jpeg" alt="Transfer" />
+                        <span>Transfer</span>
+                    </button>
+                </div> -->
+            </div>
+        </div>
+        <script>
+              document.addEventListener('DOMContentLoaded', function () {
+              const homeButton = document.getElementById('Bhome');
+              if (homeButton) {
+                 homeButton.addEventListener('click', function () {
+                 window.location.href = 'banker.html';
+              });
+            }
+           });
+  
+  document.addEventListener('DOMContentLoaded', function () {
+    const reportButton = document.getElementById('Breport');
+    if (reportButton) {
+      reportButton.addEventListener('click', function () {
+        window.location.href = 'Report.html';
+      });
+    }
+  });
+        </script>
+
 </body>
 </html>

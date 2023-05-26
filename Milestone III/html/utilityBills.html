@@ -20,8 +20,38 @@
             <li><button>Contact</button></li>
         </ul>
     </div>
-    <h1>Utility Bill Payment</h1>
+   <!-- <h1>Saved Bills</h1>
+    <table>
+      <thead>
+          <tr>
+              <th>Biller Name</th>
+              <th>Bill Number</th>
+              <th>Bill Amount</th>
+              <th>Due Date</th>
+              <th></th>
 
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>Vodafone</td>
+              <td>01005951591</td>
+              <td>EGP 200</td>
+              <td>03/06/2023</td>
+              <td><button class="paybill-button">Pay</button> </td>
+          </tr>
+          <tr>
+              <td>North Cairo Electricity</td>
+              <td>10543050886009</td>
+              <td>EGP 1000</td>
+              <td>30/05/2023</td>
+              <td><button class="paybill-button">Pay</button> </td>
+
+          </tr>
+         
+      </tbody>
+  </table>  -->
+  
     <form>
         <label for="billType">Bill Type:</label>
         <select id="billType" name="billType">
@@ -30,16 +60,20 @@
             <option value="gas">Gas</option>
             <option value="internet">Internet</option>
         </select>
-
+        <br><br>
+        <label for="provider">Provider:</label>
+<select id="provider" name="provider">
+    <!-- Provider options will be dynamically updated here -->
+</select>
         <br><br>
 
-        <label for="accountNumber">Bill Number:</label>
-        <input type="text" id="accountNumber" name="accountNumber" required>
+        <label for="accountNumber" >Bill Number:</label>
+        <input type="text"class="num-input" id="accountNumber" name="accountNumber" required>
 
         <br><br>
 
         <label for="billAmount">Bill Amount:</label>
-        <input type="number" id="billAmount" name="billAmount" readonly>
+        <input type="text" class="amount-input" id="billAmount" name="billAmount" readonly>
 
         <br><br>
 
@@ -49,22 +83,55 @@
         <br><br>
 
         <label for="accountSelection">Account Selection:</label>
-        <select id="accountSelection" name="accountSelection">
-            <option value="account1">123456789</option>
-        <option value="account2">987654321</option>
+        <select id="accountSelection" class="account-input" name="accountSelection">
+            <option value="5000">123456789</option>
+        <option value="10000">987654321</option>
         </select>
         <br><br>
 
 
-        <input type="checkbox" id="termsConditions" name="termsConditions" required>
+        <input type="checkbox" id="termsConditions" name="termsConditions" class="check-input"required>
         <label for="termsConditions">I have read and agreed to the <a href="#">Terms and Conditions</a>.</label>
 
         <br><br>
 
-        <button id="pay" class="Pay"data-toggle="modal" data-target="#confirmationModal">Pay</button>
-
+        <button id="pay" class="Pay" onclick="paybill(this.form)">Pay</button>
     </form>
     <script>
+      var billTypeDropdown = document.getElementById('billType');
+var providerDropdown = document.getElementById('provider');
+
+// Define the providers for each bill type
+var providerOptions = {
+    electricity: ['North Cairo Electricity', 'Canal Electricty', 'Middle Egypt Electricity','Upper Egypt Electricity'],
+    water: ['Epaes Egypt', 'Taqa Water', 'Holding Co.','Nasr City Water Company','Puvana Water'],
+    gas: ['Gastec Company', 'Egypt Gas', 'Town Gas','Nobel Energy Egypt'],
+    internet: ['WE Internet', 'Vodafone', 'Orange DSL','Etisalat']
+};
+
+// Function to update the provider dropdown based on the selected bill type
+function updateProviderOptions() {
+    // Get the selected bill type
+    var selectedBillType = billTypeDropdown.value;
+    
+    // Clear existing options in the provider dropdown
+    providerDropdown.innerHTML = '';
+    
+    // Add the options for the selected bill type
+    var options = providerOptions[selectedBillType];
+    for (var i = 0; i < options.length; i++) {
+        var option = document.createElement('option');
+        option.text = options[i];
+        option.value = options[i];
+        providerDropdown.appendChild(option);
+    }
+}
+
+// Attach an event listener to the bill type dropdown to trigger the update
+billTypeDropdown.addEventListener('change', updateProviderOptions);
+
+// Initial update of the provider dropdown based on the default selected bill type
+updateProviderOptions();
         document.getElementById('accountNumber').addEventListener('change', function() {
         var selectedCard = this.value;
         var amountField = document.getElementById('billAmount');
@@ -73,13 +140,13 @@
         // Update form fields based on the selected credit card
         if (selectedCard === '12345') {
           dueDateField.value = '2023-06-01';
-          amountField.value = '50.00';
+          amountField.value = 'EGP 500';
         } else if (selectedCard === '54321') {
           dueDateField.value = '2023-06-15';
-          amountField.value ='75.00';
+          amountField.value ='EGP 750';
         } else if (selectedCard === '56789') {
           dueDateField.value = '2023-06-30';
-          amountField.value = '60.00';
+          amountField.value = 'EGP 200';
         } else {
           dueDateField.value = '';
           amountField.value ='';
@@ -87,5 +154,24 @@
       });
       
         </script>
+        <script>
+          function paybill(row) {
+          var amountInput = row.querySelector('.num-input');
+          var Amount = parseInt(amountInput.value);
+               var checkbox = row.querySelector('.check-input');
+               if (isNaN(Amount)) {
+                alert('Please enter a valid Bill number.');
+                 return;
+               }
+               if (!checkbox.checked) {
+                alert('Please agree to the terms and conditions.');
+                  return;
+               }
+              else{
+                alert('Bill Paid Successfully')
+              }
+              
+          }
+      </script>
 </body>
 </html>
