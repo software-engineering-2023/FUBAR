@@ -57,12 +57,13 @@
   body {
     background: linear-gradient(to bottom, #ffffff, #4F0341);
     margin: 20px;
-    height: 100vh;
+    
   }
   h1 {
-    text-align: center;
-    margin-top: 20px;
+    text-align: left;
+    margin-top: 100px;
     margin-bottom: 30px;
+    font-size: 25px;
 }
 
 form {
@@ -148,3 +149,58 @@ a {
 a:hover {
     text-decoration: underline;
 }
+.table-container {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: 600;
+}
+
+
+thead {
+  display: table-header-group;
+}
+
+tbody {
+  display: table-row-group;
+}
+/* Rest of the CSS code */
+
+.paybill-button {
+  color: white;
+  background-color: #4F0341;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+  .paybill-button:hover{
+
+      color: #ffffff;
+      background-color: #cc7f32;
+      transform: scale(1.1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
