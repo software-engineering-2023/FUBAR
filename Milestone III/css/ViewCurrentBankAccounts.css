@@ -24,47 +24,46 @@ body {
     align-items: center;
 }
 
-    .navbar .logo {
-        margin-right: auto; /* Push the logo to the left */
-    }
+.navbar .logo {
+    margin-right: auto; /* Push the logo to the left */
+}
 
-        .navbar .logo img {
-            height: 60px; /* Adjust the height of the logo image as needed */
-        }
+.navbar .logo img {
+    height: 60px; /* Adjust the height of the logo image as needed */
+}
 
-    .navbar ul {
-        display: flex;
-        align-items: center;
-    }
+.navbar ul {
+    display: flex;
+    align-items: center;
+}
 
-    .navbar li {
-        list-style-type: none;
-        margin-left: 20px; /* Increase the margin for more spacing */
-    }
+.navbar li {
+    list-style-type: none;
+    margin-left: 20px; /* Increase the margin for more spacing */
+}
 
-        .navbar li button {
-            color: white;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
-            transition: transform 0.3s, background-color 0.3s;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
+.navbar li button {
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
 
-            .navbar li button:hover {
-                color: #ffffff;
-                background-color: #cc7f32;
-                transform: scale(1.1);
-                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-            }
+.navbar li button:hover {
+    color: #ffffff;
+    background-color: #cc7f32;
+    transform: scale(1.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
 
-        /* Adjust the distance between the buttons */
-        .navbar li:first-child {
-            margin-left: 0;
-        }
+.navbar li:first-child {
+    margin-left: 0;
+}
 
 .BankAccounts-page {
     background-color: transparent; /* Remove the white box background */
@@ -73,6 +72,7 @@ body {
     border-radius: 0; /* Remove border radius */
     box-shadow: none; /* Remove the box shadow */
 }
+
 .Bank-container {
     text-align: center;
     display: flex;
@@ -81,15 +81,15 @@ body {
     height: 25vh;
 }
 
-    .Bank-container h1 {
-        font-size: 36px;
-        font-weight: 600;
-        background-color: transparent; /* Remove the white box background */
-        padding: 0; /* Remove any padding */
-        color: #fff;
-        margin-top: 50px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Add shadow effect */
-    }
+.Bank-container h1 {
+    font-size: 36px;
+    font-weight: 600;
+    background-color: transparent; /* Remove the white box background */
+    padding: 0; /* Remove any padding */
+    color: #fff;
+    margin-top: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Add shadow effect */
+}
 
 .table-container {
     margin-top: 20px;
@@ -98,6 +98,7 @@ body {
     display: flex;
     justify-content: center;
 }
+
 table {
     width: 100%;
     max-width: 100%;
@@ -109,14 +110,12 @@ td {
     padding: 10px;
     text-align: center;
     border-bottom: 1px solid #ddd;
- 
 }
 
 th {
     background-color: #f2f2f2;
     font-weight: 600;
 }
-
 
 thead {
     display: table-header-group;
@@ -125,7 +124,6 @@ thead {
 tbody {
     display: table-row-group;
 }
-/* Rest of the CSS code */
 
 .view-transactions-button,
 .close-account-button {
@@ -140,14 +138,21 @@ tbody {
     transition: transform 0.3s, background-color 0.3s;
 }
 
-    .view-transactions-button:hover,
-    .close-account-button:hover {
+.view-transactions-button:hover,
+.close-account-button:hover {
+    color: #ffffff;
+    background-color: #cc7f32;
+    transform: scale(1.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
 
-        color: #ffffff;
-        background-color: #cc7f32;
-        transform: scale(1.1);
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    }
+.highlight-row {
+    background-color: red;
+}
 
-/* Rest of the CSS code */
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
 
+   
