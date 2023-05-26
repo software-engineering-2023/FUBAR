@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Urbanist', sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(to bottom, #ffffff, #4F0341);
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .navbar {
+    background-color: #4F0341;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 35px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .navbar .logo {
+    margin-right: auto;
+  }
+  
+  .navbar .logo img {
+    height: 60px;
+  }
+  
+  .navbar ul {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar li {
+    list-style-type: none;
+    margin-left: 20px;
+  }
+  
+  .navbar li button {
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .navbar li button:hover {
+    color: #ffffff;
+    background-color: #cc7f32;
+    transform: scale(1.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .navbar li:first-child {
+    margin-left: 0;
+  }
+  h1 {
+    font-size: 24px;
+    color: purple;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .Loan-page {
+    margin-top: 80px;
+  }
+  
+  form {
+    width: 100%;
+    margin-top: 30px;
+    padding: 30px;
+    background-color:  linear-gradient(to bottom, #ffffff, #4F0341);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-size: 16px;
+    color: #4F0341;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #4F0341;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: transparent;
+    color: black;
+  }
+  
+  textarea {
+    height: 100px;
+  }
+  
+  button[type="submit"] {
+    background-color: #4F0341;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #cc7f32;
+  }
+  

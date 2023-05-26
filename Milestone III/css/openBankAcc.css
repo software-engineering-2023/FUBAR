@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Urbanist', sans-serif;
+}
+body {
+    background: linear-gradient(to bottom, #ffffff, #4F0341);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.navbar {
+    background-color: #4F0341;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 35px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    z-index: 999;
+  }
+
+    .navbar .logo {
+        margin-right: auto;
+    }
+
+        .navbar .logo img {
+            height: 60px;
+        }
+
+    .navbar ul {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar li {
+        list-style-type: none;
+        margin-left: 20px;
+    }
+
+        .navbar li button {
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: transform 0.3s, background-color 0.3s;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+            .navbar li button:hover {
+                color: #ffffff;
+                background-color: #cc7f32;
+                transform: scale(1.1);
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            }
+
+        .navbar li:first-child {
+            margin-left: 0;
+        }
+          
+          h1 {
+            color: #333;
+          }
+          
+          form {
+            margin-top: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          
+          label {
+            display: block;
+            margin-bottom: 5px;
+          }
+          
+          select {
+            width: 200px;
+            padding: 5px;
+            font-size: 16px;
+          }
+          
+          input[type="submit"] {
+            width: 150px;
+            padding: 10px;
+            background-color: #cc7f32;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            font-size: medium;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+          }
+          
+          input[type="submit"]:hover {
+            background-color: #9d5d20;
+          }
+
+          .back-link {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            color: orange;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.3s, color 0.3s;
+            z-index: 1000;
+          }
+          
+          .back-link:hover {
+            color: #cc7f32;
+            transform: scale(1.1);
+          }
+          
+          .back-link i {
+            margin-right: 5px;
+          }
+          
+         

@@ -5,6 +5,48 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="../css/ViewCurrentBankAccounts.css" rel="stylesheet" />
+    <style>
+        /* Add the CSS styles here */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Urbanist', sans-serif;
+        }
+
+        /* Rest of the CSS code */
+
+        .view-transactions-button,
+        .close-account-button {
+            color: white;
+            background-color: #4F0341;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .view-transactions-button:hover,
+        .close-account-button:hover {
+            color: #ffffff;
+            background-color: #cc7f32;
+            transform: scale(1.1);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .highlight-row {
+            background-color: rgb(237, 69, 69);
+        }
+
+        /* Add the disabled state for the button */
+        .close-account-button.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+    </style>
 </head>
 <body>
     <div class="navbar">
@@ -33,30 +75,42 @@
                 <th>Currency</th>
                 <th></th>
                 <th></th>
-
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>123456789</td>
-                <td>5000</td>
-                <td>EGP</td>
-                <td><button class="view-transactions-button">View Transactions</button> </td>
-                <td><button class="close-account-button">Close Bank Account</button></td>
+                <td>$5000</td>
+                <td>USD</td>
+                <td><button class="view-transactions-button" id="viewTransactionsButtonInBA">View Transactions</button></td>
+                <td><button class="close-account-button" onclick="highlightRow(this)">Close Bank Account</button></td>
             </tr>
             <tr>
                 <td>987654321</td>
-                <td>10000</td>
-                <td>EGP</td>
-                <td><button class="view-transactions-button">View Transactions</button> </td>
-                <td> <button class="close-account-button">Close Bank Account</button></td>
-
+                <td>$10000</td>
+                <td>EUR</td>
+                <td><button class="view-transactions-button">View Transactions</button></td>
+                <td><button class="close-account-button" onclick="highlightRow(this)">Close Bank Account</button></td>
             </tr>
             <!-- Add more rows for other bank accounts -->
         </tbody>
     </table>
 
+    <script>
+        function highlightRow(button) {
+            var row = button.parentNode.parentNode;
+            row.classList.add("highlight-row");
+            button.classList.add("disabled"); // Add the "disabled" class to the button after it is clicked
+        }
 
-        <script src="../js/script.js"></script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const viewTransactionsButtonInBA = document.getElementById('viewTransactionsButtonInBA');
+            if (viewTransactionsButtonInBA) {
+                viewTransactionsButtonInBA.addEventListener('click', function () {
+                    window.location.href = 'ViewTransactionsInBA.html';
+                });
+            }
+        });
+    </script>
 </body>
 </html>

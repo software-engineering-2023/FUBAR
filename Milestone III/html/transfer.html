@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="../js/script.js"></script>
     <link href="../css/transfer.css" rel="stylesheet" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transfer|FUBAR Egypt</title>
+    <title>Transfer | FUBAR Egypt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        .button-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: -10px; /* Adjust the value as needed */
+        }
+
+        .button-box {
+            flex: 1;
+            padding: 0 10px; /* Adjust the value as needed */
+        }
+
+        .transparent-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            border: none;
+            background-color: transparent;
+            width: 200px; /* Adjust the width as needed */
+            height: 100px; /* Adjust the height as needed */
+            font-size: 18px; /* Adjust the font-size as needed */
+        }
+
+        .transparent-button img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <div class="navbar">
@@ -19,5 +53,64 @@
             <li><button>Contact</button></li>
         </ul>
     </div>
+    <div class="Transfer-page">
+        <div class="Transfer-container">
+            <h1>You want to make a transfer:</h1>
+        </div>
+    
+        <div class="button-container">
+            <div class="button-row">
+                <div class="button-box">
+                    <button class="transparent-button" id="International">
+                        <img src="../img/International-bank-transfer-icon.png" alt="International"/>
+                       
+                        <span>Internationally</span>
+                    </button>
+                </div>
+                <div class="button-box">
+                    <button class="transparent-button" id="Domestic">
+                        <img src="../img/Domestic.jpg" alt="Domestically" />
+                        <span>Domestically</span>
+                    </button>
+                </div>
+                <div class="button-box">
+                    <button class="transparent-button" id="Internal">
+                        <img src="../img/Internal.png"  alt="Internally"/>
+                        <span>Internally</span>
+                    </button>
+                </div>
+            </div>
+    <a href="client.html" onclick="history.back()" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        Back
+    </a>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const Internationalbutton = document.getElementById('International');
+            if (Internationalbutton) {
+                Internationalbutton.addEventListener('click', function() {
+                    window.location.href = 'InternationalTransfer.html';
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const Internalbutton = document.getElementById('Internal');
+            if (Internalbutton) {
+                Internalbutton.addEventListener('click', function() {
+                    window.location.href = 'InternalTransfer.html';
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const Domesticbutton = document.getElementById('Domestic');
+            if (Domesticbutton) {
+                Domesticbutton.addEventListener('click', function() {
+                    window.location.href = 'DomesticTransfer.html';
+                });
+            }
+        });
+    </script>
 </body>
 </html>
