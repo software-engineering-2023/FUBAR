@@ -161,15 +161,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+<<<<<<< Updated upstream
   document.addEventListener('DOMContentLoaded', function () {
     const getStartedButton = document.getElementById('openBankAccount');
     if (openBankAccount) {
         openBankAccount.addEventListener('click', function () {
             window.location.href = 'openBankAcc.html';
+=======
+  // ha redirect mn view transactions el gowa button ViewCurrentBankAccounts to viewTransactionsInBA.
+  document.addEventListener('DOMContentLoaded', function () {
+    const viewTransactionsButtonInBA = document.getElementById('viewTransactionsButtonInBA');
+    if (viewTransactionsButtonInBA) {
+        viewTransactionsButtonInBA.addEventListener('click', function () {
+            window.location.href = 'ViewTransactionsInBA.html';
+>>>>>>> Stashed changes
         });
     }
 
 });
+<<<<<<< Updated upstream
 
 document.getElementById('openAccountForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form submission
@@ -195,6 +205,8 @@ document.getElementById('openAccountForm').addEventListener('submit', function(e
   
 
   
+=======
+>>>>>>> Stashed changes
   
 
   
