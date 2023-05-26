@@ -39,7 +39,6 @@
             max-width: 100%;
             height: auto;
         }
-    
     </style>
 </head>
 <body>
@@ -85,5 +84,33 @@
         <i class="fas fa-arrow-left"></i>
         Back
     </a>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const Internationalbutton = document.getElementById('International');
+            if (Internationalbutton) {
+                Internationalbutton.addEventListener('click', function() {
+                    window.location.href = 'InternationalTransfer.html';
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const Internalbutton = document.getElementById('Internal');
+            if (Internalbutton) {
+                Internalbutton.addEventListener('click', function() {
+                    window.location.href = 'InternalTransfer.html';
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const Domesticbutton = document.getElementById('Domestic');
+            if (Domesticbutton) {
+                Domesticbutton.addEventListener('click', function() {
+                    window.location.href = 'DomesticTransfer.html';
+                });
+            }
+        });
+    </script>
 </body>
 </html>
