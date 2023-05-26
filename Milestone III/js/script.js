@@ -162,6 +162,40 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const getStartedButton = document.getElementById('openBankAccount');
+    if (openBankAccount) {
+        openBankAccount.addEventListener('click', function () {
+            window.location.href = 'openBankAcc.html';
+        });
+    }
+
+});
+
+document.getElementById('openAccountForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+    
+    // Get selected account type and currency
+    var accountType = document.getElementById('accountType').value;
+    var currency = document.getElementById('currency').value;
+    
+    // Check if account type and currency are selected
+    if (accountType === '' || currency === '') {
+      alert('Please choose a bank account type and currency.');
+      return; // Stop further execution
+    }
+    
+    // Perform any desired actions with the selected values
+    console.log('Selected Account Type:', accountType);
+    console.log('Selected Currency:', currency);
+    
+    // Clear form fields (optional)
+    document.getElementById('accountType').value = '';
+    document.getElementById('currency').value = '';
+  });
+  
+
   
 
   
