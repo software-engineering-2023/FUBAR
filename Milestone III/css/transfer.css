@@ -149,7 +149,7 @@ body {
     position: fixed;
     top: 100px;
     left: 20px;
-    color: orange;
+    color: #4F0341;
     font-size: 18px;
     font-weight: bold;
     text-decoration: none;
@@ -158,7 +158,7 @@ body {
   }
   
   .back-link:hover {
-    color: #cc7f32;
+    color: #4F0341;
     transform: scale(1.1);
   }
   
