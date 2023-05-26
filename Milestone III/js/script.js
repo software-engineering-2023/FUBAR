@@ -123,7 +123,6 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.href = 'utilityBills.html';
         });
     }
-
 });
 document.addEventListener('DOMContentLoaded', function() {
     const homeButton = document.getElementById('home');
@@ -141,7 +140,30 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   });
-
+  document.addEventListener('DOMContentLoaded', function() {
+    const Internationalbutton = document.getElementById('International');
+    if (Internationalbutton) {
+        Internationalbutton.addEventListener('click', function() {
+        window.location.href = 'InternationalTransfer.html';
+      });
+    }
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    const Internalbutton = document.getElementById('Internal');
+    if (Internalbutton) {
+        Internalbutton.addEventListener('click', function() {
+        window.location.href = 'InternalTransfer.html';
+      });
+    }
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    const Domesticbutton = document.getElementById('Domestic');
+    if (Domesticbutton) {
+        Domesticbutton.addEventListener('click', function() {
+        window.location.href = 'DomesticTransfer.html';
+      });
+    }
+  });
   document.addEventListener('DOMContentLoaded', function() {
     const redeemButtons = document.getElementsByClassName('redeem-points-button');
   
@@ -198,6 +220,8 @@ document.getElementById('openAccountForm').addEventListener('submit', function(e
   
 
   
+=======
+>>>>>>> Stashed changes
   
 
   
