@@ -22,46 +22,81 @@
         </ul>
     </div>
     <h1>Credit Card Bill Payment</h1>
-  
+    <script>
+      function payccbill(row) {
+          var amountInput = row.querySelector('.amount-input');
+          var Amount = parseInt(amountInput.value);
+          var selectElement = row.querySelector('.account-input');
+           var selectedValue = parseInt(selectElement.value.substr(4));
+           var billElement = row.querySelector('.bill-input');
+           var billValue = parseInt(billElement.value.substr(4));
+           var checkbox = row.querySelector('.check-input');
+           if (isNaN(Amount) || Amount <= 0) {
+              alert('Please enter a valid positive number.');
+              return;
+          }
+           if (!checkbox.checked) {
+            alert('Please agree to the terms and conditions.');
+              return;
+           }
+          
+          if (Amount > billValue) {
+              alert('This amount exceeds the bill amount.');
+              return;
+          }
+          
+          if (Amount > selectedValue) {
+              alert('You do not have enough money in the account.');
+              return;
+          }
+          
+          else{
+
+            alert('Amount Paid Successfully')
+          }
+          
+      }
+  </script>
     <form>
       <label for="creditCard">Select Credit Card:</label>
       <select id="creditCard" name="creditCard">
-        <option value="card1">1111222233334444</option>
+        <option value="card1" >1111222233334444</option>
         <option value="card2">5555666677778888</option>
       </select>
       
      
       <br><br>
+      <label for="amountToPay">Full Bill Amount:</label>
+      <input type="text" id="amountToPay" name="amountToPay" class="bill-input" value="" readonly>
+      <br><br>
+      <label for="minimumPayment">Minimum Payment:</label>
+<input type="text" id="minimumPayment"class="min-input" name="minimumPayment"  value="" readonly>
       
-      <label for="dueDate">Bill Due Date:</label>
+      <br><br>
+      <label for="dueDate">Due Before</label>
 <input type="date" id="dueDate" name="dueDate"value="" readonly>
       
       <br><br>
-      <label for="amountToPay">Full Bill Amount:</label>
-      <input type="text" id="amountToPay" name="amountToPay"  value="" readonly>
-      <br><br>
-      <label for="minimumPayment">Minimum Payment:</label>
-<input type="text" id="minimumPayment" name="minimumPayment"  value="" readonly>
       
-      <br><br>
+      
       
       <label for="accountNumber">Select Account:</label>
-      <select id="accountNumber" name="accountNumber">
-        <option value="account1">123456789</option>
-        <option value="account2">987654321</option>
+      <select id="accountNumber" class="account-input" name="accountNumber">
+        <option value="5000">123456789</option>
+        <option value="10000">987654321</option>
       </select>
       <br><br>
       
       <label for="amount">Amount To be Paid:</label>
-      <input type="text" id="amount" name="amount" min="0" step="1" required>
+      <input type="text" id="amount" name="amount" class="amount-input" min="0" step="1" required>
       <br><br>
 
 
-      <input type="checkbox" id="termsConditions" name="termsConditions" required>
+      <input type="checkbox" id="termsConditions"class="check-input" name="termsConditions" required>
       <label for="termsConditions">I have read and agreed to the <a href="#">Terms and Conditions</a>.</label>
 
       <br><br>
-      <button id="pay" class="Pay"data-toggle="modal" data-target="#confirmationModal">Pay</button>
+      <button id="pay" class="Pay" onclick="payccbill(this.parentNode.parentNode)">Pay</button>
     
     </form>
 
@@ -76,16 +111,16 @@
     // Update form fields based on the selected credit card
     if (selectedCard === 'card1') {
       dueDateField.value = '2023-06-01';
-      amountToPayField.value ='EGP 2500'
-      minimumPaymentField.value = 'EGP 500';
+      amountToPayField.value ='EGP 5000'
+      minimumPaymentField.value = 'EGP 250';
     } else if (selectedCard === 'card2') {
-      dueDateField.value = '2023-06-15';
-      amountToPayField.value = 'EGP 6000'
-      minimumPaymentField.value = 'EGP 800';
+      amountToPayField.value ='EGP 9000'
+      dueDateField.value = '2023-06-30';
+      minimumPaymentField.value = 'EGP 450';
     } else if (selectedCard === 'card3') {
       amountToPayField.value ='EGP 9000'
       dueDateField.value = '2023-06-30';
-      minimumPaymentField.value = 'EGP 2000';
+      minimumPaymentField.value = 'EGP 450';
     } else {
       dueDateField.value = '';
       minimumPaymentField.value = '';
