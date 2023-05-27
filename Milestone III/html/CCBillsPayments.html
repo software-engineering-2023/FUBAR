@@ -38,7 +38,6 @@
            var selectedValue = parseInt(selectElement.value);
            var billElement = row.querySelector('.bill-input');
            var billValue = parseInt(billElement.value.substr(4));
-           var checkbox = row.querySelector('.check-input');
            var billamount = document.getElementById('amount');
              var account = document.getElementById('accountNumber');
            if (loanValue===0) {
@@ -49,10 +48,6 @@
               alert('Please enter a valid positive number.');
               return;
           }
-           if (!checkbox.checked) {
-            alert('Please agree to the terms and conditions.');
-              return;
-           }
           
           if (Amount > billValue) {
               alert('This amount exceeds the bill amount.');
@@ -92,6 +87,7 @@
       }
   </script>
     <form>
+      <h2>Pay Credit Card Bill</h2>
       <label for="creditCard">Credit Card:</label>
       <select id="creditCard" name="creditCard" class="card-input">
         <option value="" disabled selected>Select Credit Card</option>
@@ -125,12 +121,6 @@
       
       <label for="amount">Amount To be Paid:</label>
       <input type="text" id="amount" name="amount" class="amount-input" min="0" step="1" required>
-      <br><br>
-
-
-      <input type="checkbox" id="termsConditions"class="check-input" name="termsConditions" required>
-      <label for="termsConditions">I have read and agreed to the <a href="#">Terms and Conditions</a>.</label>
-
       <br><br>
       <button id="pay" class="Pay" onclick="payccbill(this.parentNode.parentNode)">Pay</button>
     

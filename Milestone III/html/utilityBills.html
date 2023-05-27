@@ -57,7 +57,9 @@
     <i class="fas fa-arrow-left"></i>
     Back
 </a>
+<button id="remind" class="reminder">Set Reminder</button>
     <form>
+        <h2>Pay Utility Bill</h2>
         <label for="billType">Bill Type:</label>
         <select id="billType" name="billType">
             <option value=""disabled selected >Select Utility</option>
@@ -96,15 +98,17 @@
         </select>
         <br><br>
 
-
-        <input type="checkbox" id="termsConditions" name="termsConditions" class="check-input"required>
-        <label for="termsConditions">I have read and agreed to the <a href="#">Terms and Conditions</a>.</label>
-
-        <br><br>
-
         <button id="pay" class="Pay" onclick="paybill()">Pay</button>
     </form>
     <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const util = document.getElementById('remind');
+    if (util) {
+      util.addEventListener('click', function () {
+        window.location.href = 'Reminder.html';
+      });
+    }
+  });
       var billTypeDropdown = document.getElementById('billType');
 var providerDropdown = document.getElementById('provider');
 
@@ -162,6 +166,14 @@ document.getElementById('accountNumber').addEventListener('input', function() {
   } else if (billNumber === '123456789') {
     dueDateField.value = '2023-05-30';
     amountField.value = 'EGP 1000';
+  }
+  else if (billNumber === '12345') {
+    dueDateField.value = '2023-05-31';
+    amountField.value = 'EGP 850';
+  }
+  else if (billNumber === '6789') {
+    dueDateField.value = '2023-06-07';
+    amountField.value = 'EGP 1200';
   } else {
     dueDateField.value = '';
     amountField.value = '';
@@ -171,16 +183,19 @@ document.getElementById('accountNumber').addEventListener('input', function() {
         </script>
         <script>
           function paybill() {
-    var form = document.querySelector('form');
+           var form = document.querySelector('form');
         var amountInput = document.getElementById('accountNumber');
           var Amount = parseInt(amountInput.value);
           var account = document.getElementById('accountSelection');
           var provider = document.getElementById('provider');
           var billamount = document.getElementById('billAmount');
-          var checkbox = document.getElementById('termsConditions');
 
-            
-               if (isNaN(Amount)) {
+              if (provider.selectedIndex===0){
+                  alert('Please select a provider.');
+                 
+                 return;
+               }
+               else  if (isNaN(Amount)) {
                 alert('Please enter a valid Bill number.');
                  return;
                }
@@ -188,10 +203,6 @@ document.getElementById('accountNumber').addEventListener('input', function() {
                   alert('Please select an Account.');
                  
                  return;
-               }
-               else if (!checkbox.checked) {
-                alert('Please agree to the terms and conditions.');
-                  return;
                }
                else{
               const confirmation = confirm('Are you sure you want to pay this bill?');

@@ -32,17 +32,12 @@
             var loanValue =loanElement.selectedIndex;
              var selectElement = row.querySelector('.account-input');
              var selectedValue = parseInt(selectElement.value);
-             var checkbox = row.querySelector('.check-input');
              var billamount = document.getElementById('amountToPay');
              var account = document.getElementById('accountNumber');
              if (loanValue===0) {
               alert('Please choose a loan.');
               return;
               }
-             if (!checkbox.checked) {
-              alert('Please agree to the terms and conditions.');
-                return;
-             }
             
              else{
               const confirmation = confirm('Are you sure you want to pay this loan installment?');
@@ -71,6 +66,7 @@
       }
     </script>
       <form>
+        <h2>Pay Loan Installment</h2>
         <label for="creditCard">Loan:</label>
         <select id="creditCard" class="loan-input">
           <option value="" disabled selected>Select Loan</option>
@@ -93,10 +89,6 @@
           <option value="500000">123456789</option>
           <option value="100000">987654321</option>
         </select>
-        <br><br>
-        <input type="checkbox" id="termsConditions"class="check-input" name="termsConditions" required>
-        <label for="termsConditions">I have read and agreed to the <a href="#">Terms and Conditions</a>.</label>
-  
         <br><br>
         <button id="pay" class="Pay" onclick="payccbill(this.parentNode.parentNode)">Pay</button>
       
