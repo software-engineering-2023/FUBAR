@@ -64,45 +64,72 @@ body {
             margin-left: 0;
         }
           
-          h1 {
-            color: #333;
-          }
-          
-          form {
-            margin-top: 200px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-          }
-          
-          label {
-            display: block;
-            margin-bottom: 5px;
-          }
-          
-          select {
-            width: 200px;
-            padding: 5px;
-            font-size: 16px;
-          }
-          
-          input[type="submit"] {
-            width: 150px;
-            padding: 10px;
-            background-color: #cc7f32;
-            border: none;
-            border-radius: 5px;
-            color: white;
-            font-weight: bold;
-            font-size: medium;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: background-color 0.3s;
-          }
-          
-          input[type="submit"]:hover {
-            background-color: #9d5d20;
-          }
+        .container {
+          width: 400px;
+          margin: 0 auto;
+          margin-top: 170px;
+          background-color: transparent;
+          border: 1px solid #ffffff;
+          border-radius: 10px;
+          padding: 20px;
+          text-align: left;
+        }
+      
+      h2 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #4F0341;
+      }
+      
+      label {
+          display: block;
+          margin-bottom: 12px;
+          text-align: left;
+          font-size: 18px;
+
+      }
+      
+      input[type="text"],
+      select {
+        width: 100%; /* Make the text boxes occupy the full width of the container */
+        padding: 8px; /* Increase the padding for the text boxes */
+        margin-bottom: 12px; /* Increase the margin-bottom value to separate the text boxes */
+        font-size: 16px; /* Increase the font-size for the text boxes */
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      
+      input[type="file"] {
+        width: 100%; /* Make the text boxes occupy the full width of the container */
+        padding: 8px; /* Increase the padding for the text boxes */
+        margin-bottom: 12px; /* Increase the margin-bottom value to separate the text boxes */
+        font-size: 16px; /* Increase the font-size for the text boxes */
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+      .openAcc-button {
+        border-radius: 5px;
+        padding: 10px 10px;
+        width: 150px;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: #4F0341;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        transition: transform 0.3s, background-color 0.3s;
+        
+      }
+      
+      .openAcc-button:hover{
+        background-color: #cc7f32;
+        transform: scale(1.1);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      }
 
           .back-link {
             position: fixed;

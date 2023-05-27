@@ -29,59 +29,62 @@
         Back
     </a>
 
-    <h1>Open Bank Account</h1>
+    <div class="container">
+      <h2>Open a Bank Account</h2>
+      <form id="bankAccountForm">
+          <label for="email">Email Address:</label>
+          <input type="text" id="email" required>
 
-    <form id="openAccountForm">
-        <label for="accountType">Account Type:</label>
-        <select id="accountType" name="accountType">
-            <option value="" disabled selected>Choose account type</option>
-            <option value="current">Current</option>
-            <option value="savings">Savings</option>
-        </select>
+          <label for="phoneNumber">Phone Number:</label>
+          <input type="text" id="phoneNumber" required>
 
-        <br>
+          <label for="proofIdentification">Proof of Identification:</label>
+          <input type="file" id="proofIdentification" required>
 
-        <label for="currency">Currency:</label>
-        <select id="currency" name="currency">
-            <option value="" disabled selected>Choose currency</option>
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="EGP">EGP</option>
-        </select>
+          <label for="proofAddress">Proof of Address:</label>
+          <input type="file" id="proofAddress" required>
 
-        <br>
+          <label for="currency">Currency:</label>
+          <select id="currency" required>
+              <option value="" disabled selected>Choose Currency</option>
+              <option value="usd">USD</option>
+              <option value="eur">EUR</option>
+              <option value="gbp">EGP</option>
+          </select>
 
-        <input type="submit" id="openAcc" value="Open Account">
-    </form>
+          <label for="accountType">Account Type:</label>
+          <select id="accountType" required>
+              <option value="" disabled selected>Choose your Account Type</option>
+              <option value="current">Current</option>
+              <option value="savings">Savings</option>
+          </select>
+
+          <button type="submit" id="openBankAcc" class="openAcc-button">Submit</button>
+
+      </form>
+  </div>
+
+  <script>
+    document.getElementById("bankAccountForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    var email = document.getElementById("email").value;
+    var phoneNumber = document.getElementById("phoneNumber").value;
+    var proofIdentification = document.getElementById("proofIdentification").value;
+    var proofAddress = document.getElementById("proofAddress").value;
+    var currency = document.getElementById("currency").value;
+    var accountType = document.getElementById("accountType").value;
+
+    if (email === "" || phoneNumber === "" || proofIdentification === "" || proofAddress === "" || currency === "" || accountType === "") {
+        alert("Please fill all the required fields.");
+    } else {
+        alert("Your bank account application will be reviewed and we will get back to you shortly.");
+        // You can submit the form here or perform any other actions
+    }
+});
 
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const openBankAccountButton = document.getElementById('openAcc');
-        if (openBankAccountButton) {
-          openBankAccountButton.addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent form submission
-            
-            // Get selected account type and currency
-            const accountType = document.getElementById('accountType').value;
-            const currency = document.getElementById('currency').value;
-        
-            // Check if account type and currency are selected
-            if (accountType === '' || currency === '') {
-              alert('Please choose a bank account type and currency.');
-              return; // Stop further execution
-            }
-        
-            // Show pop-up message
-            alert('Your application will get reviewed. We will get back to you soon.');
-        
-            // Clear form fields (optional)
-            document.getElementById('accountType').value = '';
-            document.getElementById('currency').value = '';
-          });
-        }
-      });
-    </script>
+  </script>
     
     
   
