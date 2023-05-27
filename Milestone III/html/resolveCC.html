@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../js/script.js"></script>
+    <link href="../css/style.css" rel="stylesheet" />
+    <link href="../css/resolveCC.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <meta charset="utf-8" />
+    <title>Banker Homepage</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="../img/FUBAR Logo.png" />
+        </div>
+        <ul>
+            <li><button id="Bhome" class="home" >Home</button></li>
+            <li><button>About Us</button></li>
+            <li><button id="Breport">Report Issue</button></li>
+            <li><button>Contact</button></li>
+        </ul>
+    </div>
+
+    <a href="Login.html" onclick="history.back()" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        Back
+    </a>
+
+    <div class="Bank-container">
+        <h1>Credit Card Issues</h1>
+    </div>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Credit Card Number</th>
+            <th>Issue</th>
+            <th>Description</th>
+            <th>Replacement</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1111222233334444</td>
+            <td id="bank1">Theft</td>
+            <td>My Credit Card was stolen at Cairo Festival today, so I want to close it</td>
+            <td>False</td>
+            <td><button class="close-account-button" onclick="highlightRow(this)">Issue Resolved</button></td>
+        </tr>
+        <tr>
+            <td>5555666677778888</td>
+            <td id="bank2">Damage</td>
+            <td>My dog ate my Credit Card and it no longer works</td>
+            <td>True</td>
+            <td><button class="close-account-button" onclick="highlightRow(this)">Issue Resolved</button></td>
+        </tr>
+    
+        <script>
+            function highlightRow(button) {
+                var row = button.parentNode.parentNode;
+                row.classList.add("highlight-row");
+                button.classList.add("disabled"); // Add the "disabled" class to the button after it is clicked
+            }
+        </script>
+
+</body>
+</html>

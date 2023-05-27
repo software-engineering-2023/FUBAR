@@ -102,6 +102,16 @@
     }
 
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const viewBankAccountsButton = document.getElementById('resolveCCIssues');
+    if (viewBankAccountsButton) {
+        viewBankAccountsButton.addEventListener('click', function () {
+            window.location.href = 'resolveCC.html';
+        });
+    }
+
+});
         </script>
 
 </body>
