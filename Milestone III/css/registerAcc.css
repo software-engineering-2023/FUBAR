@@ -1,0 +1,199 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Urbanist', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #ffffff, #4F0341);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 100px;
+}
+
+.navbar {
+    background-color: #4F0341;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 35px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    z-index: 999;
+}
+
+.navbar .logo {
+    margin-right: auto;
+}
+
+.navbar .logo img {
+    height: 60px;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+}
+
+.navbar li {
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+.navbar li button {
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.navbar li button:hover {
+    color: #ffffff;
+    background-color: #cc7f32;
+    transform: scale(1.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar li:first-child {
+    margin-left: 0;
+}
+
+.back-link {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    color: #4F0341;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
+    z-index: 1000;
+}
+
+.back-link:hover {
+    color: #4F0341;
+    transform: scale(1.1);
+}
+
+.back-link i {
+    margin-right: 5px;
+}
+
+  
+  .container {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 170px;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+  }
+
+  .container input[type="text"],
+  .container input[type="password"] {
+  width: 100%; /* Make the text boxes occupy the full width of the container */
+  padding: 8px; /* Increase the padding for the text boxes */
+  margin-bottom: 12px; /* Increase the margin-bottom value to separate the text boxes */
+  font-size: 16px; /* Increase the font-size for the text boxes */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+  
+  h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #4F0341;
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: 12px;
+    text-align: left;
+    font-size: 18px;
+  }
+  
+  .checkbox-label {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .checkbox-label a {
+    text-decoration: underline;
+    color: #cc7f32;
+    
+  }
+
+  .checkbox-label a:hover {
+    color: rgba(204, 127, 50, 0.7);
+    transform: scale(1.1);
+  }
+  
+  .checkbox-label input {
+    vertical-align: middle;
+  }
+  
+  .register-button{
+    border-radius: 5px;
+    padding: 10px 10px;
+    width: 150px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #4F0341;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  .register-button:hover{
+    background-color: #cc7f32;
+    transform: scale(1.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  #terms-error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+  }
+  
+  #required-error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+  }
+  
+  .bank-account-link {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .bank-account-link a {
+    color: #cc7f32;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .bank-account-link a:hover {
+    color: #9d5d20;
+  }
+  
+  

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link href="../css/registrationID.css" rel="stylesheet" />
+    <link href="../css/registerAcc.css" rel="stylesheet" />
     <script src="../js/script.js"></script>
 </head>
 <body>
@@ -23,10 +23,10 @@
     </div>
 
     <div class="container">
-      <h2>Register using your National ID/ Passport</h2>
+      <h2>Register using your Bank Account Number</h2>
       <form id="registration-form" onsubmit="return validateForm()">
-        <label for="national-id" class="label">National ID/ Passport number:</label>
-        <input type="text" id="national-id" required>
+        <label for="bankAcc" class="label">Bank Account Number:</label>
+        <input type="text" id="bankAcc" required>
 
         <label for="username" class="label">Username:</label>
         <input type="text" id="username" required>
@@ -41,20 +41,21 @@
           <label class="checkbox-label">
             <input type="checkbox" id="terms-checkbox" required>
             I have read and agreed to the
-            <a href="TCid.html">Terms and Conditions</a>
+            <a href="TCAcc.html">Terms and Conditions</a>
           </label>
           <div id="terms-error">Please tick the box</div>
         </div>
 
         <div id="required-error">Please fill in the required fields</div>
         <button type="submit" id="register" class="register-button">Register</button>
-      </div>
+        <p class="bank-account-link">Don't have a bank account? <a href="registrationID.html">Click here</a></p>
+    </div>
   
       </form>
       <div id="required-error">Please fill in the required fields</div>
     </div>
 
-    <a href="registerAcc.html" onclick="history.back()" class="back-link">
+    <a href="Login.html" onclick="history.back()" class="back-link">
         <i class="fas fa-arrow-left"></i>
         Back
     </a>
@@ -84,6 +85,5 @@
         return true;
       }
     </script>
-    
 </body>
 </html>
