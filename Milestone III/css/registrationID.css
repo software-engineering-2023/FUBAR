@@ -89,25 +89,39 @@ body {
 
   
   .container {
-    width: 500px;
+    width: 400px;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 170px;
     background-color: transparent;
     border: 1px solid #ffffff;
     border-radius: 10px;
     padding: 20px;
-    text-align: center;
+    text-align: left;
   }
+
+  .container input[type="text"],
+  .container input[type="password"] {
+  width: 100%; /* Make the text boxes occupy the full width of the container */
+  padding: 8px; /* Increase the padding for the text boxes */
+  margin-bottom: 12px; /* Increase the margin-bottom value to separate the text boxes */
+  font-size: 16px; /* Increase the font-size for the text boxes */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
   
   h2 {
     margin-top: 0;
-    
+    margin-bottom: 20px;
+    text-align: center;
+    color: #4F0341;
   }
   
   .label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     text-align: left;
+    font-size: 18px;
   }
   
   .checkbox-label {
@@ -117,16 +131,32 @@ body {
   
   .checkbox-label a {
     text-decoration: underline;
-    color: blue;
+    color: #cc7f32;
   }
   
   .checkbox-label input {
     vertical-align: middle;
   }
+  
   .register-button{
-    color: black;
+    border-radius: 5px;
+    padding: 10px 10px;
+    width: 150px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #4F0341;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    transition: transform 0.3s, background-color 0.3s;
   }
-
+  .register-button:hover{
+    background-color: #cc7f32;
+    transform: scale(1.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
   
   #terms-error {
     color: red;
@@ -141,4 +171,5 @@ body {
     margin-top: 10px;
     display: none;
   }
+  
   
