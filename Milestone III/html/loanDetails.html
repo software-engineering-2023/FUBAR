@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/script.js"></script>
+    <link href="../css/style.css" rel="stylesheet" />
+    <link href="../css/loanDetails.css" rel="stylesheet" />
+    <title>Review Loan Application Details| FUBAR</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="../img/FUBAR Logo.png" />
+        </div>
+        <ul>
+            <li><button id="Bhome" class="home" >Home</button></li>
+            <li><button>About Us</button></li>
+            <li><button id="Breport">Report Issue</button></li>
+            <li><button>Contact</button></li>
+        </ul>
+    </div>
+    
+    <a href="reviewLoans.html" onclick="history.back()" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        Back
+    </a>
+    <div class="page-header">
+        <h1>Loan Application Details</h1>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Loan Amount</th>
+                <th>Currency</th>
+                <th>Loan Type</th>
+                <th>Loan Purpose</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John Doe</td>
+                <td>john.doe@example.com</td>
+                <td>$100,000</td>
+                <td>USD</td>
+                <td>Personal Loan</td>
+                <td>Home Renovation</td>
+                <td>
+                    <button class="accept-button">Accept</button>
+                    <button class="reject-button">Reject</button>
+                </td>
+            </tr>
+            <!-- Add more rows for other loan applications -->
+        </tbody>
+        
+    </table>
+
+    <script src="../js/loan-details.js"></script>
+</body>
+</html>
