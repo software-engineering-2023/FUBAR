@@ -90,6 +90,15 @@
       });
     }
   });
+  document.addEventListener('DOMContentLoaded', function () {
+    const viewBankAccountsButton = document.getElementById('reviewLoanButton');
+    if (viewBankAccountsButton) {
+        viewBankAccountsButton.addEventListener('click', function () {
+            window.location.href = 'reviewLoans.html';
+        });
+    }
+
+});
         </script>
 
 </body>
