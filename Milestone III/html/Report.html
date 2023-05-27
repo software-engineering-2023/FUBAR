@@ -1,12 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="../js/script.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="../css/report.css" rel="stylesheet" />
+    <title>Report Issue | Online Banking</title>
+    <style>
+        .button-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: -10px; /* Adjust the value as needed */
+        }
+
+        .button-box {
+            flex: 1;
+            padding: 0 10px; /* Adjust the value as needed */
+        }
+
+        .transparent-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            border: none;
+            background-color: transparent;
+            width: 200px; /* Adjust the width as needed */
+            height: 100px; /* Adjust the height as needed */
+            font-size: 18px; /* Adjust the font-size as needed */
+        }
+
+        .transparent-button img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-    Hello i am report issue
+    <div class="navbar">
+        <div class="logo">
+            <img src="../img/FUBAR Logo.png" />
+        </div>
+        <ul>
+            <li><button id="home" class="home">Home</button></li>
+            <li><button>About Us</button></li>
+            <li><button id="report">Report Issue</button></li>
+            <li><button>Contact</button></li>
+        </ul>
+    </div>
+    <div class="report-page">
+        <div class="button-container">
+            <h1>Choose the type of issue you're facing</h1>
+            <div class="button-row">
+                <div class="button-box">
+                    <button class="transparent-button" id="techissue">
+                        <img src="../img/techissue.png" alt="Technical Issue" />
+                        <span>Technical Issue</span>
+                    </button>
+                </div>
+                <div class="button-box">
+                    <button class="transparent-button" id="ccissue">
+                        <img src="../img/ccissuefinal.png" alt="Credit Card Issue" />
+                        <span>Credit Card Issue</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+            <a href="client.html" onclick="history.back()" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back
+            </a> 
+
+        <script>
+ document.addEventListener('DOMContentLoaded', function () {
+    const homeButton = document.getElementById('techissue');
+    if (homeButton) {
+      homeButton.addEventListener('click', function () {
+        window.location.href = 'techissue.html';
+      });
+    }
+  });
+  
+  document.addEventListener('DOMContentLoaded', function () {
+    const reportButton = document.getElementById('ccissue');
+    if (reportButton) {
+      reportButton.addEventListener('click', function () {
+        window.location.href = 'ccissue.html';
+      });
+    }
+  });
+        </script>
 </body>
 </html>
