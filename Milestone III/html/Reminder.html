@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/reminder.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Set Reminder | Online Banking</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="../img/FUBAR Logo.png" />
+        </div>
+        <ul>
+            <li><button id="home" class="home">Home</button></li>
+            <li><button>About Us</button></li>
+            <li><button id="report">Report Issue</button></li>
+            <li><button>Contact</button></li>
+        </ul>
+    </div>
+    <a href="utilityBills.html" onclick="history.back()" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        Back
+    </a>
+    <form>
+        <h2>Set Utility Bill Reminder</h2>
+        <label for="billType">Bill Type:</label>
+        <select id="billType" name="billType">
+            <option value=""disabled selected >Select Utility</option>
+            <option value="electricity">Electricity</option>
+            <option value="water">Water</option>
+            <option value="gas">Gas</option>
+            <option value="internet">Internet</option>
+        </select>
+        <br><br>
+        <label for="provider">Provider:</label>
+<select id="provider" name="provider">
+    <!-- Provider options will be dynamically updated here -->
+</select>
+        <br><br>
+        <label for="accountNumber" >Bill Number:</label>
+        <input type="text"class="num-input" id="accountNumber" name="accountNumber" required>
+
+        <br><br>
+
+        <label for="billAmount">Bill Amount:</label>
+        <input type="text" class="amount-input" id="billAmount" name="billAmount" readonly>
+
+        <br><br>
+
+        <label for="billDueDate">Bill Due Date:</label>
+        <input type="date" id="billDueDate" name="billDueDate" readonly>
+        <br><br>
+      <label for="reminder-date">Reminder Date:</label>
+      <input type="datetime-local" id="reminder-date" name="reminder-date" required><br><br>
+      
+      <label for="payment-method">Receive reminder via</label>
+       <div class="checkbox-container">
+        <input type="checkbox" id="item1" name="item1" value="Item 1">
+        <label for="items1">SMS</label>
+      </div>
+      
+      <div class="checkbox-container">
+        <input type="checkbox" id="item2" name="item2" value="Item 2">
+        <label for="items2">E-mail</label>
+      </div>
+      
+      <div class="checkbox-container">
+        <input type="checkbox" id="item3" name="item3" value="Item 3">
+        <label for="items3">Website</label>
+      </div>
+      
+      <button id="pay" class="Pay" onclick="paybill()">Set Reminder</button>
+    </form>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const util = document.getElementById('remind');
+          if (util) {
+            util.addEventListener('click', function () {
+              window.location.href = 'Reminder.html';
+            });
+          }
+        });
+            var billTypeDropdown = document.getElementById('billType');
+      var providerDropdown = document.getElementById('provider');
+      
+      // Define the providers for each bill type
+      var providerOptions = {
+          electricity: ['North Cairo Electricity', 'Canal Electricty', 'Middle Egypt Electricity','Upper Egypt Electricity'],
+          water: ['Epaes Egypt', 'Taqa Water', 'Holding Co.','Nasr City Water Company','Puvana Water'],
+          gas: ['Gastec Company', 'Egypt Gas', 'Town Gas','Nobel Energy Egypt'],
+          internet: ['WE Internet', 'Vodafone', 'Orange DSL','Etisalat']
+      };
+      
+      // Function to update the provider dropdown based on the selected bill type
+      function updateProviderOptions() {
+      
+          var selectedBillType = billTypeDropdown.value;
+          providerDropdown.innerHTML = '';
+      
+          var option = document.createElement('option');
+                  option.text = "Select Provider";
+                  option.value = "";
+                  option.disabled=true;
+                  option.selected=true;
+                  providerDropdown.appendChild(option);
+          if (selectedBillType !== '') {
+              var options = providerOptions[selectedBillType];
+              for (var i = 0; i < options.length; i++) {
+                  var option = document.createElement('option');
+                  option.text = options[i];
+                  option.value = options[i];
+                  providerDropdown.appendChild(option);
+              }
+          }
+          
+          // Clear the selected provider and update other fields
+          providerDropdown.value = '';
+          document.getElementById('accountNumber').value = '';
+          document.getElementById('billAmount').value = '';
+          document.getElementById('billDueDate').value = '';
+      }
+      
+      // Attach an event listener to the bill type dropdown to trigger the update
+      billTypeDropdown.addEventListener('change', updateProviderOptions);
+      
+      // Initial update of the provider dropdown based on the default selected bill type
+      updateProviderOptions();
+      document.getElementById('accountNumber').addEventListener('input', function() {
+        var billNumber = this.value;
+        var amountField = document.getElementById('billAmount');
+        var dueDateField = document.getElementById('billDueDate');
+      
+        // Update form fields based on the entered bill number
+        if (billNumber === '01205951591') {
+          amountField.value = 'EGP 200';
+          dueDateField.value = '2023-06-03';
+        } else if (billNumber === '123456789') {
+          amountField.value = 'EGP 1000';
+        } 
+        else if (billNumber === '12345') {
+        dueDateField.value = '2023-05-30';
+          amountField.value = 'EGP 850';
+        }
+        else if (billNumber === '6789') {
+            dueDateField.value = '2023-06-07';
+          amountField.value = 'EGP 1200';
+        }else {
+          dueDateField.value = '';
+          amountField.value = '';
+        }
+      });
+            
+              </script>
+               <script>
+                function paybill() {
+//                  var form = document.querySelector('form');
+              var amountInput = document.getElementById('accountNumber');
+                var Amount = parseInt(amountInput.value);
+//                 var account = document.getElementById('accountSelection');
+                var datetime = document.getElementById('reminder-date');
+//                 var billamount = document.getElementById('billAmount');
+                var provider = document.getElementById('provider');
+                var checkbox1 = document.getElementById('item1');
+                var checkbox2 = document.getElementById('item2');
+                var checkbox3 = document.getElementById('item3');
+            
+                if (provider.selectedIndex===0){
+                  alert('Please select a provider.');
+                 
+                 return;
+               }
+                    else if (isNaN(Amount)) {
+                      alert('Please enter a valid Bill number.');
+                       return;
+                     }
+                    
+                     else if (!datetime.value){
+                        alert('Please enter a valid date and time.');
+                        return;
+                     }
+                     else if (!checkbox1.checked && !checkbox2.checked && !checkbox3.checked) {
+  alert('Please pick at least one reminder method');
+  return;
+}
+                     else{
+                    const confirmation = confirm('Are you sure you want to set a reminder?');
+                     if (!confirmation) {
+                      return false;
+                       }
+//                   // Success
+                  var confirmationMessage = 'Reminder Set Successfully!\n' +
+                  'For Bill Number: ' +  Amount + '\n' +
+                  'On ' + datetime.value + '\n';
+                  alert(confirmationMessage);
+//           //         setTimeout(function () {
+//           /// form.reset();
+//           // }, 100); // Adjust the delay as needed
+       }
+                }
+            </script>
+  </body>
+</html>

@@ -30,10 +30,21 @@
    <script>
     document.addEventListener('DOMContentLoaded', function () {
 const homeButton = document.getElementById('Report');
+const card = document.getElementById('creditCard');
+const cardIssue = document.getElementById('creditCardI');
 const checkbox = document.getElementById('replacement');
 if (homeButton) {
 homeButton.addEventListener('click', function () {
-    if(checkbox.checked){
+             if(card.selectedIndex===0){
+                  alert('Please select a credit card.');
+                 
+                 return;
+               }
+               else if (cardIssue.selectedIndex===0){
+                alert('Please select the type of issue you are facing.');
+                return;
+               }
+   else if(checkbox.checked){
         alert('Issue reported Successfully and Replacement application sent')
     }
   else{
@@ -45,14 +56,17 @@ homeButton.addEventListener('click', function () {
 </script>
    <div class="report-page">
     <form>
-        <label for="creditCard">Select Credit Card:</label>
+      <h2>Report Credit Card Issue</h2>
+        <label for="creditCard">Credit Card:</label>
         <select id="creditCard" name="creditCard" class="card-input">
+          <option value=""disabled selected >Select Credit Card</option>
           <option value="card1" >1111222233334444</option>
           <option value="card2">5555666677778888</option>
         </select>
         <br><br>
         <label for="creditCard">Issue:</label>
-        <select id="creditCard" name="creditCard" class="card-input">
+        <select id="creditCardI" name="creditCard" class="card-input">
+          <option value=""disabled selected >Select Issue</option>
           <option value="card1" >Loss</option>
           <option value="card2">Theft</option>
           <option value="card2">Damage</option>
