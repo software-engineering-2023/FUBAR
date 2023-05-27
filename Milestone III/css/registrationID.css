@@ -10,6 +10,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    margin: 100px;
 }
 
 .navbar {
@@ -132,6 +133,12 @@ body {
   .checkbox-label a {
     text-decoration: underline;
     color: #cc7f32;
+    
+  }
+
+  .checkbox-label a:hover {
+    color: rgba(204, 127, 50, 0.7);
+    transform: scale(1.1);
   }
   
   .checkbox-label input {
