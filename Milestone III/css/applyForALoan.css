@@ -72,12 +72,13 @@
     margin-left: 0;
   }
   h1 {
-    font-size: 24px;
-    color: purple;
-    text-align: left;
-    margin-top: 10px;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 150px;
     margin-left: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   
   .Loan-page {
@@ -86,11 +87,10 @@
   
   form {
     width: 100%;
-    margin-top: 30px;
+    margin-top: 10px;
     padding: 30px;
-    background-color:  linear-gradient(to bottom, #ffffff, #4F0341);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color:  transparent;
+    
   }
   
   .form-group {
@@ -126,11 +126,37 @@
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    font-weight: bold;
   }
   
   button[type="submit"]:hover {
     background-color: #cc7f32;
+    transform: scale(1.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
+
+  .back-link {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    color: #4F0341;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
+    z-index: 1000;
+  }
+  
+  .back-link:hover {
+    color: #4F0341;
+    transform: scale(1.1);
+  }
+  
+  .back-link i {
+    margin-right: 5px;
+  }
+  
   
