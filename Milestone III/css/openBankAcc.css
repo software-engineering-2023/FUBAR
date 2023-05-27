@@ -73,7 +73,9 @@ body {
           border-radius: 10px;
           padding: 20px;
           text-align: left;
+          margin-bottom: 100px;
         }
+       
       
       h2 {
         margin-top: 0;
@@ -130,6 +132,29 @@ body {
         transform: scale(1.1);
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
       }
+
+      .checkbox-label {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      
+      .checkbox-label a {
+        text-decoration: underline;
+        color: #cc7f32;
+        
+      }
+    
+      .checkbox-label a:hover {
+        color: rgba(204, 127, 50, 0.7);
+        transform: scale(1.1);
+      }
+      
+      .checkbox-label input {
+        vertical-align: middle;
+      }
+      
+    
+    
 
           .back-link {
             position: fixed;
