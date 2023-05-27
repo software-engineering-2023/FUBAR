@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="../css/ccissue.css" rel="stylesheet" />
+    <title>Credit Card Issue | Online Banking</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="../img/FUBAR Logo.png" />
+        </div>
+        <ul>
+          <li><button id="home" class="home">Home</button></li>
+            <li><button>About Us</button></li>
+            <li><button id="report">Report Issue</button></li>
+            <li><button>Contact</button></li>
+        </ul>
+    </div>
+
+    <a href="Report.html" onclick="history.back()" class="back-link">
+      <i class="fas fa-arrow-left"></i>
+      Back
+   </a>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+const homeButton = document.getElementById('Report');
+const checkbox = document.getElementById('replacement');
+if (homeButton) {
+homeButton.addEventListener('click', function () {
+    if(checkbox.checked){
+        alert('Issue reported Successfully and Replacement application sent')
+    }
+  else{
+    alert('Issue reported Successfully')
+  }
+});
+}
+});
+</script>
+   <div class="report-page">
+    <form>
+        <label for="creditCard">Select Credit Card:</label>
+        <select id="creditCard" name="creditCard" class="card-input">
+          <option value="card1" >1111222233334444</option>
+          <option value="card2">5555666677778888</option>
+        </select>
+        <br><br>
+        <label for="creditCard">Issue:</label>
+        <select id="creditCard" name="creditCard" class="card-input">
+          <option value="card1" >Loss</option>
+          <option value="card2">Theft</option>
+          <option value="card2">Damage</option>
+        </select>
+        <br><br>
+        <label for="purpose">Description:</label>
+        <textarea id="purpose" name="purpose" ></textarea>
+        <br><br>
+        <input type="checkbox" id="replacement"class="check-input" name="termsConditions">
+        <label for="termsConditions">Apply For Replacement</label>
+  
+        <br><br>
+        <button id="Report" class="Pay">Report</button>
+    </form>
+   </div>
+   
+    
+</body>
+</html>
