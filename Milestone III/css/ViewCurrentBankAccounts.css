@@ -154,5 +154,26 @@ tbody {
     pointer-events: none;
     opacity: 0.5;
 }
+.back-link {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    color: #4F0341;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
+    z-index: 1000;
+  }
+  
+  .back-link:hover {
+    color:#4F0341;
+    transform: scale(1.1);
+  }
+  
+  .back-link i {
+    margin-right: 5px;
+  }
+  
 
    

@@ -1,10 +1,12 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Client Page | Online Banking</title>
+    <script src="../js/script.js"></script>
+    <title>Bank Accounts | Online Banking</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="../css/ViewCurrentBankAccounts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <style>
         /* Add the CSS styles here */
         * {
@@ -47,8 +49,10 @@
             pointer-events: none;
         }
     </style>
+    
 </head>
 <body>
+    
     <div class="navbar">
         <div class="logo">
             <img src="../img/FUBAR Logo.png" />
@@ -62,6 +66,10 @@
     </div>
 
     <div class="BankAccounts-page">
+        <a href="client.html" onclick="history.back()" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Back
+        </a>
         <div class="Bank-container">
             <h1>Here are your current bank accounts, Dareen!</h1>
         </div>
@@ -80,14 +88,14 @@
         <tbody>
             <tr>
                 <td>123456789</td>
-                <td>500,000</td>
+                <td id="bank1">500000</td>
                 <td>EGP</td>
                 <td><button class="view-transactions-button" id="viewTransactionsButtonInBA">View Transactions</button></td>
                 <td><button class="close-account-button" onclick="highlightRow(this)">Close Bank Account</button></td>
             </tr>
             <tr>
                 <td>987654321</td>
-                <td>100,000</td>
+                <td id="bank2">100000</td>
                 <td>EGP</td>
                 <td><button class="view-transactions-button">View Transactions</button></td>
                 <td><button class="close-account-button" onclick="highlightRow(this)">Close Bank Account</button></td>
@@ -95,7 +103,24 @@
             <!-- Add more rows for other bank accounts -->
         </tbody>
     </table>
+    <!-- <script>
+        // Retrieve the payment data from sessionStorage
+        var paymentDataJson = sessionStorage.getItem('paymentData');
 
+        // Check if payment data exists
+        if (paymentDataJson) {
+            // Parse the payment data from JSON string to object
+            var paymentData = JSON.parse(paymentDataJson);
+
+            // Access the payment details and update the table or display them as needed
+            if (paymentData.accountNumber === '123456789') {
+        document.getElementById('bank1').textContent = 'New Value for Bank 1';
+    } else if (paymentData.accountNumber === '987654321') {
+        document.getElementById('bank2').textContent = 'New Value for Bank 2';
+    }
+
+        }
+    </script> -->
     <script>
         function highlightRow(button) {
             var row = button.parentNode.parentNode;
@@ -111,6 +136,25 @@
                 });
             }
         });
+    </script>
+    <script>
+        // Retrieve the payment data from sessionStorage
+        var paymentDataJson = sessionStorage.getItem('paymentData');
+
+        // Check if payment data exists
+        if (paymentDataJson) {
+            // Parse the payment data from JSON string to object
+            var paymentData = JSON.parse(paymentDataJson);
+
+            // Access the payment details and update the table or display them as needed
+            if (paymentData.accountNumber === '123456789') {
+                var newBalance= parseInt(document.getElementById('bank1').textContent)-paymentData.Balance
+                document.getElementById('bank1').textContent = newBalance;
+            } else if (paymentData.accountNumber === '987654321') {
+                var newBalance= parseInt(document.getElementById('bank2').textContent)-paymentData.Balance
+                document.getElementById('bank2').textContent = newBalance;
+            }
+        }
     </script>
 </body>
 </html>

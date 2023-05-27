@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   <script src="../js/script.js"></script>
     <link href="../css/loaninstallments.css" rel="stylesheet" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,11 +30,11 @@
         function payccbill(row) {
             var loanElement = row.querySelector('.loan-input');
             var loanValue =loanElement.selectedIndex;
-              var selectElement = row.querySelector('.account-input');
-             var selectedValue = parseInt(selectElement.value.substr(4));
-             var billElement = row.querySelector('.bill-input');
-             var billValue = parseInt(billElement.value.substr(4));
+             var selectElement = row.querySelector('.account-input');
+             var selectedValue = parseInt(selectElement.value);
              var checkbox = row.querySelector('.check-input');
+             var billamount = document.getElementById('amountToPay');
+             var account = document.getElementById('accountNumber');
              if (loanValue===0) {
               alert('Please choose a loan.');
               return;
@@ -43,16 +44,36 @@
                 return;
              }
             
-            else{
-  
-              alert('Installment Paid Successfully')
-            }
+             else{
+              const confirmation = confirm('Are you sure you want to pay this loan installment?');
+               if (!confirmation) {
+                return false;
+                 }
+            // Success
+            var paymentData = {
+                
+                accountNumber: account.options[account.selectedIndex].text,
+                Balance:parseInt(billamount.value.substr(4)),
+               
+            };
+
+            // Convert the data object to a JSON string
+            var paymentDataJson = JSON.stringify(paymentData);
+            account.value=parseInt(account.value)-parseInt(billamount.value.substr(4));
+            // Store the data in sessionStorage
+            sessionStorage.setItem('paymentData', paymentDataJson);
+            var confirmationMessage = 'Installment Paid Successfully!\n' +
+            'Paid ' +  billamount.value + '\n' +
+            'Date: ' + new Date().toLocaleDateString() + '\n';
+            alert(confirmationMessage);
             
         }
+      }
     </script>
       <form>
-        <label for="creditCard">Select Loan:</label>
+        <label for="creditCard">Loan:</label>
         <select id="creditCard" class="loan-input">
+          <option value="" disabled selected>Select Loan</option>
           <option value="card1" >92019748032</option>
           <option value="card2">64717491702</option>
         </select>
@@ -66,8 +87,9 @@
   <input type="date" id="dueDate" name="dueDate"value="" readonly>
         <br><br>
         
-        <label for="accountNumber">Select Account:</label>
+        <label for="accountNumber">Account:</label>
         <select id="accountNumber" class="account-input" name="accountNumber">
+          <option value="" disabled selected>Select Account</option>
           <option value="500000">123456789</option>
           <option value="100000">987654321</option>
         </select>
@@ -104,8 +126,6 @@
     });
     
       </script>
-  
-  
-  
+
   </body>
-</html>
+</html> 

@@ -107,6 +107,7 @@
     width: 250px; /* Adjust the width as desired */
     height: 250px; /* Adjust the height as desired */
     margin: 10px;
+    margin-right: 15px;
 }
 
 .transparent-button {

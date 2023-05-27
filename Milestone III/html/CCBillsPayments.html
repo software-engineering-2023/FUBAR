@@ -35,10 +35,12 @@
           var amountInput = row.querySelector('.amount-input');
           var Amount = parseInt(amountInput.value);
           var selectElement = row.querySelector('.account-input');
-           var selectedValue = parseInt(selectElement.value.substr(4));
+           var selectedValue = parseInt(selectElement.value);
            var billElement = row.querySelector('.bill-input');
            var billValue = parseInt(billElement.value.substr(4));
            var checkbox = row.querySelector('.check-input');
+           var billamount = document.getElementById('amount');
+             var account = document.getElementById('accountNumber');
            if (loanValue===0) {
               alert('Please choose a credit card.');
               return;
@@ -63,15 +65,36 @@
           }
           
           else{
+              const confirmation = confirm('Are you sure you want to pay this amount?');
+               if (!confirmation) {
+                return false;
+                 }
+            // Success
+            var paymentData = {
+                
+                accountNumber: account.options[account.selectedIndex].text,
+                Balance: parseInt(billamount.value),
+               
+            };
+            account.value=parseInt(account.value)-parseInt(billamount.value);
+            // Convert the data object to a JSON string
+            var paymentDataJson = JSON.stringify(paymentData);
 
-            alert('Amount Paid Successfully')
-          }
+            // Store the data in sessionStorage
+            sessionStorage.setItem('paymentData', paymentDataJson);
+            var confirmationMessage = 'Amount Paid Successfully!\n' +
+            'Paid ' +  billamount.value + '\n' +
+            'Date: ' + new Date().toLocaleDateString() + '\n';
+            alert(confirmationMessage);
+            
+        }
           
       }
   </script>
     <form>
-      <label for="creditCard">Select Credit Card:</label>
+      <label for="creditCard">Credit Card:</label>
       <select id="creditCard" name="creditCard" class="card-input">
+        <option value="" disabled selected>Select Credit Card</option>
         <option value="card1" >1111222233334444</option>
         <option value="card2">5555666677778888</option>
       </select>
@@ -92,8 +115,9 @@
       
       
       
-      <label for="accountNumber">Select Account:</label>
+      <label for="accountNumber">Account:</label>
       <select id="accountNumber" class="account-input" name="accountNumber">
+        <option value="" disabled selected>Select Account</option>
         <option value="500000">123456789</option>
         <option value="100000">987654321</option>
       </select>

@@ -60,6 +60,7 @@
     <form>
         <label for="billType">Bill Type:</label>
         <select id="billType" name="billType">
+            <option value=""disabled selected >Select Utility</option>
             <option value="electricity">Electricity</option>
             <option value="water">Water</option>
             <option value="gas">Gas</option>
@@ -87,10 +88,11 @@
 
         <br><br>
 
-        <label for="accountSelection">Account Selection:</label>
+        <label for="accountSelection">Account</label>
         <select id="accountSelection" class="account-input" name="accountSelection">
+            <option value=""disabled selected >Select Account</option>
             <option value="500000">123456789</option>
-        <option value="100000">987654321</option>
+             <option value="100000">987654321</option>
         </select>
         <br><br>
 
@@ -100,7 +102,7 @@
 
         <br><br>
 
-        <button id="pay" class="Pay" onclick="paybill(this.form)">Pay</button>
+        <button id="pay" class="Pay" onclick="paybill()">Pay</button>
     </form>
     <script>
       var billTypeDropdown = document.getElementById('billType');
@@ -116,20 +118,31 @@ var providerOptions = {
 
 // Function to update the provider dropdown based on the selected bill type
 function updateProviderOptions() {
-    // Get the selected bill type
+
     var selectedBillType = billTypeDropdown.value;
-    
-    // Clear existing options in the provider dropdown
     providerDropdown.innerHTML = '';
-    
-    // Add the options for the selected bill type
-    var options = providerOptions[selectedBillType];
-    for (var i = 0; i < options.length; i++) {
-        var option = document.createElement('option');
-        option.text = options[i];
-        option.value = options[i];
-        providerDropdown.appendChild(option);
+
+    var option = document.createElement('option');
+            option.text = "Select Provider";
+            option.value = "";
+            option.disabled=true;
+            option.selected=true;
+            providerDropdown.appendChild(option);
+    if (selectedBillType !== '') {
+        var options = providerOptions[selectedBillType];
+        for (var i = 0; i < options.length; i++) {
+            var option = document.createElement('option');
+            option.text = options[i];
+            option.value = options[i];
+            providerDropdown.appendChild(option);
+        }
     }
+    
+    // Clear the selected provider and update other fields
+    providerDropdown.value = '';
+    document.getElementById('accountNumber').value = '';
+    document.getElementById('billAmount').value = '';
+    document.getElementById('billDueDate').value = '';
 }
 
 // Attach an event listener to the bill type dropdown to trigger the update
@@ -137,45 +150,76 @@ billTypeDropdown.addEventListener('change', updateProviderOptions);
 
 // Initial update of the provider dropdown based on the default selected bill type
 updateProviderOptions();
-        document.getElementById('accountNumber').addEventListener('change', function() {
-        var selectedCard = this.value;
-        var amountField = document.getElementById('billAmount');
-        var dueDateField = document.getElementById('billDueDate');
-      
-        // Update form fields based on the selected credit card
-        if (selectedCard === '12345') {
-          dueDateField.value = '2023-06-01';
-          amountField.value = 'EGP 500';
-        } else if (selectedCard === '54321') {
-          dueDateField.value = '2023-06-15';
-          amountField.value ='EGP 750';
-        } else if (selectedCard === '56789') {
-          dueDateField.value = '2023-06-30';
-          amountField.value = 'EGP 200';
-        } else {
-          dueDateField.value = '';
-          amountField.value ='';
-        }
-      });
+document.getElementById('accountNumber').addEventListener('input', function() {
+  var billNumber = this.value;
+  var amountField = document.getElementById('billAmount');
+  var dueDateField = document.getElementById('billDueDate');
+
+  // Update form fields based on the entered bill number
+  if (billNumber === '01205951591') {
+    dueDateField.value = '2023-06-03';
+    amountField.value = 'EGP 200';
+  } else if (billNumber === '123456789') {
+    dueDateField.value = '2023-05-30';
+    amountField.value = 'EGP 1000';
+  } else {
+    dueDateField.value = '';
+    amountField.value = '';
+  }
+});
       
         </script>
         <script>
-          function paybill(row) {
-          var amountInput = row.querySelector('.num-input');
+          function paybill() {
+    var form = document.querySelector('form');
+        var amountInput = document.getElementById('accountNumber');
           var Amount = parseInt(amountInput.value);
-               var checkbox = row.querySelector('.check-input');
+          var account = document.getElementById('accountSelection');
+          var provider = document.getElementById('provider');
+          var billamount = document.getElementById('billAmount');
+          var checkbox = document.getElementById('termsConditions');
+
+            
                if (isNaN(Amount)) {
                 alert('Please enter a valid Bill number.');
                  return;
                }
-               if (!checkbox.checked) {
+               else if (account.selectedIndex===0){
+                  alert('Please select an Account.');
+                 
+                 return;
+               }
+               else if (!checkbox.checked) {
                 alert('Please agree to the terms and conditions.');
                   return;
                }
-              else{
-                alert('Bill Paid Successfully')
-              }
-              
+               else{
+              const confirmation = confirm('Are you sure you want to pay this bill?');
+               if (!confirmation) {
+                return false;
+                 }
+            // Success
+            var paymentData = {
+                
+                accountNumber: account.options[account.selectedIndex].text,
+                Balance: parseInt(billamount.value.substr(4)),
+               
+            };
+           // account.value=parseInt(account.value)-parseInt(billamount.value.substr(4));
+            // Convert the data object to a JSON string
+            var paymentDataJson = JSON.stringify(paymentData);
+
+            // Store the data in sessionStorage
+            sessionStorage.setItem('paymentData', paymentDataJson);
+            var confirmationMessage = 'Bill Paid Successfully!\n' +
+            'Paid ' +  billamount.value + '\n' +
+            'To ' + provider.value + '\n' +
+            'Date: ' + new Date().toLocaleDateString() + '\n';
+            alert(confirmationMessage);
+    //         setTimeout(function () {
+    /// form.reset();
+    // }, 100); // Adjust the delay as needed
+}
           }
       </script>
 </body>
