@@ -73,8 +73,8 @@
             <input type="number" id="income" name="income" required>
         </div>
         <div class="form-group">
-            <label for="employer-name">Employer Name:</label>
-            <input type="text" id="employer-name" name="employer-name" required>
+            <label for="employer-name">Loan Purpose:</label>
+            <input type="textarea" id="employer-name" name="employer-name" required>
         </div>
         <div class="form-group">
             <label class="checkbox-label">
@@ -148,7 +148,7 @@
                  return;
                }
                else if (employerNameInput.value===''){
-                  alert('Please enter your employer name. All Fields must be filled.');
+                  alert('Please enter your loan purpose. All Fields must be filled.');
                  
                  return;
                }

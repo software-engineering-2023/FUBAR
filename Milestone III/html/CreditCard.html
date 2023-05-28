@@ -104,8 +104,16 @@
         </tbody>
     </table>
 
-    <div class="message">
-        <p>Apply for a new credit card? <a href="applyForACreditCard.html">Click here</a></p>
-    </div>
+    <button id="loanapp" class="applyloan">Apply For a New Credit Card</button>
+    <script>
+         document.addEventListener('DOMContentLoaded', function () {
+    const homeButton = document.getElementById('loanapp');
+    if (homeButton) {
+      homeButton.addEventListener('click', function () {
+        window.location.href = 'applyForACreditCard.html';
+      });
+    }
+  });
+    </script>
 </body>
 </html>

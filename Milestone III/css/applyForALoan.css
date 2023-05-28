@@ -127,6 +127,7 @@ textarea {
   input[type="text"],
   input[type="email"],
   input[type="number"],
+  input[type="textarea"],
   textarea,
   select {
     width: 100%;
