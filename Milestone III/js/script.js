@@ -1,4 +1,36 @@
-﻿document.addEventListener('DOMContentLoaded', function () {
+﻿document.addEventListener('DOMContentLoaded', function() {
+  const viewNotifsButton = document.getElementById('reminders');
+  if (viewNotifsButton) {
+      viewNotifsButton.addEventListener('click', function() {
+          window.location.href = 'reminders.html';
+      });
+  }
+});
+document.addEventListener('DOMContentLoaded', function() {
+const viewNotifsButton = document.getElementById('notifs');
+if (viewNotifsButton) {
+    viewNotifsButton.addEventListener('click', function() {
+        window.location.href = 'notifs.html';
+    });
+}
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const viewNotifsButton = document.getElementById('contact');
+  if (viewNotifsButton) {
+      viewNotifsButton.addEventListener('click', function() {
+          window.location.href = 'contact.html';
+      });
+  }
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const viewNotifsButton = document.getElementById('contact2');
+  if (viewNotifsButton) {
+      viewNotifsButton.addEventListener('click', function() {
+          window.location.href = 'contactNoRegister.html';
+      });
+  }
+});
+document.addEventListener('DOMContentLoaded', function () {
     const getStartedButton = document.getElementById('getStartedButton');
     if (getStartedButton) {
       getStartedButton.addEventListener('click', function () {
@@ -209,19 +241,4 @@
     document.getElementById('currency').value = '';
   });
   
-  document.addEventListener('DOMContentLoaded', function() {
-    const viewNotifsButton = document.getElementById('reminders');
-    if (viewNotifsButton) {
-        viewNotifsButton.addEventListener('click', function() {
-            window.location.href = 'reminders.html';
-        });
-    }
-});
-document.addEventListener('DOMContentLoaded', function() {
-  const viewNotifsButton = document.getElementById('notifs');
-  if (viewNotifsButton) {
-      viewNotifsButton.addEventListener('click', function() {
-          window.location.href = 'notifs.html';
-      });
-  }
-});
+ 

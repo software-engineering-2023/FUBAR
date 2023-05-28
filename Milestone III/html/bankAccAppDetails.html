@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="../css/ccDetails.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Review Bank Account Details | FUBAR Egypt</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="../img/FUBAR Logo.png" />
+        </div>
+        <ul>
+            <li><button id="home" class="home">Home</button></li>
+            <li><button>About Us</button></li>
+            <li><button id="report">Report Issue</button></li>
+            <li><button>Contact</button></li>
+        </ul>
+    </div>
+    <a href="reviewBankAccApps.html" onclick="history.back()" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        Back
+    </a>
+
+    <div class="cc-details-container">
+        <h1>Application Number: 717171</h1>
+        <table>
+            <tr>
+                <th>Name:</th>
+                <td><span id="name">Dareen Khalifa</span></td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td><span id="email">dareensamir29@gmail.com</span></td>
+            </tr>
+            <tr>
+                <th>Phone No.:</th>
+                <td><span id="phoneNumber">01025051056</span></td>
+            </tr>
+            <tr>
+                <th>Currency:</th>
+                <td><span id="currency">USD</span></td>
+            </tr>
+            <tr>
+                <th>Account type:</th>
+                <td><span id="accType">Current</span></td>
+            </tr>
+        </table>
+
+        <div class="button-container">
+            <button onclick="downloadBankAccDocs()" class="download-button">View Documents</button>
+        </div>
+    </div>
+
+    <script>
+        function downloadBankAccDocs() {
+            var proofOfAddressUrl = 'pdfs/ProofOfAddress.pdf';
+            var proofOfIdentificationUrl = 'pdfs/ProofOfIdentification.pdf';
+            downloadFile(proofOfAddressUrl, "Proof of Address");
+            downloadFile(proofOfIdentificationUrl, "Proof of Identification");
+        }
+
+        function downloadFile(url, fileName) {
+            var link = document.createElement("a");
+            link.href = url;
+            link.download = fileName;
+            link.click();
+        }
+    </script>
+</body>
+</html>
