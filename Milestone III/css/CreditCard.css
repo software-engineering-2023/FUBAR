@@ -231,4 +231,26 @@ tbody {
   .message a:hover {
     color: #cc7f32;
   }
+  .applyloan {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    color: white;
+  background-color: #4F0341;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: transform 0.3s, background-color 0.3s;
+  }
   
+  .applyloan:hover {
+    color: #ffffff;
+    background-color: #cc7f32;
+    transform: scale(1.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+
