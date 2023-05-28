@@ -62,11 +62,16 @@
         </tbody>
     </table>
 
-    <div class="message">
-        <p>Apply for a new loan? <a href="applyForALoan.html">Click here</a></p>
-    </div>
-
-
-        <script src="../js/script.js"></script>
+    <button id="loanapp" class="applyloan">Apply For a New Loan</button>
+    <script>
+         document.addEventListener('DOMContentLoaded', function () {
+    const homeButton = document.getElementById('loanapp');
+    if (homeButton) {
+      homeButton.addEventListener('click', function () {
+        window.location.href = 'applyForALoan.html';
+      });
+    }
+  });
+    </script>
 </body>
 </html>
