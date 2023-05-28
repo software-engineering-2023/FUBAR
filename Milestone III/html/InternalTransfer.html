@@ -95,12 +95,19 @@
             alert('Please enter a valid transfer description. All boxes are required to be filled'); // Display an alert for empty transfer description
             return;
         }
+        
+        var fromAccountInput = document.getElementById('fromAccount');
+        var selectedAccountValue = parseInt(fromAccountInput.value);
 
+        if (amount > selectedAccountValue) {
+           alert('Insufficient funds in the selected bank account. Please enter a valid Transfer Amount.');
+           return;
+        }
         const confirmation = confirm('Are you sure you want to make this Internal transfer?');
         if (!confirmation) {
             return;
         }
-
+        
         // Success
         var confirmationMessage = 'Transfer successful!\n' +
             'Payment Name: ' + paymentName + '\n' +

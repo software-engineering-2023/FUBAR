@@ -215,7 +215,13 @@
                 alert('Please enter the Transaction Purpose. All Boxes are required to be filled');
                 return false;
             }
-        
+            var fromAccountInput = document.getElementById('fromAccount');
+            var selectedAccountValue = parseInt(fromAccountInput.value);
+
+            if (amount > selectedAccountValue) {
+             alert('Insufficient funds in the selected bank account. Please enter a valid Transfer Amount.');
+             return;
+            }
             // Confirmation
             const confirmation = confirm('Are you sure you want to make this International transfer?');
             if (!confirmation) {
