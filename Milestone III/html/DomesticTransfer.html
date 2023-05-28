@@ -39,6 +39,7 @@
         <br><br>
         <label for="fromAccount">From Account:</label>
         <select id="fromAccount" name="fromAccount">
+            <option value=""disabled selected >Select Account</option>
             <option value="500000">123456789</option>
             <option value="100000">987654321</option>
         </select>
@@ -51,12 +52,6 @@
         <label for="branchAddress">Branch Address:</label>
         <input type="text" class="branchAddress" id="branchAddress" name="branchAddress" required>
         <br><br>
-        <label for="city">City:</label>
-        <input type="text" class="city" id="city" name="city" required>
-        <br><br>
-        <label for="state">State:</label>
-        <input type="text" class="state" id="state" name="state" required>
-        <br><br>
         <label for="bankCode">Bank Code: (SWIFT, FEDWIRE, Sort Code, BLZ, BSB)</label>
         <input type="text" class="bankCode" id="bankCode" name="bankCode" required>
         <br><br>
@@ -68,12 +63,6 @@
         <label for="beneficiaryAddress">Beneficiary Address:</label>
         <input type="text" class="beneficiaryAddress" id="beneficiaryAddress" name="beneficiaryAddress" required>
         <br><br>
-        <label for="beneficiaryCity">Beneficiary City:</label>
-        <input type="text" class="beneficiaryCity" id="beneficiaryCity" name="beneficiaryCity" required>
-        <br><br>
-        <label for="beneficiaryState">Beneficiary State:</label>
-        <input type="text" class="beneficiaryState" id="beneficiaryState" name="beneficiaryState" required>
-        <br><br>
         <label for="PaymentConfirmationDetails" class="underline">Payment Confirmation Details</label>
         <br>
         <label for="beneficiaryAccount/IBAN">Beneficiary Account Number/IBAN:</label>
@@ -81,9 +70,6 @@
         <br><br>
         <label for="Amount">Transfer Amount:</label>
         <input type="text" class="amount" id="Amount" name="Amount" required>
-        <br><br>
-        <label for="transactionDate">Transaction Date:</label>
-        <input type="date" id="transactionDate" name="transactionDate" readonly>
         <br><br>
         <label for="transactionPurpose">Transaction Purpose:</label>
         <input type="text" id="transactionPurpose" name="transactionPurpose" required>
@@ -114,18 +100,10 @@
         }
 
         // Verification for City
-        const city = form.city.value;
-        if (city.trim() === '') {
-            alert('Please enter the City. All Boxes are required to be filled');
-            return false;
-        }
+       
 
         // Verification for State
-        const state = form.state.value;
-        if (state.trim() === '') {
-            alert('Please enter the State. All Boxes are required to be filled');
-            return false;
-        }
+      
 
         // Verification for Bank Code
         const bankCode = form.bankCode.value;
@@ -148,20 +126,6 @@
             return false;
         }
 
-        // Verification for Beneficiary City
-        const beneficiaryCity = form.beneficiaryCity.value;
-        if (beneficiaryCity.trim() === '') {
-            alert('Please enter the Beneficiary City. All Boxes are required to be filled');
-            return false;
-        }
-
-        // Verification for Beneficiary State
-        const beneficiaryState = form.beneficiaryState.value;
-        if (beneficiaryState.trim() === '') {
-            alert('Please enter the Beneficiary State. All Boxes are required to be filled');
-            return false;
-        }
-
         // Verification for Beneficiary Account/IBAN
         const beneficiaryAccountIBAN = form['beneficiaryAccount/IBAN'].value;
             if (beneficiaryAccountIBAN.trim() === '') {
@@ -179,7 +143,7 @@
                 alert('Please enter the Transfer Amount. All Boxes are required to be filled');
                 return false;
             }
-            if (isNaN(amount)) {
+            if (isNaN(amount) || amount<=0)  {
                 alert('Please enter a valid Transfer Amount.');
                 return false;
             }

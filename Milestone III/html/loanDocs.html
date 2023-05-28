@@ -62,6 +62,10 @@
             alert("Please Upload all the required documents.");
         }
         else{
+            const confirmation = confirm('Are you sure you want to apply for a loan?');
+            if (!confirmation) {
+                return false;
+            }
             alert("You have applied for a loan successfully. We will review your application and get back to you.");
             window.location.href = 'client.html';
         }

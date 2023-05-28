@@ -38,6 +38,7 @@
         <br><br>
         <label for="fromAccount">From Account:</label>
         <select id="fromAccount" name="fromAccount">
+            <option value=""disabled selected >Select Account</option>
             <option value="500000">123456789</option>
             <option value="100000">987654321</option>
         </select>
@@ -46,8 +47,13 @@
         <br>
         <label for="branchCountry">Branch Country:</label>
         <select id="branchCountry" name="branchCountry">
+            <option value=""disabled selected >Select Country</option>
             <option value="Germany">Germany</option>
             <option value="Italy">Italy</option>
+            <option value="Germany">France</option>
+            <option value="Italy">Spain</option>
+            <option value="Germany">Qatar</option>
+            <option value="Italy">USA</option>
         </select>
         <br><br>
         <label for="bankName">Bank Name:</label>
@@ -75,8 +81,13 @@
         <br><br>
         <label for="beneficiaryCountry">Branch Country:</label>
         <select id="beneficiaryCountry" name="beneficiaryCountry">
+            <option value=""disabled selected >Select Country</option>
             <option value="Germany">Germany</option>
             <option value="Italy">Italy</option>
+            <option value="Germany">France</option>
+            <option value="Italy">Spain</option>
+            <option value="Germany">Qatar</option>
+            <option value="Italy">USA</option>
         </select>
         <br><br>
         <label for="beneficiaryCity">Beneficiary City:</label>
@@ -92,9 +103,6 @@
         <br><br>
         <label for="Amount">Transfer Amount:</label>
         <input type="text" class="amount" id="Amount" name="Amount" required>
-        <br><br>
-        <label for="transactionDate">Transaction Date:</label>
-        <input type="date" id="transactionDate" name="transactionDate" readonly>
         <br><br>
         <label for="transactionPurpose">Transaction Purpose:</label>
         <input type="text" id="transactionPurpose" name="transactionPurpose" required>
@@ -204,7 +212,7 @@
                 alert('Please enter the Transfer Amount. All Boxes are required to be filled');
                 return false;
             }
-            if (isNaN(amount)) {
+            if (isNaN(amount) || amount<=0) {
                 alert('Please enter a valid Transfer Amount.');
                 return false;
             }

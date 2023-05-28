@@ -1,4 +1,29 @@
-﻿document.addEventListener('DOMContentLoaded', function() {
+﻿
+document.addEventListener('DOMContentLoaded', function() {
+  const viewNotifsButton = document.getElementById('Breport');
+  if (viewNotifsButton) {
+      viewNotifsButton.addEventListener('click', function() {
+          window.location.href = 'Btechissue.html';
+      });
+  }
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    const viewNotifsButton = document.getElementById('Bnotifs');
+    if (viewNotifsButton) {
+        viewNotifsButton.addEventListener('click', function() {
+            window.location.href = 'Bnotifs.html';
+        });
+    }
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const viewNotifsButton = document.getElementById('Bhome');
+      if (viewNotifsButton) {
+          viewNotifsButton.addEventListener('click', function() {
+              window.location.href = 'banker.html';
+          });
+      }
+      });
+  document.addEventListener('DOMContentLoaded', function() {
   const viewNotifsButton = document.getElementById('reminders');
   if (viewNotifsButton) {
       viewNotifsButton.addEventListener('click', function() {

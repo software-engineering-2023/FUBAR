@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../js/script.js"></script>
+    <title>Notifications | Online Banking</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="../css/notifs.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        /* Add the CSS styles here */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Urbanist', sans-serif;
+        }
+
+        /* Rest of the CSS code */
+
+        .view-transactions-button,
+        .close-account-button {
+            color: white;
+            background-color: #4F0341;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .view-transactions-button:hover,
+        .close-account-button:hover {
+            color: #ffffff;
+            background-color: #cc7f32;
+            transform: scale(1.1);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .highlight-row {
+            background-color: rgb(237, 69, 69);
+        }
+
+        /* Add the disabled state for the button */
+        .close-account-button.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <div class="navbar">
+        <div class="logo">
+            <img src="../img/FUBAR Logo.png" />
+        </div>
+        <ul>
+            <li><button id="Bhome" class="home" >Home</button></li>
+            <li><button id="Breport">Report Issue</button></li>
+            <li><button id="Bnotifs">Notifications</button></li>
+        </ul>
+    </div>
+
+    <div class="BankAccounts-page">
+        <a href="banker.html" onclick="history.back()" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Back
+        </a>
+        <div class="Bank-container">
+            <h1>Notifications</h1>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Description</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Bank Announcement</td>
+                <td >We would like to inform you of upcoming changes in our interest rates, effective from the first of May.
+                   The interest rate for new fixed-rate mortgage loans will be adjusted to 7%.
+                </td>
+               
+            </tr>
+            <tr>
+                <td>Issue Resolution</td>
+                <td>Your login issue has been resolved</td>
+            </tr>
+            <!-- Add more rows for other bank accounts -->
+        </tbody>
+    </table>
+</body>
+</html>

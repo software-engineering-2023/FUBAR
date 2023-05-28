@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="../css/ccissue.css" rel="stylesheet" />
+    <title>Technicsl Issue | Online Banking</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="../img/FUBAR Logo.png" />
+        </div>
+        <ul>
+            <li><button id="Bhome" class="home" >Home</button></li>
+            <li><button id="Breport">Report Issue</button></li>
+            <li><button id="Bnotifs">Notifications</button></li>
+        </ul>
+    </div>
+
+    <a href="banker.html" onclick="history.back()" class="back-link">
+      <i class="fas fa-arrow-left"></i>
+      Back
+   </a>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+const homeButton = document.getElementById('Report');
+const title = document.getElementById('title');
+const desc = document.getElementById('purpose');
+if (homeButton) {
+homeButton.addEventListener('click', function () {
+             if(title.value==='' || desc.value===''){
+                  alert('Please enter a proper title and a detailed description of your issue.');
+                 
+                 return;
+               }
+  else{
+    alert('Issue reported Successfully')
+  }
+});
+}
+});
+</script>
+   <div class="report-page">
+    <form>
+      <h2>Report Technical Issue</h2>
+      <label for="accountNumber" >Issue Title:</label>
+      <input type="text"class="num-input" id="title" required>
+        <br><br>
+        <label for="purpose1">Description:</label>
+        <textarea id="purpose" name="purpose"  ></textarea>
+        <br><br>
+        <button id="Report" class="Pay">Report</button>
+    </form>
+   </div>
+   
+    
+</body>
+</html>

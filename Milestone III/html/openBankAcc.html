@@ -90,6 +90,10 @@
     if (email === "" || phoneNumber === "" || proofIdentification === "" || proofAddress === "" || currency === "" || accountType === "") {
         alert("Please fill all the required fields.");
     } else {
+      const confirmation = confirm('Are you sure you want to open a bank account?');
+            if (!confirmation) {
+                return false;
+            }
         alert("Your bank account application will be reviewed and we will get back to you shortly.");
         window.location.href='client.html';
     }

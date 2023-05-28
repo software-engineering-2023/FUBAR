@@ -36,6 +36,7 @@
         <br><br>
         <label for="fromAccount">From Account:</label>
         <select id="fromAccount" name="fromAccount">
+            <option value=""disabled selected >Select Account</option>
             <option value="500000">123456789</option>
             <option value="100000">987654321</option>
         </select>
@@ -45,9 +46,6 @@
         <br><br>
         <label for="Amount">Transfer Amount:</label>
         <input type="text" class="amount" id="Amount" name="Amount" required>
-        <br><br>
-        <label for="transactionDate">Transaction Date:</label>
-        <input type="date" id="transactionDate" name="transactionDate" readonly>
         <br><br>
         <label for="transactionDescription">Transaction Description:</label>
         <input type="text" id="transactionDescription" name="transactionDescription" required>
@@ -86,7 +84,7 @@
             return;
         }
 
-        if (isNaN(amount)) {
+        if (isNaN(amount) || amount<=0) {
             alert('Please enter a valid Transfer Amount.');
             return;
         }

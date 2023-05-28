@@ -17,9 +17,8 @@
         </div>
         <ul>
             <li><button id="Bhome" class="home" >Home</button></li>
-            <li><button>About Us</button></li>
             <li><button id="Breport">Report Issue</button></li>
-            <li><button>Contact</button></li>
+            <li><button id="Bnotifs">Notifications</button></li>
         </ul>
     </div>
 
@@ -61,6 +60,10 @@
     
         <script>
             function highlightRow(button) {
+                const confirmation = confirm('Is the issue resolved?');
+               if (!confirmation) {
+                return false;
+                 }
                 var row = button.parentNode.parentNode;
                 row.classList.add("highlight-row");
                 button.classList.add("disabled"); // Add the "disabled" class to the button after it is clicked
