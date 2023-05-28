@@ -208,6 +208,20 @@
     document.getElementById('accountType').value = '';
     document.getElementById('currency').value = '';
   });
-
- 
   
+  document.addEventListener('DOMContentLoaded', function() {
+    const viewNotifsButton = document.getElementById('reminders');
+    if (viewNotifsButton) {
+        viewNotifsButton.addEventListener('click', function() {
+            window.location.href = 'reminders.html';
+        });
+    }
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const viewNotifsButton = document.getElementById('notifs');
+  if (viewNotifsButton) {
+      viewNotifsButton.addEventListener('click', function() {
+          window.location.href = 'notifs.html';
+      });
+  }
+});

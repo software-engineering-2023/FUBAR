@@ -1,13 +1,14 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <script src="../js/script.js"></script>
+   
     <title>Client Page | Online Banking</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link href="../css/style.css" rel="stylesheet" />
     <link href="../css/client.css" rel="stylesheet" />
+    <script src="../js/script.js"></script>
 </head>
 <body>
     <div class="navbar">
@@ -84,6 +85,22 @@
                     });
                 }
             });
+            document.addEventListener('DOMContentLoaded', function() {
+    const viewNotifsButton = document.getElementById('reminders');
+    if (viewNotifsButton) {
+        viewNotifsButton.addEventListener('click', function() {
+            window.location.href = 'reminders.html';
+        });
+    }
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const viewNotifsButton = document.getElementById('notifs');
+  if (viewNotifsButton) {
+      viewNotifsButton.addEventListener('click', function() {
+          window.location.href = 'notifs.html';
+      });
+  }
+});
         </script>
     </div>
    
