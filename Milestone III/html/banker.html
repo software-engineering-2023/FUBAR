@@ -112,6 +112,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const viewBankAccountsButton = document.getElementById('reviewCreditCardButton');
+    if (viewBankAccountsButton) {
+        viewBankAccountsButton.addEventListener('click', function () {
+            window.location.href = 'reviewCreditCardApps.html';
+        });
+    }
+
+});
         </script>
 
 </body>

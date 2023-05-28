@@ -39,8 +39,8 @@
         <br><br>
         <label for="fromAccount">From Account:</label>
         <select id="fromAccount" name="fromAccount">
-            <option value="123456789">123456789</option>
-            <option value="987654321">987654321</option>
+            <option value="500000">123456789</option>
+            <option value="100000">987654321</option>
         </select>
         <br><br>
         <label for="beneficiaryBank" class="underline">Beneficiary Bank</label>
@@ -88,9 +88,6 @@
         <label for="transactionPurpose">Transaction Purpose:</label>
         <input type="text" id="transactionPurpose" name="transactionPurpose" required>
         <br><br>
-        <input type="checkbox" id="termsConditions" name="termsConditions" class="check-input" required>
-        <label for="termsConditions">I have read and agreed to the <a href="#">Terms and Conditions</a>.</label>
-        <br>
         <button id="Transfer" class="Transfer" onclick="transferDomestically(this.form)">Transfer</button>
     </form>
     <script>
@@ -165,33 +162,37 @@
             return false;
         }
 
+        // Verification for Beneficiary Account/IBAN
         const beneficiaryAccountIBAN = form['beneficiaryAccount/IBAN'].value;
-        if (beneficiaryAccountIBAN.trim() === '') {
-            alert('Please enter the Beneficiary Account Number/IBAN.');
-            return false;
-        }
-
-        // Verification for Transfer Amount
-        const amount = form.Amount.value;
-        if (amount.trim() === '') {
-            alert('Please enter the Transfer Amount.');
-            return false;
-        }
+            if (beneficiaryAccountIBAN.trim() === '') {
+                alert('Please enter the Beneficiary Account Number/IBAN. All Boxes are required to be filled');
+                return false;
+            }
+            if (isNaN(beneficiaryAccountIBAN)) {
+                alert('Please enter a valid Beneficiary Account Number/IBAN.');
+                return false;
+            }
+        
+            // Verification for Transfer Amount
+            const amount = form.Amount.value;
+            if (amount.trim() === '') {
+                alert('Please enter the Transfer Amount. All Boxes are required to be filled');
+                return false;
+            }
+            if (isNaN(amount)) {
+                alert('Please enter a valid Transfer Amount.');
+                return false;
+            }
+        
 
         // Verification for Transaction Purpose
         const transactionPurpose = form.transactionPurpose.value;
         if (transactionPurpose.trim() === '') {
-            alert('Please enter the Transaction Purpose.');
-            return false;
-        }
- 
-        const termsConditions = form.termsConditions;
-        if (!termsConditions.checked) {
-            alert('Please read and agree to the Terms and Conditions.');
+            alert('Please enter the Transaction Purpose. All Boxes are required to be filled');
             return false;
         }
         // Confirmation
-        const confirmation = confirm('Are you sure you want to make this transfer?');
+        const confirmation = confirm('Are you sure you want to make this Domestic transfer?');
         if (!confirmation) {
             return false;
         }
