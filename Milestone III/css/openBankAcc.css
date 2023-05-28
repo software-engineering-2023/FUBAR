@@ -92,7 +92,7 @@ body {
 
       }
       
-      input[type="text"],
+      input[type="text"], 
       select {
         width: 100%; /* Make the text boxes occupy the full width of the container */
         padding: 8px; /* Increase the padding for the text boxes */
@@ -101,7 +101,16 @@ body {
         border-radius: 5px;
         border: 1px solid #ccc;
       }
-      
+      input[type="number"],
+      select{
+        width: 100%; /* Make the text boxes occupy the full width of the container */
+        padding: 8px; /* Increase the padding for the text boxes */
+        margin-bottom: 12px; /* Increase the margin-bottom value to separate the text boxes */
+        font-size: 16px; /* Increase the font-size for the text boxes */
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
       input[type="file"] {
         width: 100%; /* Make the text boxes occupy the full width of the container */
         padding: 8px; /* Increase the padding for the text boxes */

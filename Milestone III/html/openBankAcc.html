@@ -36,7 +36,7 @@
           <input type="text" id="email" required>
 
           <label for="phoneNumber">Phone Number:</label>
-          <input type="text" id="phoneNumber" required>
+          <input type="number" id="phoneNumber" required>
 
           <label for="proofIdentification">Proof of Identification:</label>
           <input type="file" id="proofIdentification" required>
@@ -73,7 +73,7 @@
 
   <script>
     document.getElementById("bankAccountForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault(); 
 
     var email = document.getElementById("email").value;
     var phoneNumber = document.getElementById("phoneNumber").value;
@@ -86,7 +86,7 @@
         alert("Please fill all the required fields.");
     } else {
         alert("Your bank account application will be reviewed and we will get back to you shortly.");
-        // You can submit the form here or perform any other actions
+        window.location.href='client.html';
     }
 });
 

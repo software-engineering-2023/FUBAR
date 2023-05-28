@@ -10,7 +10,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    margin: 100px;
 }
 
 .navbar {
@@ -80,7 +79,7 @@ body {
 }
 
 .back-link:hover {
-    color: #4F0341;
+    color:#4F0341;
     transform: scale(1.1);
 }
 
@@ -88,112 +87,40 @@ body {
     margin-right: 5px;
 }
 
-  
-  .container {
-    width: 400px;
-    margin: 0 auto;
+h1 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-top: 170px;
-    background-color: transparent;
-    border: 1px solid #ffffff;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: left;
-  }
-
-  .container input[type="text"],
-  .container input[type="password"], .container input[type="number"] {
-  width: 100%; /* Make the text boxes occupy the full width of the container */
-  padding: 8px; /* Increase the padding for the text boxes */
-  margin-bottom: 12px; /* Increase the margin-bottom value to separate the text boxes */
-  font-size: 16px; /* Increase the font-size for the text boxes */
-  border-radius: 5px;
-  border: 1px solid #ccc;
+    text-align: center;
 }
 
-  
-  h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #4F0341;
-  }
-  
-  .label {
-    display: block;
-    margin-bottom: 12px;
-    text-align: left;
-    font-size: 18px;
-  }
-  
-  .checkbox-label {
-    display: inline-block;
-    vertical-align: middle;
-  }
-  
-  .checkbox-label a {
-    text-decoration: underline;
-    color: #cc7f32;
-    
-  }
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
 
-  .checkbox-label a:hover {
-    color: rgba(204, 127, 50, 0.7);
-    transform: scale(1.1);
-  }
-  
-  .checkbox-label input {
-    vertical-align: middle;
-  }
-  
-  .register-button{
+.registration-btn {
     border-radius: 5px;
-    padding: 10px 10px;
-    width: 150px;
+    padding: 10px 60px;
+    width: 400px;
     font-size: 18px;
     font-weight: bold;
     background-color: #4F0341;
     color: #fff;
     border: none;
     cursor: pointer;
-    margin-top: 20px;
     margin-bottom: 30px;
     transition: transform 0.3s, background-color 0.3s;
-  }
-  .register-button:hover{
+}
+
+.registration-btn:hover {
     background-color: #cc7f32;
     transform: scale(1.1);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  }
-  
-  #terms-error {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-    display: none;
-  }
-  
-  #required-error {
-    color: red;
-    font-size: 14px;
-    margin-top: 10px;
-    display: none;
-  }
-  
-  .bank-account-link {
-    text-align: center;
-    margin-top: 20px;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
+}
 
-  .bank-account-link a {
-    color: #cc7f32;
-    text-decoration: none;
-    font-weight: bold;
-  }
 
-  .bank-account-link a:hover {
-    color: #9d5d20;
-  }
-  
-  
+
+
