@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="../js/script.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +42,18 @@
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
         </div>
-
+        <div class="form-group">
+            <label for="ssn">National ID:</label>
+            <input type="number" id="ssn" name="ssn" required>
+        </div>
+        <div class="form-group">
+            <label for="loan-type">Loan Type:</label>
+            <select id="loan-type" name="loan-type" required>
+                <option value="" disabled selected>Select Loan Type</option>
+                <option value="personal">Personal Loan</option>
+                <option value="car">Car Loan</option>
+            </select>
+        </div>
         <div class="form-group">
             <label for="loan-amount">Loan Amount:</label>
             <input type="number" id="loan-amount" name="loan-amount" required>
@@ -50,34 +62,109 @@
         <div class="form-group">
             <label for="currency">Currency:</label>
             <select id="currency" name="currency" required>
-                <option value="" disabled selected>Choose your Currency</option>
+                <option value="" disabled selected> Select Currency</option>
                 <option value="USD">USD</option>
                 <option value="EUR">EUR</option>
                 <option value="EGP">EGP</option>
             </select>
         </div>
-
         <div class="form-group">
-            <label for="loan-type">Loan Type:</label>
-            <select id="loan-type" name="loan-type" required>
-                <option value="" disabled selected>Choose your Loan Type</option>
-                <option value="personal">Personal Loan</option>
-                <option value="car">Car Loan</option>
-            </select>
+            <label for="income">Net Monthly Income:</label>
+            <input type="number" id="income" name="income" required>
         </div>
-
         <div class="form-group">
+            <label for="employer-name">Employer Name:</label>
+            <input type="text" id="employer-name" name="employer-name" required>
+        </div>
+        <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="terms-checkbox" required>
+              I have read and agreed to the
+              <a href="TCLoan.html">Terms and Conditions</a>
+            </label>
+          </div>
+        <!-- <div class="form-group">
             <label for="purpose">Loan Purpose:</label>
             <textarea id="purpose" name="purpose" required></textarea>
-        </div>
+        </div> -->
 
         <div class="form-group">
-            <button type="submit" id="submitLoan">Submit</button>
+            <button type="button" id="next"onclick="loanapp()">Next</button>
         </div>
     </form>
-
-    <script src="../js/application.js"></script>
     <script>
+        function loanapp() {
+    var nameInput = document.getElementById('name');
+    var emailInput = document.getElementById('email');
+    var ssnInput = document.getElementById('ssn');
+    var loanTypeSelect = document.getElementById('loan-type');
+    var loanAmountInput = document.getElementById('loan-amount');
+    var currencySelect = document.getElementById('currency');
+    var incomeInput = document.getElementById('income');
+    var employerNameInput = document.getElementById('employer-name');
+    var termsCheckbox = document.getElementById('terms-checkbox');
+            if (nameInput.value===''){
+                  alert('Please enter your name. All Fields must be filled.');
+                 
+                 return;
+               }
+               else if (emailInput.value===''){
+                  alert('Please enter your E-mail. All Fields must be filled.');
+                 
+                 return;
+               }
+               else  if (ssnInput.value==='') {
+                alert('Please enter your National ID.All Fields must be filled.');
+                 return;
+               }
+               else  if (ssnInput.value<=0) {
+                alert('Please enter a valid National ID.');
+                 return;
+               }
+               else if (loanTypeSelect.selectedIndex===0){
+                  alert('Please select a loan type.All Fields must be filled');
+                 
+                 return;
+               }
+               else  if (loanAmountInput.value==='') {
+                alert('Please enter your requested amount.All Fields must be filled.');
+                 return;
+               }
+               else  if (loanAmountInput.value<=0) {
+                alert('Please enter a valid amount.');
+                 return;
+               }
+               else if (loanTypeSelect.selectedIndex===0){
+                alert('Please select a currency.All Fields must be filled');
+                 
+                 return;
+               }
+               else  if (incomeInput.value==='') {
+                alert('Please enter your income.All Fields must be filled.');
+                 return;
+               }
+               else  if (incomeInput.value<=0) {
+                alert('Please enter a valid income.');
+                 return;
+               }
+               else if (employerNameInput.value===''){
+                  alert('Please enter your employer name. All Fields must be filled.');
+                 
+                 return;
+               }
+               if (!termsCheckbox.checked){
+                  alert('Please agree to the terms and conditions to proceed.');
+                 
+                 return;
+               }
+               
+                window.location.href = 'loanDocs.html';
+            
+        }
+    </script>
+
+  <!-- <script src="../js/application.js"></script> -->
+    <!-- <script>
         document.getElementById('loan-application-form').addEventListener('submit', function(e) {
             e.preventDefault(); // Prevent form submission
             showMessage("Success", "You have applied for a loan successfully. We will review your application and get back to you.");
@@ -86,17 +173,17 @@
         function showMessage(title, message) {
             alert(title + "\n\n" + message); // Display the message in an alert box with a title
         }
-    </script>
+    </script> -->
 
-    <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const homeButton = document.getElementById('home');
-    if (homeButton) {
-      homeButton.addEventListener('click', function () {
-        window.location.href = 'client.html';
-      });
-    }
-  });
+    <!-- <script>
+// document.addEventListener('DOMContentLoaded', function () {
+//     const homeButton = document.getElementById('home');
+//     if (homeButton) {
+//       homeButton.addEventListener('click', function () {
+//         window.location.href = 'client.html';
+//       });
+//     }
+//   });
   
   document.addEventListener('DOMContentLoaded', function () {
     const reportButton = document.getElementById('report');
@@ -106,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   });
-    </script>
+    </script> -->
 
 
 </body>
