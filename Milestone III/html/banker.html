@@ -35,8 +35,8 @@
         <div class="button-container">
             <div class="button-row">
                 <div class="button-box">
-                    <button class="transparent-button" id="viewBankAccountsButton">
-                        <img src="../img/view-bank-accounts-image.jpeg" alt="View Bank Accounts"/>
+                    <button class="transparent-button" id="reviewBankAccountsButton">
+                        <img src="../img/view-bank-accounts-image.jpeg" alt="Review Bank Accounts"/>
                        
                         <span>Review Bank Account Applications</span>
                     </button>
@@ -61,18 +61,6 @@
                         <span>Review Credit Card Applications</span>
                     </button>
                 </div>
-                <!-- <div class="button-box">
-                    <button class="transparent-button" id="billButton">
-                        <img src="../img/bills-image.jpeg"  alt="Bills"  />
-                        <span>Bills</span>
-                    </button>
-                </div>
-                <div class="button-box">
-                    <button class="transparent-button" id="transferbutton">
-                        <img src="../img/transfer-money-image.jpeg" alt="Transfer" />
-                        <span>Transfer</span>
-                    </button>
-                </div> -->
             </div>
         </div>
         <script>
@@ -100,7 +88,6 @@
             window.location.href = 'reviewLoans.html';
         });
     }
-
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -117,6 +104,16 @@ document.addEventListener('DOMContentLoaded', function () {
     if (viewBankAccountsButton) {
         viewBankAccountsButton.addEventListener('click', function () {
             window.location.href = 'reviewCreditCardApps.html';
+        });
+    }
+
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const viewBankAccountsButton = document.getElementById('reviewBankAccountsButton');
+    if (viewBankAccountsButton) {
+        viewBankAccountsButton.addEventListener('click', function () {
+            window.location.href = 'reviewBankAccApps.html';
         });
     }
 
