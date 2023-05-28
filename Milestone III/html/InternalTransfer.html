@@ -36,8 +36,8 @@
         <br><br>
         <label for="fromAccount">From Account:</label>
         <select id="fromAccount" name="fromAccount">
-            <option value="123456789">123456789</option>
-            <option value="987654321">987654321</option>
+            <option value="500000">123456789</option>
+            <option value="100000">987654321</option>
         </select>
         <br><br>
         <label for="beneficiaryAccount">Beneficiary Account No.</label>
@@ -52,57 +52,66 @@
         <label for="transactionDescription">Transaction Description:</label>
         <input type="text" id="transactionDescription" name="transactionDescription" required>
         <br><br>
-        <input type="checkbox" id="termsConditions" name="termsConditions" class="check-input" required>
-        <label for="termsConditions">I have read and agreed to the <a href="#">Terms and Conditions</a>.</label>
-        <br>
         <button id="Transfer" class="Transfer" onclick="transferinternally(this.form)">Transfer</button>
     </form>
+<script>
+    function transferinternally(form) {
+        var paymentNameInput = form.querySelector('.num-input');
+        var beneficiaryAccountInput = form.querySelector('.beneficiaryAccount');
+        var amountInput = form.querySelector('.amount');
+        var descriptionInput = form.querySelector('#transactionDescription'); // Get the transfer description input element
 
-    <script>
-        function transferinternally(form) {
-            var paymentNameInput = form.querySelector('.num-input');
-            var beneficiaryAccountInput = form.querySelector('.beneficiaryAccount');
-            var amountInput = form.querySelector('.amount');
-            var checkbox = form.querySelector('.check-input');
+        var paymentName = paymentNameInput.value;
+        var beneficiaryAccount = beneficiaryAccountInput.value;
+        var amount = parseInt(amountInput.value);
+        var description = descriptionInput.value; // Get the transfer description value
 
-            var paymentName = paymentNameInput.value;
-            var beneficiaryAccount = beneficiaryAccountInput.value;
-            var amount = parseInt(amountInput.value);
-
-            if (paymentName.trim() === '') {
-                alert('Please enter a valid payment name.');
-                return;
-            }
-
-            if (beneficiaryAccount.trim() === '') {
-                alert('Please enter a valid beneficiary account number.');
-                return;
-            }
-
-            if (isNaN(amount)) {
-                alert('Please enter a valid transfer amount.');
-                return;
-            }
-
-            if (!checkbox.checked) {
-                alert('Please agree to the terms and conditions.');
-                return;
-            }
-            const confirmation = confirm('Are you sure you want to make this transfer?');
-             if (!confirmation) {
-             return false;
-            }
-            // Success
-            var confirmationMessage = 'Transfer successful!\n' +
-                'Payment Name: ' + paymentName + '\n' +
-                'Beneficiary Account No.: ' + beneficiaryAccount + '\n' +
-                'Transfer Amount: ' + amount + '\n' +
-                'Transaction Date: ' + new Date().toLocaleDateString() + '\n' +
-                'Transaction Description: ' + form.transactionDescription.value;
-
-            alert(confirmationMessage);
-            form.reset();
+        if (paymentName.trim() === '') {
+            alert('Please enter a valid payment name. All boxes are required to be filled');
+            return;
         }
+
+        if (beneficiaryAccount.trim() === '') {
+            alert('Please enter the Beneficiary Account Number. All boxes are required to be filled');
+            return;
+        }
+
+        if (isNaN(beneficiaryAccount)) {
+            alert('Please enter a valid Beneficiary Account Number');
+            return;
+        }
+
+        if (amountInput.value.trim() === '') {
+            alert('Please enter the Transfer Amount. All boxes are required to be filled');
+            return;
+        }
+
+        if (isNaN(amount)) {
+            alert('Please enter a valid Transfer Amount.');
+            return;
+        }
+
+        if (description.trim() === '') { // Check if transfer description is empty
+            alert('Please enter a valid transfer description. All boxes are required to be filled'); // Display an alert for empty transfer description
+            return;
+        }
+
+        const confirmation = confirm('Are you sure you want to make this Internal transfer?');
+        if (!confirmation) {
+            return;
+        }
+
+        // Success
+        var confirmationMessage = 'Transfer successful!\n' +
+            'Payment Name: ' + paymentName + '\n' +
+            'Beneficiary Account No.: ' + beneficiaryAccount + '\n' +
+            'Transfer Amount: ' + amount + '\n' +
+            'Transaction Date: ' + new Date().toLocaleDateString() + '\n' +
+            'Transaction Description: ' + description; // Use the obtained transfer description
+
+        alert(confirmationMessage);
+        form.reset();
+    }
     </script>
 </body>
 </html>
