@@ -78,7 +78,11 @@
     font-size: 36px;
     text-align: center;
     font-weight: 600;
-    color: #4F0341;
+    background-color: transparent; /* Remove the white box background */
+    padding: 0; /* Remove any padding */
+    color: #fff;
+    margin-top: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Add shadow effect */
   }
   
   
@@ -103,7 +107,7 @@
   table {
     width: 100%;
     max-width: 100%;
-    background-color: #fff;
+    background-color:linear-gradient(to bottom, #ffffff, #4F0341);
     border-collapse: collapse;
     margin-top: 20px;
     border-radius: 5px;
@@ -118,7 +122,7 @@
   }
   
   th {
-    background-color: #f2f2f2;
+    background-color: white;
     font-weight: 600;
   }
   
@@ -144,7 +148,7 @@
     position: fixed;
     top: 100px;
     left: 20px;
-    color: orange;
+    color: #4F0341;
     font-size: 18px;
     font-weight: bold;
     text-decoration: none;
@@ -153,7 +157,7 @@
   }
   
   .back-link:hover {
-    color: #cc7f32;
+    color:#4F0341;
     transform: scale(1.1);
   }
   
