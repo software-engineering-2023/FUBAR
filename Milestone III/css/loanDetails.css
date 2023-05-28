@@ -65,38 +65,35 @@ body {
     margin-left: 0;
 }
 
-.LoanDetails-page {
-    background-color: transparent; /* Remove the white box background */
-    padding: 0; /* Remove any padding */
-    margin: 0; /* Remove any margin */
-    border-radius: 0; /* Remove border radius */
-    box-shadow: none; /* Remove the box shadow */
-}
-
-.LoanDetails-container {
+.loan-details-container {
     text-align: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 25vh;
-    background-color: #fff;
+    background-color: linear-gradient(to bottom, #ffffff, #4F0341);
     margin-top: 50px;
     border-radius: 5px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    padding: 20px;
 }
 
-.LoanDetails-container h1 {
-    font-size: 36px;
+.loan-details-container h1 {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 70px;
     font-weight: 600;
     color: #4F0341;
+    margin-bottom: 20px;
 }
 
 table {
     width: 100%;
     max-width: 100%;
-    background-color: #fff;
+    margin-top: 10px;
+    background-color: linear-gradient(to bottom, #ffffff, #4F0341);
+    border: 1px solid #fff;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
@@ -105,17 +102,21 @@ th,
 td {
     padding: 10px;
     text-align: center;
-    border-bottom: 1pxsolid #ddd;
+    border-bottom: 1px solid white;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: linear-gradient(to bottom, #ffffff, #4F0341);
     font-weight: 600;
 }
-.accept-button,
-.reject-button {
+
+.button-container {
+    margin-top: 20px;
+}
+
+.button-container button {
     color: white;
-    background-color: #4F0341;
+    background-color: #cc7f32;
     border: none;
     cursor: pointer;
     font-size: 18px;
@@ -123,32 +124,33 @@ th {
     padding: 5px 10px;
     border-radius: 5px;
     transition: transform 0.3s, background-color 0.3s;
+    margin-right: 10px;
 }
 
-.accept-button:hover,
-.reject-button:hover {
+.button-container button:hover {
     color: #ffffff;
-    background-color: #cc7f32;
+    background-color: #4F0341;
     transform: scale(1.1);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-
-.back-button {
-    color: white;
-    background-color: #4F0341;
-    border: none;
-    cursor: pointer;
+.back-link {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    color: orange;
     font-size: 18px;
     font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: transform 0.3s, background-color 0.3s;
-}
-
-.back-button:hover {
-    color: #ffffff;
-    background-color: #cc7f32;
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
+    z-index: 1000;
+  }
+  
+  .back-link:hover {
+    color: #cc7f32;
     transform: scale(1.1);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
+  }
+  
+  .back-link i {
+    margin-right: 5px;
+  }

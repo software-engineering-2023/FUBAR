@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../js/script.js"></script>
-    <link href="../css/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="../css/loanDetails.css" rel="stylesheet" />
-    <title>Review Loan Application Details| FUBAR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Review Loan Details | FUBAR Egypt</title>
 </head>
 <body>
     <div class="navbar">
@@ -15,50 +15,77 @@
             <img src="../img/FUBAR Logo.png" />
         </div>
         <ul>
-            <li><button id="Bhome" class="home" >Home</button></li>
+            <li><button id="home" class="home">Home</button></li>
             <li><button>About Us</button></li>
-            <li><button id="Breport">Report Issue</button></li>
+            <li><button id="report">Report Issue</button></li>
             <li><button>Contact</button></li>
         </ul>
     </div>
-    
+
     <a href="reviewLoans.html" onclick="history.back()" class="back-link">
         <i class="fas fa-arrow-left"></i>
         Back
     </a>
-    <div class="page-header">
-        <h1>Loan Application Details</h1>
+
+    <div class="loan-details-container">
+        <h1>Application Number: 92019748032</h1>
+        <table>
+            <tr>
+                <th>Name:</th>
+                <td><span id="name">Dareeb Khalifa</span></td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td><span id="email">dareensamir29@gmail.com</span></td>
+            </tr>
+            <tr>
+                <th>National ID:</th>
+                <td><span id="ssn">1234567890</span></td>
+            </tr>
+            <tr>
+                <th>Loan Type:</th>
+                <td><span id="loan-type">Personal Loan</span></td>
+            </tr>
+            <tr>
+                <th>Loan Amount:</th>
+                <td><span id="loan-amount">$10,000</span></td>
+            </tr>
+            <tr>
+                <th>Currency:</th>
+                <td><span id="currency">USD</span></td>
+            </tr>
+            <tr>
+                <th>Net Monthly Income:</th>
+                <td><span id="income">$5,000</span></td>
+            </tr>
+            <tr>
+                <th>Loan Purpose:</th>
+                <td><span id="loan-purpose">Home Renovation</span></td>
+            </tr>
+        </table>
+
+        <div class="button-container">
+            <button onclick="downloadDocuments()" class="download-button">View Documents</button>
+        </div>
     </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Loan Amount</th>
-                <th>Currency</th>
-                <th>Loan Type</th>
-                <th>Loan Purpose</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>John Doe</td>
-                <td>john.doe@example.com</td>
-                <td>$100,000</td>
-                <td>USD</td>
-                <td>Personal Loan</td>
-                <td>Home Renovation</td>
-                <td>
-                    <button class="accept-button">Accept</button>
-                    <button class="reject-button">Reject</button>
-                </td>
-            </tr>
-            <!-- Add more rows for other loan applications -->
-        </tbody>
-        
-    </table>
+    <script>
+        function downloadDocuments() {
+            var proofOfIncomeUrl = 'pdfs/ProofOfIncome.pdf';
+            var proofOfAddressUrl = 'pdfs/ProofOfAddress.pdf';
+            var proofOfIdentificationUrl = 'pdfs/ProofOfIdentification.pdf';
 
-    <script src="../js/loan-details.js"></script>
+            downloadFile(proofOfIncomeUrl, "Proof of Income");
+            downloadFile(proofOfAddressUrl, "Proof of Address");
+            downloadFile(proofOfIdentificationUrl, "Proof of Identification");
+        }
+
+        function downloadFile(url, fileName) {
+            var link = document.createElement("a");
+            link.href = url;
+            link.download = fileName;
+            link.click();
+        }
+    </script>
 </body>
 </html>
