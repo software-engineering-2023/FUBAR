@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <title>Credit Card Bills | Online Banking</title>
+    <title>Credit Card Bills | FUBAR Egypt</title>
     <script src="../js/script.js"></script>
 </head>
 <body>
@@ -26,6 +26,7 @@
             <li><button id="notifs">Notifications</button></li>
             <li><button id ="reminders">Reminders</button></li>
             <li><button id="contact">Contact</button></li>
+            <li><button id="logout" class="logout-button">Logout</button></li> <!-- New logout button -->
         </ul>
     </div>
 
@@ -40,6 +41,7 @@
            var billElement = row.querySelector('.bill-input');
            var billValue = parseInt(billElement.value.substr(4));
            var billamount = document.getElementById('amount');
+           var min = document.getElementById('minimumPayment');
              var account = document.getElementById('accountNumber');
            if (loanValue===0) {
               alert('Please choose a credit card.');
@@ -78,11 +80,20 @@
 
             // Store the data in sessionStorage
             sessionStorage.setItem('paymentData', paymentDataJson);
+            if(parseInt(billamount.value)<parseInt(min.value.substr(4))){
+              var balane =parseInt(min.value.substr(4))-parseInt(billamount.value) ;
+              var confirmationMessage = 'Amount Paid Successfully!\n' +
+            'Paid ' +  billamount.value + '\n' +
+            'Date: ' + new Date().toLocaleDateString() + '\n'+
+            'You Paid Less than the Minimum value, you still have to pay:\n'+ 'EGP ' + balane +' before the due date to avoid charges';
+            alert(confirmationMessage);  
+          }
+            else{
             var confirmationMessage = 'Amount Paid Successfully!\n' +
             'Paid ' +  billamount.value + '\n' +
             'Date: ' + new Date().toLocaleDateString() + '\n';
             alert(confirmationMessage);
-            
+            }
         }
           
       }

@@ -141,14 +141,6 @@ input[type="submit"] {
     background-color: #9d5d20;
   }
   
-
-a {
-    color: #4F0341;
-}
-
-a:hover {
-    text-decoration: underline;
-}
 .table-container {
   margin-top: 20px;
   width: 100%;

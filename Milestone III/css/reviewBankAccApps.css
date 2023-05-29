@@ -167,6 +167,7 @@ th {
 
 .accept-button,
 .reject-button {
+  margin-left: 150px;
     color: white;
     background-color: #4F0341;
     border: none;

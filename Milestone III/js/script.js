@@ -8,6 +8,34 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   });
   document.addEventListener('DOMContentLoaded', function() {
+    const viewNotifsButton = document.getElementById('Ahome');
+    if (viewNotifsButton) {
+        viewNotifsButton.addEventListener('click', function() {
+            window.location.href = 'admin.html';
+        });
+    }
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const viewNotifsButton = document.getElementById('Anotifs');
+      if (viewNotifsButton) {
+          viewNotifsButton.addEventListener('click', function() {
+              window.location.href = 'Anotifs.html';
+          });
+      }
+      });
+      document.addEventListener('DOMContentLoaded', function() {
+        const viewNotifsButton = document.getElementById('logout');
+        if (viewNotifsButton) {
+            viewNotifsButton.addEventListener('click', function() {
+              const confirmation = confirm('Are you sure you want to logout?');
+              if (!confirmation) {
+               return false;
+                }
+                window.location.href = 'index.html';
+            });
+        }
+        });
+  document.addEventListener('DOMContentLoaded', function() {
     const viewNotifsButton = document.getElementById('Bnotifs');
     if (viewNotifsButton) {
         viewNotifsButton.addEventListener('click', function() {

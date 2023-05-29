@@ -110,9 +110,6 @@
     color: white;
 }
 
-a:hover {
-    text-decoration: underline;
-}
   .modal {
     display: none;
     position: fixed;
