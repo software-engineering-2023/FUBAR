@@ -57,7 +57,7 @@
                 <td>64717491702</td>
                 <td>100,000</td>
                 <td>EUR</td>
-                <td><button class="view-details-button">View Details</button> </td>
+                <td><button class="view-details-button" id="viewDeets">View Details</button> </td>
 
             </tr>
             <!-- Add more rows for other bank accounts -->
@@ -74,6 +74,16 @@
       });
     }
   });
+
+  document.addEventListener('DOMContentLoaded', function () {
+            const VTButton = document.getElementById('viewDeets');
+            if (VTButton) {
+                VTButton.addEventListener('click', function () {
+                    window.location.href = 'viewLoanDetails2.html';
+                });
+            }
+        });
+
     </script>
 </body>
 </html>

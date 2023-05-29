@@ -102,7 +102,7 @@
                 <td>$10000</td>
                 <td>$20000</td>
                 <td class="points-cell">2000</td>
-                <td><button class="view-transactions-button">View Transactions</button></td>
+                <td><button class="view-transactions-button" id="CCtransactions2">View Transactions</button></td>
                 <td>
                     <input type="number" class="redeem-input" placeholder="Amount" />
                     <button class="redeem-points-button" onclick="redeemPoints(this.parentNode.parentNode)">
@@ -121,6 +121,15 @@
             if (homeButton) {
                 homeButton.addEventListener('click', function () {
                     window.location.href = 'applyForACreditCard.html';
+                });
+            }
+        });
+    
+        document.addEventListener('DOMContentLoaded', function () {
+            const VTButton = document.getElementById('CCtransactions2');
+            if (VTButton) {
+                VTButton.addEventListener('click', function () {
+                    window.location.href = 'CCtransactions2.html';
                 });
             }
         });
