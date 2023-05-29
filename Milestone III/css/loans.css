@@ -101,7 +101,7 @@ body {
 table {
     width: 100%;
     max-width: 100%;
-    border-spacing: 0; /* Add this line */
+    border-spacing: 0; 
 }
 
 th,
