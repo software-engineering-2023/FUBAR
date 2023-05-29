@@ -54,7 +54,7 @@
                 <td>987654321</td>
                 <td id="bank2">250000</td>
                 <td>USD</td>
-                <td><button class="view-transactions-button">View Transactions</button></td>
+                <td><button class="view-transactions-button" id="VT2Button">View Transactions</button></td>
                 <td><button class="close-account-button" onclick="openClosureForm(this)">Close Bank Account</button></td>
             </tr>
         </tbody>
@@ -90,6 +90,16 @@
                 });
             }
         });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const VTButton = document.getElementById('VT2Button');
+            if (VTButton) {
+                VTButton.addEventListener('click', function () {
+                    window.location.href = 'ViewTransactionsInBA2.html';
+                });
+            }
+        });
+
 
         function openClosureForm(button) {
             var closureForm = document.getElementById("closureForm");
