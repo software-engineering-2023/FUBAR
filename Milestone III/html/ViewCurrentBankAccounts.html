@@ -1,73 +1,28 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <script src="../js/script.js"></script>
     <title>Bank Accounts | Online Banking</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="../css/ViewCurrentBankAccounts.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <style>
-        /* Add the CSS styles here */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Urbanist', sans-serif;
-        }
-
-        /* Rest of the CSS code */
-
-        .view-transactions-button,
-        .close-account-button {
-            color: white;
-            background-color: #4F0341;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: transform 0.3s, background-color 0.3s;
-        }
-
-        .view-transactions-button:hover,
-        .close-account-button:hover {
-            color: #ffffff;
-            background-color: #cc7f32;
-            transform: scale(1.1);
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-        }
-
-        .highlight-row {
-            background-color: rgb(237, 69, 69);
-        }
-
-        /* Add the disabled state for the button */
-        .close-account-button.disabled {
-            opacity: 0.5;
-            pointer-events: none;
-        }
-    </style>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" /> 
 </head>
 <body>
-    
     <div class="navbar">
         <div class="logo">
             <img src="../img/FUBAR Logo.png" />
         </div>
         <ul>
-            <li><button id="home" class="home" >Home</button></li>
+            <li><button id="home" class="home">Home</button></li>
             <li><button id="report">Report Issue</button></li>
             <li><button id="notifs">Notifications</button></li>
-            <li><button id ="reminders">Reminders</button></li>
+            <li><button id="reminders">Reminders</button></li>
             <li><button id="contact">Contact</button></li>
         </ul>
     </div>
 
     <div class="BankAccounts-page">
-        <a href="client.html" onclick="history.back()" class="back-link">
+        <a href="#" onclick="history.back()" class="back-link">
             <i class="fas fa-arrow-left"></i>
             Back
         </a>
@@ -91,71 +46,81 @@
                 <td>123456789</td>
                 <td id="bank1">500000</td>
                 <td>EGP</td>
-                <td><button class="view-transactions-button" id="viewTransactionsButtonInBA">View Transactions</button></td>
-                <td><button class="close-account-button" onclick="highlightRow(this)">Close Bank Account</button></td>
+                <td><button class="view-transactions-button" id="VTButton">View Transactions</button></td>
+                <td><button class="close-account-button" onclick="openClosureForm(this)">Close Bank Account</button></td>
             </tr>
             <tr>
                 <td>987654321</td>
-                <td id="bank2">100000</td>
-                <td>EGP</td>
+                <td id="bank2">250000</td>
+                <td>USD</td>
                 <td><button class="view-transactions-button">View Transactions</button></td>
-                <td><button class="close-account-button" onclick="highlightRow(this)">Close Bank Account</button></td>
+                <td><button class="close-account-button" onclick="openClosureForm(this)">Close Bank Account</button></td>
             </tr>
-            <!-- Add more rows for other bank accounts -->
         </tbody>
     </table>
-    <!-- <script>
-        // Retrieve the payment data from sessionStorage
-        var paymentDataJson = sessionStorage.getItem('paymentData');
 
-        // Check if payment data exists
-        if (paymentDataJson) {
-            // Parse the payment data from JSON string to object
-            var paymentData = JSON.parse(paymentDataJson);
+    <div id="closureForm" class="modal">
+        <div class="modal-content">
+            <span class="close-icon" onclick="closeClosureForm()">&#10005;</span>
+            <form id="closureFormContent">
+                <h2>Bank Account Closure Form</h2>
 
-            // Access the payment details and update the table or display them as needed
-            if (paymentData.accountNumber === '123456789') {
-        document.getElementById('bank1').textContent = 'New Value for Bank 1';
-    } else if (paymentData.accountNumber === '987654321') {
-        document.getElementById('bank2').textContent = 'New Value for Bank 2';
-    }
+                <label for="accountNumber">Account Number:</label>
+                <input type="text" id="accountNumber" name="accountNumber" disabled>
 
-        }
-    </script> -->
+                <label for="reason">Reason for Closure:</label>
+                <textarea id="reason" name="reason" required></textarea>
+
+                <div class="button-wrapper">
+                    <button type="button" onclick="confirmClosure()">Send Request</button>
+                    <button type="button" onclick="closeClosureForm()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
     <script>
-        function highlightRow(button) {
-            var row = button.parentNode.parentNode;
-            row.classList.add("highlight-row");
-            button.classList.add("disabled"); // Add the "disabled" class to the button after it is clicked
-        }
-
         document.addEventListener('DOMContentLoaded', function () {
-            const viewTransactionsButtonInBA = document.getElementById('viewTransactionsButtonInBA');
-            if (viewTransactionsButtonInBA) {
-                viewTransactionsButtonInBA.addEventListener('click', function () {
+            const VTButton = document.getElementById('VTButton');
+            if (VTButton) {
+                VTButton.addEventListener('click', function () {
                     window.location.href = 'ViewTransactionsInBA.html';
                 });
             }
         });
-    </script>
-    <script>
-        // Retrieve the payment data from sessionStorage
-        var paymentDataJson = sessionStorage.getItem('paymentData');
 
-        // Check if payment data exists
-        if (paymentDataJson) {
-            // Parse the payment data from JSON string to object
-            var paymentData = JSON.parse(paymentDataJson);
+        function openClosureForm(button) {
+            var closureForm = document.getElementById("closureForm");
+            closureForm.style.display = "block";
 
-            // Access the payment details and update the table or display them as needed
-            if (paymentData.accountNumber === '123456789') {
-                var newBalance= parseInt(document.getElementById('bank1').textContent)-paymentData.Balance
-                document.getElementById('bank1').textContent = newBalance;
-            } else if (paymentData.accountNumber === '987654321') {
-                var newBalance= parseInt(document.getElementById('bank2').textContent)-paymentData.Balance
-                document.getElementById('bank2').textContent = newBalance;
+            var accountNumber = document.getElementById("accountNumber");
+            accountNumber.value = button.parentNode.parentNode.children[0].innerText;
+        }
+
+        function closeClosureForm() {
+            var closureForm = document.getElementById("closureForm");
+            closureForm.style.display = "none";
+        }
+
+        function confirmClosure() {
+            var reason = document.getElementById("reason");
+
+            if (reason.checkValidity()) {
+                if (confirm("Are you sure you want to request to close this bank account?")) {
+                    alert("Your request is being processed. We'll get back to you shortly.");
+                    closeClosureForm();
+                }
+            } else {
+                alert("Please enter a reason for closure.");
+                reason.focus();
             }
         }
     </script>
 </body>
 </html>
+
+
+
+
+

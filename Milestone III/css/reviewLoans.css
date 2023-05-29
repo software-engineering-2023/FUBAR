@@ -165,3 +165,56 @@
   .back-link i {
     margin-right: 5px;
   }
+  .accept-button,
+.reject-button {
+    color: white;
+    background-color: #4F0341;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: transform 0.3s, background-color 0.3s;
+    text-decoration: none;
+    width: 100px; /* Add this line to set a fixed width */
+}
+
+.accept-button:hover,
+.reject-button:hover {
+    color: #ffffff;
+    background-color: #cc7f32;
+    transform: scale(1.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.accepted-row .view-details-button,
+.rejected-row .view-details-button {
+  pointer-events: none;
+}
+
+.accepted-row .accept-button,
+.accepted-row .reject-button,
+.rejected-row .accept-button,
+.rejected-row .reject-button {
+    pointer-events: none;
+    opacity: 0.5;
+}
+ .accepted-row {
+            background-color: #047815;
+        }
+        
+        .rejected-row {
+            background-color: #df0d0d;
+        }
+        .accept-button.disabled-button,
+
+.reject-button.disabled-button {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.accepted-row .view-details-button,
+.rejected-row .view-details-button {
+  pointer-events: auto;
+}

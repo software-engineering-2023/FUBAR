@@ -44,10 +44,10 @@
             <img src="../img/FUBAR Logo.png" />
         </div>
         <ul>
-            <li><button id="home" class="home" >Home</button></li>
+            <li><button id="home" class="home">Home</button></li>
             <li><button id="report">Report Issue</button></li>
             <li><button id="notifs">Notifications</button></li>
-            <li><button id ="reminders">Reminders</button></li>
+            <li><button id="reminders">Reminders</button></li>
             <li><button id="contact">Contact</button></li>
         </ul>
     </div>
@@ -67,6 +67,7 @@
         <thead>
             <tr>
                 <th>Credit Card Number</th>
+                <th>Related Bank Account</th> <!-- New column added -->
                 <th>Credit left to use</th>
                 <th>Limit</th>
                 <th>Points</th>
@@ -77,6 +78,7 @@
         <tbody>
             <tr>
                 <td>1111222233334444</td>
+                <td>123456789</td> <!-- Related bank account for the credit card -->
                 <td>$5000</td>
                 <td>$10000</td>
                 <td class="points-cell">1000</td>
@@ -90,6 +92,7 @@
             </tr>
             <tr>
                 <td>5555666677778888</td>
+                <td>987654321</td> <!-- Related bank account for the credit card -->
                 <td>$10000</td>
                 <td>$20000</td>
                 <td class="points-cell">2000</td>
@@ -107,14 +110,15 @@
 
     <button id="loanapp" class="applyloan">Apply For a New Credit Card</button>
     <script>
-         document.addEventListener('DOMContentLoaded', function () {
-    const homeButton = document.getElementById('loanapp');
-    if (homeButton) {
-      homeButton.addEventListener('click', function () {
-        window.location.href = 'applyForACreditCard.html';
-      });
-    }
-  });
+        document.addEventListener('DOMContentLoaded', function () {
+            const homeButton = document.getElementById('loanapp');
+            if (homeButton) {
+                homeButton.addEventListener('click', function () {
+                    window.location.href = 'applyForACreditCard.html';
+                });
+            }
+        });
     </script>
 </body>
 </html>
+
